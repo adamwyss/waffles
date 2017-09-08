@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>www.thewaffl.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="generator" content="Rvglobalsoft" />
+<!-- Version: 5.4.1 PRO; Project name: WaFFL Home Page; Project id: 5c18f4749d5f9409152c4456350c72d6; Template Name: 22-433-1_darkgreen_plain01_2; 
+Published date: December 14, 2014, 10:49 46 (GMT -06:00) --> 
+<link rel="stylesheet" href="http://thewaffl.net/style.css" type="text/css" />
+
+<link rel="stylesheet" href="http://thewaffl.net/Verdana.css" type="text/css" />
+<link rel="stylesheet" href="http://thewaffl.net/Navigator.css" type="text/css" />
+<link rel="stylesheet" href="http://thewaffl.net/pathway.css" type="text/css" />
+
+
+<link id ="linkcssglobal" rel="stylesheet" type="text/css" media="screen" href="http://thewaffl.net/js/jquery-ui/themes/base/ui.all.css" />
+<script  type="text/javascript" src="http://thewaffl.net/js/jquery-ui/jquery.min.js"></script>
+<script  type="text/javascript" src="http://thewaffl.net/js/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+
+<script  type="text/javascript" src="http://thewaffl.net/rvsincludefile/rvsheadpage.js"></script>
+
+
+<script type="text/javascript" src="http://thewaffl.net/js/jquery.url.js"></script>
+<!-- new navigation style 2013 -->
+<link rel="stylesheet" type="text/css" href="http://thewaffl.net/js/publishNavigator/ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="http://thewaffl.net/js/publishNavigator/ddsmoothmenu-v.css" />
+
+<script type="text/javascript" defer ="defer">
+
+(function ($) {
+$(document).ready(function() {
+    var CurrentUrl = window.location.href;
+    if (CurrentUrl.match(/(rvsindex.php)|(blogweb\/index)|(faqweb\/)/)) {
+        page = (urlRefer != undefined) ? urlRefer : '';
+    } else {
+        rPath = CurrentUrl.match(/.*?(\/).*?/img);
+        for (i=0;i< rPath.length;i++) {
+            page = CurrentUrl.replace(/(.*?)\//,'');
+            CurrentUrl = page;
+        }
+    }
+    
+    if ($.browser.webkit) {
+	    window.addEventListener('load', function(){
+	    	$(':-webkit-autofill').each(function(){
+            	var text = $(this).val();
+            	var name = $(this).attr('name');
+            	$(this).after(this.outerHTML).remove();
+            	$('input[name=' + name + ']').val(text);
+            });
+	    }, false);
+	}
+    
+    
+    var poiont = $('.rvnavigator a[href="' + page + '"]').parents("li").length;
+    if (poiont > 0) {
+        for (i=0;i<=poiont;i++) {
+            $('.rvnavigator a[href="' + page + '"]').parents("li").eq(i).find('a:first').attr('class', 'current');
+        }
+    }
+    
+    $('#jumpmenu').find('option').each(function() {
+		if($(this).val() == window.location.href) {
+			$(this).attr('selected', 'selected');
+		}
+	})
+    
+});
+})($);
+
+</script>
+
+<script  type="text/javascript" src="http://thewaffl.net/rvsincludefile/rvscustomopenwindow.js"></script>
+
+
+
+</head>
+
+<body >
+<table cellpadding="0" cellspacing="0" id="rv_top_adjust_width_0" width="100%" align="center" >
+	<tr>
+		<td align="left" valign="top" class="padding">
+			<!-- START LOGO -->
+				<div style="position: absolute;">
+					<div id="Layer1" style="position:relative; left:1112px; top:29px; width:120; height:60; text-align:center; z-index:1; overflow:visible; white-space:nowrap;"></div>
+				</div>
+				<div style="position: absolute;">
+					<div id="Layer2" style="position:relative; left:594px; top:71px; width:auto; height:auto; text-align:left; z-index:2; overflow:visible; white-space:nowrap;" class="company">WaFFL Home Page</div>
+				</div>
+				<div style="position: absolute;">
+					<div id="Layer3" style="position:relative; left:170px; top:90px; width:auto; height:auto; text-align:left; z-index:3; overflow:visible; white-space:nowrap;" class="slogan"></div>
+				</div>
+			<!-- END LOGO -->
+<!-- START CUSTOM LAYER --><!-- END CUSTOM LAYER -->
+<div id="fb-root"></div>
+<!-- {literal} -->
+<script type="text/javascript">
+//<![CDATA[
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+//]]>
+</script>
+<!-- {/literal} -->	
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td width="99%" valign="top" class="bgtop"><img src="images/spacer.gif" alt="" width="776" height="151" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="top" height="32" class="bgmenu"><div id="rvnavigator"><ul class="rvnavigator">
+<li>
+<a href="http://thewaffl.net/Home.php"   target="_self" ><span>Home +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/WaFFL-Rules.php"   target="_self" ><span>WaFFL Rules</span></a></li>
+<li>
+<a href="http://thewaffl.net/Draft-Process.php"   target="_self" ><span>Draft Process</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/2014.php"   target="_self" ><span>2014 +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/2014-Draft.php"   target="_self" ><span>2014 Draft</span></a></li>
+<li>
+<a href="http://thewaffl.net/Playoff-Scenario.php"   target="_self" ><span>Playoff Scenario</span></a></li>
+<li>
+<a href="http://thewaffl.net/Pro-Bowl.php"   target="_self" ><span>Pro Bowl</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/Rosters.php"   target="_self" ><span>Rosters +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/Waiver-Order.php"   target="_self" ><span>Waiver Order</span></a></li>
+<li>
+<a href="http://thewaffl.net/Transactions.php"   target="_self" ><span>Transactions</span></a></li>
+<li>
+<a href="http://thewaffl.net/2013-Draft.php"   target="_self" ><span>2013 Draft</span></a></li>
+<li>
+<a href="http://thewaffl.net/2012-Draft.php"   target="_self" ><span>2012 Draft</span></a></li>
+<li>
+<a href="http://thewaffl.net/2011-Draft.php"   target="_self" ><span>2011 Draft</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/League-Leaders.php"   target="_self" ><span>League Leaders +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/AFC-Team-Stats.php"   target="_self" ><span>AFC Team Stats</span></a></li>
+<li>
+<a href="http://thewaffl.net/NFC-Team-Stats.php"   target="_self" ><span>NFC Team Stats</span></a></li>
+<li>
+<a href="http://thewaffl.net/Playoff-Leaders.php"   target="_self" ><span>Playoff Leaders</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/Playoff-Challenge-Standings.php"   target="_self" ><span>Playoff Challenge Standings +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/AFC-Playoff-Challenge-Scores.php"   target="_self" ><span>AFC Playoff Challenge Scores</span></a></li>
+<li>
+<a href="http://thewaffl.net/NFC-Playoff-Challenge-Scores.php"   target="_self" ><span>NFC Playoff Challenge Scores</span></a></li>
+<li>
+<a href="http://thewaffl.net/NFL-Playoff-Stats.php"   target="_self" ><span>NFL Playoff Stats</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/Home27.php"   target="_self" ><span>League History +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/1996.php"   target="_self" ><span>1996</span></a></li>
+<li>
+<a href="http://thewaffl.net/1997.php"   target="_self" ><span>1997</span></a></li>
+<li>
+<a href="http://thewaffl.net/1998.php"   target="_self" ><span>1998</span></a></li>
+<li>
+<a href="http://thewaffl.net/1999.php"   target="_self" ><span>1999</span></a></li>
+<li>
+<a href="http://thewaffl.net/2000.php"   target="_self" ><span>2000</span></a></li>
+<li>
+<a href="http://thewaffl.net/2001.php"   target="_self" ><span>2001</span></a></li>
+<li>
+<a href="http://thewaffl.net/2002.php"   target="_self" ><span>2002</span></a></li>
+<li>
+<a href="http://thewaffl.net/2003.php"   target="_self" ><span>2003</span></a></li>
+<li>
+<a href="http://thewaffl.net/2004.php"   target="_self" ><span>2004</span></a></li>
+<li>
+<a href="http://thewaffl.net/2005.php"   target="_self" ><span>2005</span></a></li>
+<li>
+<a href="http://thewaffl.net/2006.php"   target="_self" ><span>2006</span></a></li>
+<li>
+<a href="http://thewaffl.net/2007.php"   target="_self" ><span>2007</span></a></li>
+<li>
+<a href="http://thewaffl.net/2008.php"   target="_self" ><span>2008</span></a></li>
+<li>
+<a href="http://thewaffl.net/2009.php"   target="_self" ><span>2009</span></a></li>
+<li>
+<a href="http://thewaffl.net/2010.php"   target="_self" ><span>2010</span></a></li>
+<li>
+<a href="http://thewaffl.net/2011.php"   target="_self" ><span>2011</span></a></li>
+<li>
+<a href="http://thewaffl.net/2012.php"   target="_self" ><span>2012</span></a></li>
+<li>
+<a href="http://thewaffl.net/2013.php"   target="_self" ><span>2013</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/WaFFL-Hall-of-Fame.php"   target="_self" ><span>WaFFL Hall of Fame +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/WaFFL-Records.php"   target="_self" ><span>WaFFL Records</span></a></li>
+<li>
+<a href="http://thewaffl.net/All-Pros--1996-Present-.php"   target="_self" ><span>All-Pros (1996-Present)</span></a></li>
+<li>
+<a href="http://thewaffl.net/All-Time-Coaching-Records.php"   target="_self" ><span>All-Time Coaching Records</span></a></li>
+<li>
+<a href="http://thewaffl.net/Pro-Bowl-Results.php"   target="_self" ><span>Pro Bowl Results</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/JHS.php"   target="_self" ><span>JHS</span></a></li>
+</ul></div>
+<div class="clear"></div>
+</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top" bgcolor="#FFFFFF">
+						<table cellpadding="0" cellspacing="0" width="100%">
+							
+<tr><td align="center" class="content_margin_top"></td></tr>
+ 
+							<!-- Begin PATHWAY and ICON -->
+							<tr>
+								<td class="magin">
+									<table cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<!-- Begin PATHWAY -->
+											<td align="left" width="99%"><table cellpadding="0" cellspacing="0" width="100%"><tr valign="top"> <td nowrap="nowrap">&nbsp;&nbsp;&nbsp;<a href="http://thewaffl.net/index.php" target="_top">Home</a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><a href="http://thewaffl.net/.php"></a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><b>1997</b></td><td width="99%" nowrap="nowrap"></td></tr></table></td>
+											<!-- End PATHWAY -->
+											<!-- Begin ICON -->
+											<td align="right"><!--Cannot get icon--></td>
+											<!-- End ICON -->
+										</tr>
+									</table>																		
+								</td>
+							</tr>
+							<!-- End PATHWAY and ICON -->
+							<tr>
+								<td align="left" valign="top">
+									<table cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<!-- Begin SIDE1 -->
+											<td width="160" align="center" valign="top" class="magin"><div>Commissioner:</div>
+<div><a title="" href="mailto:Waffl@hotmail.com">Ryan Simmons</a></div>
+<div>&nbsp;</div>
+<div>Deputy Commissioner:</div>
+<div>Chris Rangel</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><strong><u>Web Links</u></strong></div>
+<div>&nbsp;</div>
+<div><a title="" target="_blank" href="http://www.nfl.com">NFL.com</a></div>
+<div>&nbsp;</div>
+<div><a title="" target="_blank" href="http://www.nationalchamps.net/Helmet_Project/">Helmet Project</a>&nbsp;</div></td>
+											<!-- End SIDE1 -->
+											<td align="left" valign="top" class="magin" id="rv_adjust_width_5" width="100%"><div class="content_margin_left_right">
+<table cellpadding="0" cellspacing="0" width="100%">  <tr>    <td align="left" valign="top" width="100%" id="layout_zone1" style = ""><div align="center"><img title="" height="108" alt="" width="173" src="http://thewaffl.net/images/WaFFLlogo.gif" /></div>
+<div align="center">&nbsp;</div>
+<div align="center"><strong><font size="4">1997 Season</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="center">
+<table style="width: 75%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" bgcolor="#ffffff" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="left"><strong><font size="3">AFC</font></strong></div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td></tr>
+<tr valign="top" bgcolor="#6699ff">
+<td>
+<div align="left">Team</div></td>
+<td>
+<div>W-L</div></td>
+<td>
+<div>%</div></td>
+<td>
+<div>PF</div></td>
+<td>
+<div>PA</div></td>
+<td>
+<div>+/-</div></td>
+<td>
+<div>Conf.</div></td>
+<td>
+<div>NFC</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">z - Procrastinators</div></td>
+<td>
+<div>11-3</div></td>
+<td>
+<div>.786</div></td>
+<td>
+<div>14,510</div></td>
+<td>
+<div>9,911</div></td>
+<td>
+<div>+ 4,599</div></td>
+<td>
+<div>9-1</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">x - Eskimoes</div></td>
+<td>
+<div>9-5</div></td>
+<td>
+<div>.643</div></td>
+<td>
+<div>11,405</div></td>
+<td>
+<div>10,794</div></td>
+<td>
+<div>+ 611</div></td>
+<td>
+<div>8-2</div></td>
+<td>
+<div>1-3</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">x - Anal Retentive Pioneers</div></td>
+<td>
+<div>8-6</div></td>
+<td>
+<div>.571</div></td>
+<td>
+<div>11,729</div></td>
+<td>
+<div>11,975</div></td>
+<td>
+<div>- 246</div></td>
+<td>
+<div>6-4</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Nonoxynol Nightmares</div></td>
+<td>
+<div>6-8</div></td>
+<td>
+<div>.428</div></td>
+<td>
+<div>11,489</div></td>
+<td>
+<div>11,843</div></td>
+<td>
+<div>- 354</div></td>
+<td>
+<div>3-7</div></td>
+<td>
+<div>3-1</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Nick Baker's Touchdown Makers</div></td>
+<td>
+<div>5-9</div></td>
+<td>
+<div>.357</div></td>
+<td>
+<div>10,101</div></td>
+<td>
+<div>12,288</div></td>
+<td>
+<div>- 2,187</div></td>
+<td>
+<div>2-8</div></td>
+<td>
+<div>3-1</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Big Daddy Spanks</div></td>
+<td>
+<div>4-10</div></td>
+<td>
+<div>.286</div></td>
+<td>
+<div>9,581</div></td>
+<td>
+<div>11,237</div></td>
+<td>
+<div>- 1,656</div></td>
+<td>
+<div>2-8</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong><font size="3">NFC</font></strong></div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td></tr>
+<tr valign="top" bgcolor="#6699ff">
+<td>
+<div align="left">Team</div></td>
+<td>
+<div>W-L</div></td>
+<td>
+<div>%</div></td>
+<td>
+<div>PF</div></td>
+<td>
+<div>PA</div></td>
+<td>
+<div>+/-</div></td>
+<td>
+<div>Conf.</div></td>
+<td>
+<div>AFC</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">z - Avalanche</div></td>
+<td>
+<div>9-5</div></td>
+<td>
+<div>.643</div></td>
+<td>
+<div>12,392</div></td>
+<td>
+<div>11,391</div></td>
+<td>
+<div>+ 1001</div></td>
+<td>
+<div>7-3</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">x - A-Team</div></td>
+<td>
+<div>8-6</div></td>
+<td>
+<div>.571</div></td>
+<td>
+<div>12,067</div></td>
+<td>
+<div>11,303</div></td>
+<td>
+<div>+ 764</div></td>
+<td>
+<div>6-4</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">x - Screamin' Kookarachas</div></td>
+<td>
+<div>7-7</div></td>
+<td>
+<div>.500</div></td>
+<td>
+<div>12,290</div></td>
+<td>
+<div>10,468</div></td>
+<td>
+<div>+ 1,822</div></td>
+<td>
+<div>5-5</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Oklahoma City Bombers</div></td>
+<td>
+<div>7-7</div></td>
+<td>
+<div>.500</div></td>
+<td>
+<div>11,039</div></td>
+<td>
+<div>10,668</div></td>
+<td>
+<div>+ 371</div></td>
+<td>
+<div>5-5</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Rocky Mountain Oysters</div></td>
+<td>
+<div>5-9</div></td>
+<td>
+<div>.357</div></td>
+<td>
+<div>9,912</div></td>
+<td>
+<div>11,589</div></td>
+<td>
+<div>- 1,677</div></td>
+<td>
+<div>4-6</div></td>
+<td>
+<div>1-3</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Erasers</div></td>
+<td>
+<div>5-9</div></td>
+<td>
+<div>.357</div></td>
+<td>
+<div>8,802</div></td>
+<td>
+<div>12,031</div></td>
+<td>
+<div>- 3,229</div></td>
+<td>
+<div>3-7</div></td>
+<td>
+<div>2-2</div></td></tr></tbody></table></div>
+<div align="left"><font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z - clinched Bye; x - clinched playoff</font></div>
+<div>&nbsp;</div>
+<div align="center"><strong><font size="4">1997 Scores</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="center">
+<table style="width: 80%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 1</strong></div></td>
+<td>
+<div align="left"><strong>Week 2</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Eskimoes 1013, Nonoxynol Nightmares 681</div>
+<div align="left">Anal Retentive Pioneers 1273, Big Daddy Spanks 690</div>
+<div align="left">Procrastinators 1278, Nick Baker's Touchdown Makers 863</div>
+<div align="left">Avalanche 1019, Erasers 371</div>
+<div align="left">Rocky Mountain Oysters 994, A-Team 714</div>
+<div align="left">Oklahoma City Bombers 748, Screamin' Kookarachas 680</div></td>
+<td>
+<div align="left">Anal Retentive Pioneers 762, Nonoxynol Nightmares 723</div>
+<div align="left">Procrastinators 1253, Big Daddy Spanks 514</div>
+<div align="left">Eskimoes 982, Nick Baker's Touchdown Makers 359</div>
+<div align="left">Avalanche 1211, A-Team 834</div>
+<div align="left">Oklahoma City Bombers 770, Rocky Mountain Oysters 674</div>
+<div align="left">Screamin' Kookarachas 1043, Eraser 351</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 3</strong></div></td>
+<td>
+<div align="left"><strong>Week 4</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Eskimoes 1158, Anal Retentive Pioneers 782</div>
+<div align="left">Procrastinators 1066, Nonoxynol Nightmares 819</div>
+<div align="left">Nick Baker's Touchdown Makers 707, Big Daddy Spanks 694</div>
+<div align="left">A-Team 1030, Erasers 706</div>
+<div align="left">Avalanche 752, Oklahoma City Bombers 751</div>
+<div align="left">Rocky Mountain Oysters 705, Screamin' Kookarachas 627</div></td>
+<td>
+<div align="left">Eskimoes 997, Big Daddy Spanks 582</div>
+<div align="left">Procrastinators 1715, Anal Retentive Pioneers 607</div>
+<div align="left">Nonoxynol Nightmares 1049, Nick Baker's Touchdown Makers 975</div>
+<div align="left">Rocky Mountain Oysters 1286, Erasers 727</div>
+<div align="left">Oklahoma City Bombers 1211, A-Team 648</div>
+<div align="left">Screamin' Kookarachas 1135, Avalanche 694</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 5</strong></div></td>
+<td>
+<div align="left"><strong>Week 6</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Procrastinators 1088, Eskimoes 882</div>
+<div align="left">Anal Retentive Pioneers 949, Nick Baker's Touchdown Makers 768</div>
+<div align="left">Big Daddy Spanks 782, Nonoxynol Nightmares 629</div>
+<div align="left">Erasers 885, Oklahoma City Bombers 714</div>
+<div align="left">A-Team 1366, Screamin' Kookarachas 736</div>
+<div align="left">Rocky Mountain Oysters 845, Avalanche 560</div></td>
+<td>
+<div align="left">Erasers 663, Eskimoes 578</div>
+<div align="left">Nonoxynol Nightmares 942, Avalanche 722</div>
+<div align="left">A-Team 851, Anal Retentive Pioneers 630</div>
+<div align="left">Rocky Mountain Oysters 953, Big Daddy Spanks 838</div>
+<div align="left">Procrastinators 890, Oklahoma City Bombers 687</div>
+<div align="left">Nick Baker's Touchdown Makers 652, Screamin' Kookarachas 583</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 7</strong></div></td>
+<td>
+<div align="left"><strong>Week 8</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Screamin' Kookarachas 1434, Eskimoes 449</div>
+<div align="left">Oklahoma City Bombers 866, Nonoxynol Nightmares 732</div>
+<div align="left">Anal Retentive Pioneers 1065, Rocky Mountain Oysters 496</div>
+<div align="left">Big Daddy Spanks 520, A-Team 438</div>
+<div align="left">Avalanche 1170, Procrastinators 683</div>
+<div align="left">Nick Baker's Touchdown Makers 824, Erasers 316</div></td>
+<td>
+<div align="left">Avalanche 812, Eskimoes 769</div>
+<div align="left">Nonoxynol Nightmares 1053, Rocky Mountain Oysters 867</div>
+<div align="left">Screamin' Kookarachas 870, Anal Retentive Pioneers 592</div>
+<div align="left">Erasers 534, Big Daddy Spanks 345</div>
+<div align="left">A-Team 487, Procrastinators 472</div>
+<div align="left">Oklahoma City Bombers 789, Nick Baker's Touchdown Makers 700</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 9</strong></div></td>
+<td>
+<div align="left"><strong>Week 10</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Anal Retentive Pioneers 1302, Erasers 975</div>
+<div align="left">Nick Baker's Touchdown Makers 942, Avalanche 877</div>
+<div align="left">Eskimoes 799, A-Team 539</div>
+<div align="left">Procrastinators 1190, Rocky Mountain Oysters 774</div>
+<div align="left">Big Daddy Spanks 889, Oklahoma City Bombers 515</div>
+<div align="left">Nonoxynol Nightmares 957, Screamin' Kookarachas 637</div></td>
+<td>
+<div align="left">Eskimoes 850, Nonoxynol Nightmares 648</div>
+<div align="left">Big Daddy Spanks 800, Anal Retentive Pioneers 408</div>
+<div align="left">Procrastinators 1074, Nick Baker's Touchdown Makers 486</div>
+<div align="left">Avalanche 923, Erasers 741</div>
+<div align="left">A-Team 739, Rocky Mountain Oysters 619</div>
+<div align="left">Screamin' Kookarachas 1020, Oklahoma City Bombers 847</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 11</strong></div></td>
+<td>
+<div align="left"><strong>Week 12</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Anal Retentive Pioneers 1039, Nonoxynol Nightmares 1022</div>
+<div align="left">Procrastinators 1061, Big Daddy Spanks 658</div>
+<div align="left">Eskimoes 780, Nick Baker's Touchdown Makers 591</div>
+<div align="left">Avalanche 1035, A-Team 977</div>
+<div align="left">Oklahoma City Bombers 726, Rocky Mountain Oysters 201</div>
+<div align="left">Erasers 656, Screamin' Kookarachas 627</div></td>
+<td>
+<div align="left">Eskimoes 649, Anal Retentive Pioneers 641</div>
+<div align="left">Procrastinators 743, Nonoxynol Nightmares 433</div>
+<div align="left">Nick Baker's Touchdown Makers 876, Big Daddy Spanks 770</div>
+<div align="left">A-Team 1019, Erasers 734</div>
+<div align="left">Avalanche 778, Oklahoma City Bombers 747</div>
+<div align="left">Screamin' Kookarachas 891, Rocky Mountain Oysters 502</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 13</strong></div></td>
+<td>
+<div align="left"><strong>Week 14</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Eskimoes 838, Big Daddy Spanks 790</div>
+<div align="left">Anal Retentive Pioneers 870, Procrastinators 813</div>
+<div align="left">Nonoxynol Nightmares 1066, Nick Baker's Touchdown Makers 813</div>
+<div align="left">Erasers 658, Rocky Mountain Oysters 438</div>
+<div align="left">A-Team 1284, Oklahoma City Bombers 775</div>
+<div align="left">Screamin' Kookarachas 1096, Avalanche 833</div></td>
+<td>
+<div align="left">Procrastinators 1184, Eskimoes 661</div>
+<div align="left">Anal Retentive Pioneers 1081, Nick Baker's Touchdown Makers 545</div>
+<div align="left">Nonoxynol Nightmares 735, Big Daddy Spanks 709</div>
+<div align="left">Oklahoma City Bombers 893, Erasers 485</div>
+<div align="left">A-Team 1116, Screamin' Kookarachas 861</div>
+<div align="left">Avalanche 1006, Rocky Mountain Oysters 558</div></td></tr></tbody></table></div>
+<div align="center">&nbsp;</div>
+<div align="center">&nbsp;<strong><font size="4">1997 WaFFL Playoffs</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="center">
+<table style="width: 80%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="center"><strong>Wild Card</strong></div></td>
+<td>
+<div><strong>Conference Championship</strong></div></td>
+<td>
+<div><strong>Fantasy Bowl II</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="center">AFC: Anal Retentive Pioneers 1233, Eskimoes 510</div>
+<div align="center">NFC: A-Team 889, Screamin' Kookarachas 820</div></td>
+<td>
+<div>AFC: Procrastinators 1092, Anal Retentive Pioneers 980</div>
+<div>NFC: A-Team 844, Avalanche 713</div></td>
+<td>
+<div>Procrastinators 841, A-Team 538</div>
+<div>MVP: Tim Brown - Procrastinators</div></td></tr></tbody></table></div>
+<div align="center">&nbsp;</div>
+<div align="center"><strong><font size="4">1997 WaFFL All-Pro's</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="justify">The WaFFL All-Pro's were selected based on scoring the most points in their respective positions during the 1997 WaFFL season.&nbsp; The MVP award is given to the WaFFL All-Pro that provided the largest point contribution to their team.</div>
+<div align="justify">&nbsp;</div>
+<div align="justify">
+<table style="width: 100%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="center"><img title="" height="108" alt="" width="82" src="http://thewaffl.net/images/george97.jpg" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/sanders97.gif" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/davis97.gif" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/brown97.gif" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/moore97.gif" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/hollis97.gif" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/sanfran97.gif" /></div></td></tr>
+<tr valign="top">
+<td>
+<div align="center">Jeff George</div></td>
+<td>
+<div align="center">Barry Sanders - <strong>MVP</strong></div></td>
+<td>
+<div align="center">Terrell Davis</div></td>
+<td>
+<div align="center">Tim Brown</div></td>
+<td>
+<div align="center">Herman Moore</div></td>
+<td>
+<div align="center">Mike Hollis</div></td>
+<td>
+<div align="center">San Francisco 49ers</div></td></tr>
+<tr valign="top">
+<td>
+<div align="center">Procrastinators</div></td>
+<td>
+<div align="center">Screamin' Kookarachas</div></td>
+<td>
+<div align="center">Procrastinators</div></td>
+<td>
+<div align="center">Procrastinators</div></td>
+<td>
+<div align="center">Rocky Mountain Oysters</div></td>
+<td>
+<div align="center">Procrastinators</div></td>
+<td>
+<div align="center">Procrastinators</div></td></tr></tbody></table></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p></td>  </tr></table>
+</div></td>
+											<!-- Begin SIDE2 -->
+											<td width="160" align="center" valign="top" class="magin"><div><strong>2013 WaFFL Champs</strong></div>
+<div>&nbsp;</div>
+<div><img src="http://thewaffl.net/images/dtmb.gif" width="160" height="106" border="0" title="" alt="" /><br />
+</div>
+<div>&nbsp;</div>
+<div>Dont Tase Me Bro</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><strong>2013 Playoff Challenge Champs</strong></div>
+<div>&nbsp;</div>
+<div><img src="http://thewaffl.net/images/D.gif" width="160" height="106" border="0" title="" alt="" />&nbsp;</div>
+<div>&nbsp;</div>
+<div>Dominators</div></td>
+											<!-- End SIDE2 -->
+										</tr>
+									</table>														
+								</td>
+							</tr>
+							<!-- Begin FOOTER -->
+							<tr>
+								<td align="center" class="magin"></td>
+							</tr>
+							<!-- End FOOTER -->
+
+							 
+<tr><td align="center" class="content_margin_bottom"></td></tr>
+
+							<tr>
+								<td height="25" align="center" valign="bottom">
+									<table cellpadding="0" cellspacing="0">
+										<tr>
+											<td align="center" valign="bottom" class="marginpw"></td>
+											<td width="8"></td>
+											<td align="center" valign="bottom" class="marginpw"></td>
+										</tr>
+									</table>			
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

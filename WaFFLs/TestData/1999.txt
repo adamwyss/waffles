@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>www.thewaffl.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="generator" content="Rvglobalsoft" />
+<!-- Version: 5.4.1 PRO; Project name: WaFFL Home Page; Project id: 5c18f4749d5f9409152c4456350c72d6; Template Name: 22-433-1_darkgreen_plain01_2; 
+Published date: December 14, 2014, 10:49 44 (GMT -06:00) --> 
+<link rel="stylesheet" href="http://thewaffl.net/style.css" type="text/css" />
+
+<link rel="stylesheet" href="http://thewaffl.net/Verdana.css" type="text/css" />
+<link rel="stylesheet" href="http://thewaffl.net/Navigator.css" type="text/css" />
+<link rel="stylesheet" href="http://thewaffl.net/pathway.css" type="text/css" />
+
+
+<link id ="linkcssglobal" rel="stylesheet" type="text/css" media="screen" href="http://thewaffl.net/js/jquery-ui/themes/base/ui.all.css" />
+<script  type="text/javascript" src="http://thewaffl.net/js/jquery-ui/jquery.min.js"></script>
+<script  type="text/javascript" src="http://thewaffl.net/js/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+
+<script  type="text/javascript" src="http://thewaffl.net/rvsincludefile/rvsheadpage.js"></script>
+
+
+<script type="text/javascript" src="http://thewaffl.net/js/jquery.url.js"></script>
+<!-- new navigation style 2013 -->
+<link rel="stylesheet" type="text/css" href="http://thewaffl.net/js/publishNavigator/ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="http://thewaffl.net/js/publishNavigator/ddsmoothmenu-v.css" />
+
+<script type="text/javascript" defer ="defer">
+
+(function ($) {
+$(document).ready(function() {
+    var CurrentUrl = window.location.href;
+    if (CurrentUrl.match(/(rvsindex.php)|(blogweb\/index)|(faqweb\/)/)) {
+        page = (urlRefer != undefined) ? urlRefer : '';
+    } else {
+        rPath = CurrentUrl.match(/.*?(\/).*?/img);
+        for (i=0;i< rPath.length;i++) {
+            page = CurrentUrl.replace(/(.*?)\//,'');
+            CurrentUrl = page;
+        }
+    }
+    
+    if ($.browser.webkit) {
+	    window.addEventListener('load', function(){
+	    	$(':-webkit-autofill').each(function(){
+            	var text = $(this).val();
+            	var name = $(this).attr('name');
+            	$(this).after(this.outerHTML).remove();
+            	$('input[name=' + name + ']').val(text);
+            });
+	    }, false);
+	}
+    
+    
+    var poiont = $('.rvnavigator a[href="' + page + '"]').parents("li").length;
+    if (poiont > 0) {
+        for (i=0;i<=poiont;i++) {
+            $('.rvnavigator a[href="' + page + '"]').parents("li").eq(i).find('a:first').attr('class', 'current');
+        }
+    }
+    
+    $('#jumpmenu').find('option').each(function() {
+		if($(this).val() == window.location.href) {
+			$(this).attr('selected', 'selected');
+		}
+	})
+    
+});
+})($);
+
+</script>
+
+<script  type="text/javascript" src="http://thewaffl.net/rvsincludefile/rvscustomopenwindow.js"></script>
+
+
+
+</head>
+
+<body >
+<table cellpadding="0" cellspacing="0" id="rv_top_adjust_width_0" width="100%" align="center" >
+	<tr>
+		<td align="left" valign="top" class="padding">
+			<!-- START LOGO -->
+				<div style="position: absolute;">
+					<div id="Layer1" style="position:relative; left:1112px; top:29px; width:120; height:60; text-align:center; z-index:1; overflow:visible; white-space:nowrap;"></div>
+				</div>
+				<div style="position: absolute;">
+					<div id="Layer2" style="position:relative; left:594px; top:71px; width:auto; height:auto; text-align:left; z-index:2; overflow:visible; white-space:nowrap;" class="company">WaFFL Home Page</div>
+				</div>
+				<div style="position: absolute;">
+					<div id="Layer3" style="position:relative; left:170px; top:90px; width:auto; height:auto; text-align:left; z-index:3; overflow:visible; white-space:nowrap;" class="slogan"></div>
+				</div>
+			<!-- END LOGO -->
+<!-- START CUSTOM LAYER --><!-- END CUSTOM LAYER -->
+<div id="fb-root"></div>
+<!-- {literal} -->
+<script type="text/javascript">
+//<![CDATA[
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+//]]>
+</script>
+<!-- {/literal} -->	
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td width="99%" valign="top" class="bgtop"><img src="images/spacer.gif" alt="" width="776" height="151" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="top" height="32" class="bgmenu"><div id="rvnavigator"><ul class="rvnavigator">
+<li>
+<a href="http://thewaffl.net/Home.php"   target="_self" ><span>Home +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/WaFFL-Rules.php"   target="_self" ><span>WaFFL Rules</span></a></li>
+<li>
+<a href="http://thewaffl.net/Draft-Process.php"   target="_self" ><span>Draft Process</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/2014.php"   target="_self" ><span>2014 +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/2014-Draft.php"   target="_self" ><span>2014 Draft</span></a></li>
+<li>
+<a href="http://thewaffl.net/Playoff-Scenario.php"   target="_self" ><span>Playoff Scenario</span></a></li>
+<li>
+<a href="http://thewaffl.net/Pro-Bowl.php"   target="_self" ><span>Pro Bowl</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/Rosters.php"   target="_self" ><span>Rosters +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/Waiver-Order.php"   target="_self" ><span>Waiver Order</span></a></li>
+<li>
+<a href="http://thewaffl.net/Transactions.php"   target="_self" ><span>Transactions</span></a></li>
+<li>
+<a href="http://thewaffl.net/2013-Draft.php"   target="_self" ><span>2013 Draft</span></a></li>
+<li>
+<a href="http://thewaffl.net/2012-Draft.php"   target="_self" ><span>2012 Draft</span></a></li>
+<li>
+<a href="http://thewaffl.net/2011-Draft.php"   target="_self" ><span>2011 Draft</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/League-Leaders.php"   target="_self" ><span>League Leaders +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/AFC-Team-Stats.php"   target="_self" ><span>AFC Team Stats</span></a></li>
+<li>
+<a href="http://thewaffl.net/NFC-Team-Stats.php"   target="_self" ><span>NFC Team Stats</span></a></li>
+<li>
+<a href="http://thewaffl.net/Playoff-Leaders.php"   target="_self" ><span>Playoff Leaders</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/Playoff-Challenge-Standings.php"   target="_self" ><span>Playoff Challenge Standings +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/AFC-Playoff-Challenge-Scores.php"   target="_self" ><span>AFC Playoff Challenge Scores</span></a></li>
+<li>
+<a href="http://thewaffl.net/NFC-Playoff-Challenge-Scores.php"   target="_self" ><span>NFC Playoff Challenge Scores</span></a></li>
+<li>
+<a href="http://thewaffl.net/NFL-Playoff-Stats.php"   target="_self" ><span>NFL Playoff Stats</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/Home27.php"   target="_self" ><span>League History +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/1996.php"   target="_self" ><span>1996</span></a></li>
+<li>
+<a href="http://thewaffl.net/1997.php"   target="_self" ><span>1997</span></a></li>
+<li>
+<a href="http://thewaffl.net/1998.php"   target="_self" ><span>1998</span></a></li>
+<li>
+<a href="http://thewaffl.net/1999.php"   target="_self" ><span>1999</span></a></li>
+<li>
+<a href="http://thewaffl.net/2000.php"   target="_self" ><span>2000</span></a></li>
+<li>
+<a href="http://thewaffl.net/2001.php"   target="_self" ><span>2001</span></a></li>
+<li>
+<a href="http://thewaffl.net/2002.php"   target="_self" ><span>2002</span></a></li>
+<li>
+<a href="http://thewaffl.net/2003.php"   target="_self" ><span>2003</span></a></li>
+<li>
+<a href="http://thewaffl.net/2004.php"   target="_self" ><span>2004</span></a></li>
+<li>
+<a href="http://thewaffl.net/2005.php"   target="_self" ><span>2005</span></a></li>
+<li>
+<a href="http://thewaffl.net/2006.php"   target="_self" ><span>2006</span></a></li>
+<li>
+<a href="http://thewaffl.net/2007.php"   target="_self" ><span>2007</span></a></li>
+<li>
+<a href="http://thewaffl.net/2008.php"   target="_self" ><span>2008</span></a></li>
+<li>
+<a href="http://thewaffl.net/2009.php"   target="_self" ><span>2009</span></a></li>
+<li>
+<a href="http://thewaffl.net/2010.php"   target="_self" ><span>2010</span></a></li>
+<li>
+<a href="http://thewaffl.net/2011.php"   target="_self" ><span>2011</span></a></li>
+<li>
+<a href="http://thewaffl.net/2012.php"   target="_self" ><span>2012</span></a></li>
+<li>
+<a href="http://thewaffl.net/2013.php"   target="_self" ><span>2013</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/WaFFL-Hall-of-Fame.php"   target="_self" ><span>WaFFL Hall of Fame +</span></a><ul>
+<li>
+<a href="http://thewaffl.net/WaFFL-Records.php"   target="_self" ><span>WaFFL Records</span></a></li>
+<li>
+<a href="http://thewaffl.net/All-Pros--1996-Present-.php"   target="_self" ><span>All-Pros (1996-Present)</span></a></li>
+<li>
+<a href="http://thewaffl.net/All-Time-Coaching-Records.php"   target="_self" ><span>All-Time Coaching Records</span></a></li>
+<li>
+<a href="http://thewaffl.net/Pro-Bowl-Results.php"   target="_self" ><span>Pro Bowl Results</span></a></li>
+</ul>
+</li>
+<li>
+<a href="http://thewaffl.net/JHS.php"   target="_self" ><span>JHS</span></a></li>
+</ul></div>
+<div class="clear"></div>
+</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top" bgcolor="#FFFFFF">
+						<table cellpadding="0" cellspacing="0" width="100%">
+							
+<tr><td align="center" class="content_margin_top"></td></tr>
+ 
+							<!-- Begin PATHWAY and ICON -->
+							<tr>
+								<td class="magin">
+									<table cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<!-- Begin PATHWAY -->
+											<td align="left" width="99%"><table cellpadding="0" cellspacing="0" width="100%"><tr valign="top"> <td nowrap="nowrap">&nbsp;&nbsp;&nbsp;<a href="http://thewaffl.net/index.php" target="_top">Home</a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><a href="http://thewaffl.net/.php"></a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><b>1999</b></td><td width="99%" nowrap="nowrap"></td></tr></table></td>
+											<!-- End PATHWAY -->
+											<!-- Begin ICON -->
+											<td align="right"><!--Cannot get icon--></td>
+											<!-- End ICON -->
+										</tr>
+									</table>																		
+								</td>
+							</tr>
+							<!-- End PATHWAY and ICON -->
+							<tr>
+								<td align="left" valign="top">
+									<table cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<!-- Begin SIDE1 -->
+											<td width="160" align="center" valign="top" class="magin"><div>Commissioner:</div>
+<div><a title="" href="mailto:Waffl@hotmail.com">Ryan Simmons</a></div>
+<div>&nbsp;</div>
+<div>Deputy Commissioner:</div>
+<div>Chris Rangel</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><strong><u>Web Links</u></strong></div>
+<div>&nbsp;</div>
+<div><a title="" target="_blank" href="http://www.nfl.com">NFL.com</a></div>
+<div>&nbsp;</div>
+<div><a title="" target="_blank" href="http://www.nationalchamps.net/Helmet_Project/">Helmet Project</a>&nbsp;</div></td>
+											<!-- End SIDE1 -->
+											<td align="left" valign="top" class="magin" id="rv_adjust_width_5" width="100%"><div class="content_margin_left_right">
+<table cellpadding="0" cellspacing="0" width="100%">  <tr>    <td align="left" valign="top" width="100%" id="layout_zone1" style = ""><div align="center"><img title="" height="108" alt="" width="173" src="http://thewaffl.net/images/WaFFLlogo.gif" /></div>
+<div align="center">&nbsp;</div>
+<div align="center"><strong><font size="4">1999 Season</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="center">
+<table style="width: 75%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" bgcolor="#ffffff" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="left"><strong><font size="3">AFC</font></strong></div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td></tr>
+<tr valign="top" bgcolor="#6699ff">
+<td>
+<div align="left">Team</div></td>
+<td>
+<div>W-L</div></td>
+<td>
+<div>%</div></td>
+<td>
+<div>PF</div></td>
+<td>
+<div>PA</div></td>
+<td>
+<div>+/-</div></td>
+<td>
+<div>Conf.</div></td>
+<td>
+<div>NFC</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">z - M&amp;M Connection</div></td>
+<td>
+<div>8-6</div></td>
+<td>
+<div>.571</div></td>
+<td>
+<div>12,686</div></td>
+<td>
+<div>11,684</div></td>
+<td>
+<div>+ 1,002</div></td>
+<td>
+<div>7-3</div></td>
+<td>
+<div>1-3</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">x - Nick Baker's Touchdown Makers</div></td>
+<td>
+<div>8-6</div></td>
+<td>
+<div>.571</div></td>
+<td>
+<div>13,932</div></td>
+<td>
+<div>12,879</div></td>
+<td>
+<div>+ 1,053</div></td>
+<td>
+<div>7-3</div></td>
+<td>
+<div>1-3</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">x - Blue Thunder</div></td>
+<td>
+<div>7-7</div></td>
+<td>
+<div>.500</div></td>
+<td>
+<div>11,088</div></td>
+<td>
+<div>12,498</div></td>
+<td>
+<div>- 1410</div></td>
+<td>
+<div>5-5</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">A-Team</div></td>
+<td>
+<div>7-7</div></td>
+<td>
+<div>.500</div></td>
+<td>
+<div>12,434</div></td>
+<td>
+<div>11,912</div></td>
+<td>
+<div>+ 522</div></td>
+<td>
+<div>4-6</div></td>
+<td>
+<div>3-1</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">TD Matrix</div></td>
+<td>
+<div>7-7</div></td>
+<td>
+<div>.500</div></td>
+<td>
+<div>11,930</div></td>
+<td>
+<div>11,465</div></td>
+<td>
+<div>+ 465</div></td>
+<td>
+<div>4-6</div></td>
+<td>
+<div>3-1</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">Stanwood Stampede</div></td>
+<td>
+<div>6-8</div></td>
+<td>
+<div>.429</div></td>
+<td>
+<div>11,401</div></td>
+<td>
+<div>12,420</div></td>
+<td>
+<div>- 1,019</div></td>
+<td>
+<div>3-7</div></td>
+<td>
+<div>3-1</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong><font size="3">NFC</font></strong></div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td>
+<td>
+<div>&nbsp;</div></td></tr>
+<tr valign="top" bgcolor="#6699ff">
+<td>
+<div align="left">Team</div></td>
+<td>
+<div>W-L</div></td>
+<td>
+<div>%</div></td>
+<td>
+<div>PF</div></td>
+<td>
+<div>PA</div></td>
+<td>
+<div>+/-</div></td>
+<td>
+<div>Conf.</div></td>
+<td>
+<div>AFC</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">z - Marshal Law</div></td>
+<td>
+<div>12-2</div></td>
+<td>
+<div>.857</div></td>
+<td>
+<div>13,362</div></td>
+<td>
+<div>10,004</div></td>
+<td>
+<div>+ 3,358</div></td>
+<td>
+<div>9-1</div></td>
+<td>
+<div>3-1</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">x - Fourteen Fourteen</div></td>
+<td>
+<div>9-5</div></td>
+<td>
+<div>.643</div></td>
+<td>
+<div>12,032</div></td>
+<td>
+<div>10,201</div></td>
+<td>
+<div>+ 1,831</div></td>
+<td>
+<div>6-4</div></td>
+<td>
+<div>3-1</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">x - Bayou Boys</div></td>
+<td>
+<div>7-7</div></td>
+<td>
+<div>.500</div></td>
+<td>
+<div>9,986</div></td>
+<td>
+<div>10,285</div></td>
+<td>
+<div>- 389</div></td>
+<td>
+<div>5-5</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">Brawlers II</div></td>
+<td>
+<div>6-8</div></td>
+<td>
+<div>.429</div></td>
+<td>
+<div>8,808</div></td>
+<td>
+<div>9,583</div></td>
+<td>
+<div>- 775</div></td>
+<td>
+<div>5-5</div></td>
+<td>
+<div>1-3</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">Slackers</div></td>
+<td>
+<div>5-9</div></td>
+<td>
+<div>.357</div></td>
+<td>
+<div>10,246</div></td>
+<td>
+<div>11,626</div></td>
+<td>
+<div>-1,380</div></td>
+<td>
+<div>3-7</div></td>
+<td>
+<div>2-2</div></td></tr>
+<tr valign="top" bgcolor="#ccccff">
+<td>
+<div align="left">Anal Cleansing Technicians</div></td>
+<td>
+<div>2-12</div></td>
+<td>
+<div>.143</div></td>
+<td>
+<div>8,408</div></td>
+<td>
+<div>11,481</div></td>
+<td>
+<div>- 3,703</div></td>
+<td>
+<div>2-8</div></td>
+<td>
+<div>0-4</div></td></tr></tbody></table></div>
+<div align="left"><font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;z - clinched Bye; x - clinched playoff</font></div>
+<div>&nbsp;</div>
+<div align="center"><strong><font size="4">1999 Scores</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="center">
+<table style="width: 75%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 1</strong></div></td>
+<td>
+<div align="left"><strong>Week 2</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">A-Team 754, TD Matrix 726</div>
+<div align="left">M&amp;M Connection 1180, Stanwood Stampede 651</div>
+<div align="left">Nick Baker's Touchdown Makers 1077, Blue Thunder 446</div>
+<div align="left">Fourteen Fourteen 1168, Bayou Boys 405</div>
+<div align="left">Marshal Law 994, Brawlers II 745</div>
+<div align="left">Slackers 988, Anal Cleansing Technicians 980</div></td>
+<td>
+<div align="left">Stanwood Stampede 790, A-Team 741</div>
+<div align="left">Nick Baker's Touchdown Makers 1379, TD Matrix 873</div>
+<div align="left">M&amp;M Connection 881, Blue Thunder 524</div>
+<div align="left">Bayou Boys 904, Slackers 528</div>
+<div align="left">Brawlers II 689, Fourteen Fourteen 535</div>
+<div align="left">Marshal Law 762, Anal Cleansing Technicians 575</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 3</strong></div></td>
+<td>
+<div align="left"><strong>Week 4</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Blue Thunder 960, TD Matrix 726</div>
+<div align="left">A-Team 1163, M&amp;M Connection 712</div>
+<div align="left">Stanwood Stampede 1111, Nick Baker's Touchdown Makers 701</div>
+<div align="left">Fourteen Fourteen 788, Marshal Law 735</div>
+<div align="left">Bayou Boys 584, Anal Cleansing Technicians 438</div>
+<div align="left">Brawlers II 754, Slackers 675</div></td>
+<td>
+<div align="left">TD Matrix 996, Stanwood Stampede 711</div>
+<div align="left">Blue Thunder 906, A-Team 870</div>
+<div align="left">M&amp;M Connection 1357, Nick Baker's Touchdown Makers 995</div>
+<div align="left">Brawlers II 946, Bayou Boys 643</div>
+<div align="left">Marshal Law 912, Slackers 453</div>
+<div align="left">Anal Cleansing Technicians 899, Fourteen Fourteen 877</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 5</strong></div></td>
+<td>
+<div align="left"><strong>Week 6</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Nick Baker's Touchdown Makers 1027, A-Team 815</div>
+<div align="left">TD Matrix 1058, M&amp;M Connection 850</div>
+<div align="left">Stanwood Stampede 988, Blue Thunder 815</div>
+<div align="left">Marshal Law 753, Bayou Boys 633</div>
+<div align="left">Brawlers II 686, Anal Cleansing Technicians 607</div>
+<div align="left">Fourteen Fourteen 1222, Slackers 617</div></td>
+<td>
+<div align="left">Fourteen Fourteen 909, A-Team 695</div>
+<div align="left">Bayou Boys 551, TD Matrix 494</div>
+<div align="left">Stanwood Stampede 751, Brawlers II 424</div>
+<div align="left">Marshal Law 1153, M&amp;M Connection 952</div>
+<div align="left">Slackers 1226, Nick Baker's Touchdown Makers 628</div>
+<div align="left">Blue Tunder 968, Anal Cleansing Technicians 346</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 7</strong></div></td>
+<td>
+<div align="left"><strong>Week 8</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Fourteen Fourteen 1122, Nick Baker's Touchdown Makers 909</div>
+<div align="left">A-Team 973, Bayou Boys 693</div>
+<div align="left">TD Matrix 803, Brawlers II 364</div>
+<div align="left">Stanwood Stampede 699, Marshal Law 638</div>
+<div align="left">M&amp;M Connection 595, Anal Cleansing Technicians 427</div>
+<div align="left">Slackers 1209, Blue Thunder 878</div></td>
+<td>
+<div align="left">A-Team 1180, Anal Cleansing Technicians 820</div>
+<div align="left">TD Matrix 556, Slackers 550</div>
+<div align="left">Fourteen Fourteen 791, Stanwood Stampede 608</div>
+<div align="left">Bayou Boys 1106, M&amp;M Connection 783</div>
+<div align="left">Blue Thunder 818, Brawlers II 666</div>
+<div align="left">Marshal Law 1168, Nick Baker's Touchdown Makers 1058</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 9</strong></div></td>
+<td>
+<div align="left"><strong>Week 10</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Marshal Law 1395, Blue Thunder 891</div>
+<div align="left">Nick Baker's Touchdown Makers 900, Anal Cleansing Techicians 497</div>
+<div align="left">TD Matrix 964, Fourteen Fourteen 824</div>
+<div align="left">Stanwood Stampede 1079, Bayou Boys 1027</div>
+<div align="left">Brawlers II 788, M&amp;M Connection 603</div>
+<div align="left">A-Team 846, Slackers 424</div></td>
+<td>
+<div align="left">TD Matrix 1172, A-Team 899</div>
+<div align="left">M&amp;M Connection 1170, Stanwood Stampede 621</div>
+<div align="left">Nick Baker's Touchdown Makers 1144, Blue Thunder 572</div>
+<div align="left">Fourteen Fourteen 845, Bayou Boys 442</div>
+<div align="left">Marshal Law 1248, Brawlers II 760</div>
+<div align="left">Slackers 606, Anal Cleansing Technicians 420</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 11</strong></div></td>
+<td>
+<div align="left"><strong>Week 12</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">A-Team 1047, Stanwood Stampede 1020</div>
+<div align="left">Nick Baker's Touchdown Makers 959, TD Matrix 597</div>
+<div align="left">Blue Thunder 754, M&amp;M Connection 525</div>
+<div align="left">Bayou Boys 884, Slackers 509</div>
+<div align="left">Fourteen Fourteen 661, Brawlers II 530</div>
+<div align="left">Marshal Law 876, Anal Cleansing Technicians 647</div></td>
+<td>
+<div align="left">M&amp;M Connection 832, A-Team 531</div>
+<div align="left">Nick Baker's Touchdown Makers 865, Stanwood Stampede 818</div>
+<div align="left">Blue Thunder 956, TD Matrix 936</div>
+<div align="left">Bayou Boys 847, Anal Cleansing Technicians 498</div>
+<div align="left">Brawlers II 741, Slackers 458</div>
+<div align="left">Marshal Law 838, Fourteen Fourteen 529</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 13</strong></div></td>
+<td>
+<div align="left"><strong>Week 14</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">TD Matrix 1000, Stanwood Stampede 666</div>
+<div align="left">A-Team 847, Blue Thunder 699</div>
+<div align="left">M&amp;M Connection 1204, Nick Baker's Touchdown Makers 1108</div>
+<div align="left">Bayou Boys 641, Brawlers II 588</div>
+<div align="left">Marshal Law 1207, Slackers 848</div>
+<div align="left">Fourteen Fourteen 1167, Anal Cleansing Technician 695</div></td>
+<td>
+<div align="left">Nick Baker's Touchdown Makers 1182, A-Team 1073</div>
+<div align="left">M&amp;M Connection 1042, TD Matrix 805</div>
+<div align="left">Blue Thunder 901, Stanwood Stampede 888</div>
+<div align="left">Marshal Law 683, Bayou Boys 426</div>
+<div align="left">Anal Cleansing Technicians 539, Brawlers II 445</div>
+<div align="left">Slackers 1178, Fourteen Fourteen 594</div></td></tr></tbody></table></div>
+<div align="center">&nbsp;</div>
+<div align="center">&nbsp;<strong><font size="4">1999 WaFFL Playoffs</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="center">
+<table style="width: 90%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="center"><strong>Wild Card</strong></div></td>
+<td>
+<div><strong>Conference Championship</strong></div></td>
+<td>
+<div><strong>Fantasy Bowl IV</strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="center">AFC: Nick Baker's Touchdown Makers 1210,&nbsp; Blue Thunder 894</div>
+<div align="center">NFC: Fourteen Fourteen 718, Bayou Boys 493</div></td>
+<td>
+<div>AFC: M&amp;M Connection 1334, Nick Baker's Touchdown Makers 586</div>
+<div>NFC: Marshal Law 937, Fourteen Fourteen 624</div></td>
+<td>
+<div>Marshal Law 1136, M&amp;M Connection 705</div>
+<div>MVP: Randy Moss - Marshal Law</div></td></tr></tbody></table></div>
+<div align="center">&nbsp;</div>
+<div align="center"><strong><font size="4">1999 WaFFL All-Pro's</font></strong></div>
+<div align="center">&nbsp;</div>
+<div align="justify">The WaFFL All-Pro's were selected based on scoring the most points in their respective positions during the 1999 WaFFL season.&nbsp; The MVP award is given to the WaFFL All-Pro that provided the largest point contribution to their team.</div>
+<div align="justify">&nbsp;</div>
+<div align="justify">
+<table style="width: 100%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr valign="top">
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/manning99.gif" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="78" src="http://thewaffl.net/images/faulk99.jpg" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="65" src="http://thewaffl.net/images/james99.jpg" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="71" src="http://thewaffl.net/images/harrison99.jpg" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="78" src="http://thewaffl.net/images/moss99.jpg" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/hanson99.gif" /></div></td>
+<td>
+<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/StL99.gif" /></div></td></tr>
+<tr valign="top">
+<td>
+<div align="center">Peyton Manning - <strong>MVP</strong></div></td>
+<td>
+<div align="center">Marshall Faulk</div></td>
+<td>
+<div align="center">Edgerrin James</div></td>
+<td>
+<div align="center">Marvin Harrison</div></td>
+<td>
+<div align="center">Randy Moss</div></td>
+<td>
+<div align="center">Jason Hanson</div></td>
+<td>
+<div align="center">St. Louis Rams</div></td></tr>
+<tr valign="top">
+<td>
+<div align="center">A-Team</div></td>
+<td>
+<div align="center">Slackers</div></td>
+<td>
+<div align="center">Marshal Law</div></td>
+<td>
+<div align="center">Nick Baker's Touchdown Makers</div></td>
+<td>
+<div align="center">Marshal Law</div></td>
+<td>
+<div align="center">Marshal Law</div></td>
+<td>
+<div align="center">M&amp;M Connection</div></td></tr></tbody></table></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div></td>  </tr></table>
+</div></td>
+											<!-- Begin SIDE2 -->
+											<td width="160" align="center" valign="top" class="magin"><div><strong>2013 WaFFL Champs</strong></div>
+<div>&nbsp;</div>
+<div><img src="http://thewaffl.net/images/dtmb.gif" width="160" height="106" border="0" title="" alt="" /><br />
+</div>
+<div>&nbsp;</div>
+<div>Dont Tase Me Bro</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><strong>2013 Playoff Challenge Champs</strong></div>
+<div>&nbsp;</div>
+<div><img src="http://thewaffl.net/images/D.gif" width="160" height="106" border="0" title="" alt="" />&nbsp;</div>
+<div>&nbsp;</div>
+<div>Dominators</div></td>
+											<!-- End SIDE2 -->
+										</tr>
+									</table>														
+								</td>
+							</tr>
+							<!-- Begin FOOTER -->
+							<tr>
+								<td align="center" class="magin"></td>
+							</tr>
+							<!-- End FOOTER -->
+
+							 
+<tr><td align="center" class="content_margin_bottom"></td></tr>
+
+							<tr>
+								<td height="25" align="center" valign="bottom">
+									<table cellpadding="0" cellspacing="0">
+										<tr>
+											<td align="center" valign="bottom" class="marginpw"></td>
+											<td width="8"></td>
+											<td align="center" valign="bottom" class="marginpw"></td>
+										</tr>
+									</table>			
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
