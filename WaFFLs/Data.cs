@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using System.Runtime.Remoting;
+using System.Runtime.Remoting.Messaging;
 
 namespace WaFFLs
 {
@@ -156,6 +158,28 @@ namespace WaFFLs
             }
 
             throw new Exception();
+        }
+    }
+
+    public static class WeekExtensions
+    {
+        public static string GetDisplayName(this Week week)
+        {
+            return string.Format("{0} {1}", week.Name, week.Season.Year);
+        }
+    }
+
+    public static class TeamExtensions
+    {
+        public static string GetDisplayName(this Team team, int maxLength = -1)
+        {
+            string name = team.Name;
+            if (maxLength > 0 && name.Length > maxLength)
+            {
+                name = name.Substring(0, maxLength);
+            }
+
+            return name;
         }
     }
 

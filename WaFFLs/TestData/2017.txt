@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="generator" content="Rvglobalsoft" />
 <!-- Version: 6.4.2 PRO; Project name: WaFFL Home Page; Project id: 5c18f4749d5f9409152c4456350c72d6; Template Name: 22-433-1_darkgreen_plain01_2; 
-Published date: January 1, 2018, 12:28 57 (GMT -06:00) --> 
+Published date: January 1, 2018, 12:29 00 (GMT -06:00) --> 
 <link rel="stylesheet" href="http://thewaffl.net/style.css" type="text/css" />
 
 <link rel="stylesheet" href="http://thewaffl.net/Verdana.css" type="text/css" />
@@ -296,7 +296,7 @@ $(document).ready(function(){
 									<table cellpadding="0" cellspacing="0" width="100%">
 										<tr>
 											<!-- Begin PATHWAY -->
-											<td align="left" width="99%"><table cellpadding="0" cellspacing="0" width="100%"  iscomponentDB="0" ><tr valign="top" style="float:left;"> <td nowrap="nowrap">&nbsp;&nbsp;&nbsp;<a href="http://thewaffl.net/index.php" target="_top" pageid="9c928833f213d32a99c2028f5bbd41a7">Home</a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><a href="http://thewaffl.net/2010s.php" pageid="07ad64d062414504c2c73050d97fc9b5">2010s</a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><b pageid="e9f04769a0f62232b2581b5e44f773f3">2014</b></td><td width="99%" nowrap="nowrap"></td></tr></table></td>
+											<td align="left" width="99%"><table cellpadding="0" cellspacing="0" width="100%"  iscomponentDB="0" ><tr valign="top" style="float:left;"> <td nowrap="nowrap">&nbsp;&nbsp;&nbsp;<a href="http://thewaffl.net/index.php" target="_top" pageid="9c928833f213d32a99c2028f5bbd41a7">Home</a></td><td nowrap="nowrap">&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap="nowrap"><b pageid="36449f0f353bf3d9153686adf7fa4c7a">2017</b></td><td width="99%" nowrap="nowrap"></td></tr></table></td>
 											<!-- End PATHWAY -->
 											<!-- Begin ICON -->
 											<td align="right"><!--Cannot get icon--></td>
@@ -328,11 +328,21 @@ $(document).ready(function(){
 <div>&nbsp;</div></td>
 											<!-- End SIDE1 -->
 											<td align="left" valign="top" class="magin" id="rv_adjust_width_5" width="100%"><div class="content_margin_left_right">
-<table cellpadding="0" cellspacing="0" width="100%">  <tr>    <td align="left" valign="top" width="100%" id="layout_zone1" style = ""><br />
-<br /><style type="text/css">.type8margin {
+<table cellpadding="0" cellspacing="0" width="100%">  <tr>    <td align="left" valign="top" width="100%" id="layout_zone1" style = ""><table width="100%" cellspacing="0" cellpadding="0" id="rv_template_layout">
+<tbody>
+<tr>
+<td valign="top"></td>
+<td valign="top"></td></tr></tbody></table>
+<table width="100%" cellspacing="0" cellpadding="0" id="rv_template_layout" style="font-size: 12.16px">
+<tbody>
+<tr>
+<td valign="top"><br />
+</td>
+<td valign="top"><style type="text/css">.type8margin {
 padding:5px;
 }
---></style>
+--></style><br />
+</td></tr></tbody></table><span style="font-size: 12.16px"></span><br />
 <table width="100%" cellspacing="0" cellpadding="0" id="rv_template_layout" style="font-size: 12px">
 <tbody>
 <tr>
@@ -340,11 +350,11 @@ padding:5px;
 <table cellspacing="0" cellpadding="0" style="font-size: 12px">
 <tbody>
 <tr>
-<td class="type8margin" colspan="2" style="padding: 5px">
-<div align="center"><img title="" height="108" alt="" width="173" src="http://thewaffl.net/images/WaFFLlogo.gif" /></div>
+<td class="type8margin" colspan="2">
+<div align="center"><img src="http://thewaffl.net/images/09Sample4.gif" width="173" height="108" border="0" title="" alt="" /></div>
 <div align="center">&nbsp;</div>
-<div align="center"><font size="4"><strong>2014 WaFFL Season</strong></font></div>
-<div align="center"><font size="4"><strong><a title="" href="2014-Draft.php">2014 Draft</a></strong></font></div>
+<div align="center"><font size="4"><strong>2017 WaFFL Season</strong></font></div>
+<div align="center"><font size="4"><strong><a title="" href="2017-Draft.php">2017 Draft</a></strong></font></div>
 <div>&nbsp;</div>
 <div><strong><font color="#000000" size="2"></font></strong>&nbsp;</div>
 <div>
@@ -389,56 +399,37 @@ padding:5px;
 <td>
 <div align="center"><strong>NFC</strong></div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
-<td>
-<div align="left">z - Dont Tase Me Bro</div></td>
-<td>
-<div align="center">11-3</div></td>
-<td>
-<div align="center">.786</div></td>
-<td>
-<div align="center">-</div></td>
-<td>
-<div align="center">14459</div></td>
-<td>
-<div align="center">11711</div></td>
-<td>
-<div align="center">3-3</div></td>
-<td>
-<div align="center">7-3</div></td>
-<td>
-<div align="center">4-0</div></td></tr>
-<tr valign="top" bgcolor="#ffffcc">
-<td>
-<div align="left">x - Team Bean</div></td>
+<td>y - Marauding Nomads
+<div align="left"></div></td>
 <td>
 <div align="center">7-7</div></td>
 <td>
 <div align="center">.500</div></td>
 <td>
-<div align="center">4</div></td>
+<div align="center">-</div></td>
 <td>
-<div align="center">12917</div></td>
+<div align="center">13068</div></td>
 <td>
-<div align="center">13045</div></td>
+<div align="center">11914</div></td>
+<td align="center">3-3<br />
+<div align="center"></div></td>
 <td>
-<div align="center">2-4</div></td>
+<div align="center">5-5</div></td>
 <td>
-<div align="center">4-6</div></td>
-<td>
-<div align="center">3-1</div></td></tr>
+<div align="center">2-2</div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Marauding Nomads</div></td>
+<div align="left">Truffle Shuffle</div></td>
 <td>
 <div align="center">6-8</div></td>
 <td>
 <div align="center">.429</div></td>
 <td>
-<div align="center">5</div></td>
+<div align="center">1</div></td>
 <td>
-<div align="center">11378</div></td>
+<div align="center">10922</div></td>
 <td>
-<div align="center">11910</div></td>
+<div align="center">11593</div></td>
 <td>
 <div align="center">3-3</div></td>
 <td>
@@ -447,23 +438,42 @@ padding:5px;
 <div align="center">1-3</div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Truffle Shuffle</div></td>
+<div align="left">Suck My Hawks</div></td>
+<td>
+<div align="center">6-8</div></td>
+<td>
+<div align="center">.429</div></td>
+<td>
+<div align="center">1</div></td>
+<td>
+<div align="center">10295</div></td>
+<td>
+<div align="center">12420</div></td>
+<td>
+<div align="center">3-3</div></td>
+<td>
+<div align="center">4-6</div></td>
+<td>
+<div align="center">2-2</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Team Bean</div></td>
 <td>
 <div align="center">5-9</div></td>
 <td>
 <div align="center">.357</div></td>
 <td>
-<div align="center">6</div></td>
+<div align="center">2</div></td>
 <td>
-<div align="center">13065</div></td>
+<div align="center">9526</div></td>
 <td>
-<div align="center">13806</div></td>
+<div align="center">12385</div></td>
 <td>
-<div align="center">4-2</div></td>
+<div align="center">3-3</div></td>
 <td>
-<div align="center">4-6</div></td>
+<div align="center">3-7</div></td>
 <td>
-<div align="center">1-3</div></td></tr>
+<div align="center">2-2</div></td></tr>
 <tr valign="top" bgcolor="#ffffff">
 <td>
 <div align="left"><strong><font size="2">AFC South</font></strong>&nbsp;</div></td>
@@ -504,21 +514,40 @@ padding:5px;
 <div align="center"><strong>NFC</strong></div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">y - Rocky Mountain Oysters</div></td>
+<div align="left">z - Just Too Lucky</div></td>
 <td>
-<div align="center">9-5</div></td>
+<div align="center">11-3</div></td>
 <td>
-<div align="center">.643</div></td>
+<div align="center">.786</div></td>
 <td>
 <div align="center">-</div></td>
 <td>
-<div align="center">14667</div></td>
+<div align="center">15101</div></td>
 <td>
-<div align="center">12640</div></td>
+<div align="center">9906</div></td>
 <td>
 <div align="center">4-2</div></td>
 <td>
-<div align="center">6-4</div></td>
+<div align="center">7-3</div></td>
+<td>
+<div align="center">4-0</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">x - Rocky Mountain Oysters</div></td>
+<td>
+<div align="center">10-4</div></td>
+<td>
+<div align="center">.714</div></td>
+<td>
+<div align="center">1</div></td>
+<td>
+<div align="center">12773</div></td>
+<td>
+<div align="center">11273</div></td>
+<td>
+<div align="center">3-3</div></td>
+<td>
+<div align="center">7-3</div></td>
 <td>
 <div align="center">3-1</div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
@@ -529,11 +558,11 @@ padding:5px;
 <td>
 <div align="center">.571</div></td>
 <td>
-<div align="center">1</div></td>
+<div align="center">3</div></td>
 <td>
-<div align="center">12378</div></td>
+<div align="center">11912</div></td>
 <td>
-<div align="center">13091</div></td>
+<div align="center">11356</div></td>
 <td>
 <div align="center">3-3</div></td>
 <td>
@@ -541,43 +570,23 @@ padding:5px;
 <td>
 <div align="center">3-1</div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
+<td>Phantoms</td>
 <td>
-<div align="left">Just Too Lucky</div></td>
+<div align="center">7-7</div></td>
 <td>
-<div align="center">6-8</div></td>
-<td>
-<div align="center">.429</div></td>
-<td>
-<div align="center">3</div></td>
-<td>
-<div align="center">11691</div></td>
-<td>
-<div align="center">12015</div></td>
-<td>
-<div align="center">4-2</div></td>
-<td>
-<div align="center">6-4</div></td>
-<td>
-<div align="center">0-4</div></td></tr>
-<tr valign="top" bgcolor="#ffffcc">
-<td>
-<div>Phantoms</div></td>
-<td>
-<div align="center">5-9</div></td>
-<td>
-<div align="center">.357</div></td>
+<div align="center">.500</div></td>
 <td>
 <div align="center">4</div></td>
 <td>
-<div align="center">10274</div></td>
+<div align="center">12272</div></td>
 <td>
-<div align="center">13416</div></td>
+<div align="center">12679</div></td>
 <td>
-<div align="center">1-5</div></td>
+<div align="center">2-4</div></td>
 <td>
-<div align="center">3-7</div></td>
+<div align="center">4-6</div></td>
 <td>
-<div align="center">2-2</div></td></tr>
+<div align="center">3-1</div></td></tr>
 <tr valign="top" bgcolor="#ffffff">
 <td>
 <div align="left"><strong><font size="2">NFC North</font></strong></div></td>
@@ -618,80 +627,79 @@ padding:5px;
 <div align="center"><strong>AFC</strong></div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">y - Doom Patrol</div></td>
-<td align="center">8-6
+<div align="left">z - The TecmoBowlers</div></td>
+<td align="center">10-4<br />
 <div align="center"></div></td>
 <td>
-<div align="center">.571</div></td>
+<div align="center">.714</div></td>
 <td>
 <div align="center">-</div></td>
 <td>
-<div align="center">12856</div></td>
+<div align="center">12661</div></td>
 <td>
-<div align="center">12414</div></td>
-<td align="center">5-1<br />
-</td>
+<div align="center">10762</div></td>
+<td align="center">5-1</td>
 <td>
-<div align="center">6-4</div></td>
+<div align="center">8-2</div></td>
 <td>
 <div align="center">2-2</div></td></tr>
-<tr valign="top" bgcolor="#ffffcc">
-<td>
-<div align="left">x - Fighting Calrissians</div></td>
-<td>
-<div align="center">8-6</div></td>
-<td>
-<div align="center">.571</div></td>
-<td>
-<div align="center">-</div></td>
-<td>
-<div align="center">13032</div></td>
-<td>
-<div align="center">13266</div></td>
-<td>
-<div align="center">4-2</div></td>
-<td>
-<div align="center">7-3</div></td>
-<td>
-<div align="center">1-3</div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
 <div align="left">x - Dominators</div></td>
-<td>
-<div align="center">8-6</div></td>
-<td>
-<div align="center">.571</div></td>
-<td>
-<div align="center">-</div></td>
-<td>
-<div align="center">13040</div></td>
-<td>
-<div align="center">12298</div></td>
-<td>
-<div align="center">3-3</div></td>
-<td>
-<div align="center">6-4</div></td>
-<td>
-<div align="center">2-2</div></td></tr>
-<tr valign="top" bgcolor="#ffffcc">
-<td>
-<div align="left">Ultracogs</div></td>
 <td>
 <div align="center">6-8</div></td>
 <td>
 <div align="center">.429</div></td>
 <td>
-<div align="center">2</div></td>
+<div align="center">4</div></td>
 <td>
-<div align="center">13337</div></td>
+<div align="center">11015</div></td>
 <td>
-<div align="center">13177</div></td>
+<div align="center">11661</div></td>
 <td>
-<div align="center">0-6</div></td>
+<div align="center">3-3</div></td>
+<td>
+<div align="center">5-5</div></td>
+<td>
+<div align="center">1-3</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Ultracogs</div></td>
+<td>
+<div align="center">4-10</div></td>
+<td>
+<div align="center">.286</div></td>
+<td>
+<div align="center">6</div></td>
+<td>
+<div align="center">11322</div></td>
+<td>
+<div align="center">12131</div></td>
+<td>
+<div align="center">1-5</div></td>
 <td>
 <div align="center">4-6</div></td>
 <td>
-<div align="center">2-2</div></td></tr>
+<div align="center">0-4</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Kumar's Klan</div></td>
+<td>
+<div align="center">4-10</div></td>
+<td>
+<div align="center">.286</div></td>
+<td align="center">6
+<div align="center"></div></td>
+<td>
+<div align="center">9705</div></td>
+<td>
+<div align="center">11123</div></td>
+<td>
+<div align="center">3-3</div></td>
+<td>
+<div align="center">4-6</div></td>
+<td>
+<div align="center">0-4</div></td></tr>
 <tr valign="top" bgcolor="#ffffff">
 <td>
 <div align="left"><strong><font size="2">NFC South</font></strong></div></td>
@@ -732,26 +740,45 @@ padding:5px;
 <div align="center"><strong>AFC</strong></div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">z - Speed Demons</div></td>
+<div align="left">y - Bayou Boys</div></td>
 <td>
 <div align="center">10-4</div></td>
 <td>
 <div align="center">.714</div></td>
 <td>
 <div align="center">-</div></td>
-<td align="center">14600
+<td align="center">12590<br />
 <div align="center"></div></td>
 <td>
-<div align="center">11085</div></td>
+<div align="center">11043</div></td>
 <td>
-<div align="center">6-0</div></td>
+<div align="center">4-2</div></td>
 <td>
-<div align="center">8-2</div></td>
+<div align="center">6-4</div></td>
 <td>
-<div align="center">2-2</div></td></tr>
+<div align="center">4-0</div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Bayou Boys</div></td>
+<div align="left">x-Speed Demons</div></td>
+<td>
+<div align="center">8-6</div></td>
+<td>
+<div align="center">.571</div></td>
+<td>
+<div align="center">2</div></td>
+<td>
+<div align="center">10872</div></td>
+<td>
+<div align="center">11868</div></td>
+<td align="center">2-4<br />
+<div align="center"></div></td>
+<td>
+<div align="center">5-5</div></td>
+<td>
+<div align="center">3-1</div></td></tr>
+<tr valign="top" bgcolor="#ffffcc">
+<td>
+<div align="left">Monica Loves Clinton Dix</div></td>
 <td>
 <div align="center">6-8</div></td>
 <td>
@@ -759,34 +786,15 @@ padding:5px;
 <td>
 <div align="center">4</div></td>
 <td>
-<div align="center">11275</div></td>
+<div align="center">10483</div></td>
 <td>
-<div align="center">13996</div></td>
-<td align="center">3-3
-<div align="center"></div></td>
+<div align="center">10937</div></td>
+<td>
+<div align="center">2-4</div></td>
 <td>
 <div align="center">4-6</div></td>
 <td>
 <div align="center">2-2</div></td></tr>
-<tr valign="top" bgcolor="#ffffcc">
-<td>
-<div align="left">X-Factor</div></td>
-<td>
-<div align="center">5-9</div></td>
-<td>
-<div align="center">.357</div></td>
-<td>
-<div align="center">5</div></td>
-<td>
-<div align="center">12308</div></td>
-<td>
-<div align="center">12806</div></td>
-<td>
-<div align="center">2-4</div></td>
-<td>
-<div align="center">2-8</div></td>
-<td>
-<div align="center">3-1</div></td></tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
 <div align="left">Wolves</div></td>
@@ -797,204 +805,204 @@ padding:5px;
 <td>
 <div align="center">6</div></td>
 <td>
-<div align="center">10564</div></td>
+<div align="center">10259</div></td>
 <td>
-<div align="center">12610</div></td>
+<div align="center">11065</div></td>
 <td>
-<div align="center">1-5</div></td>
+<div align="center">4-2</div></td>
 <td>
-<div align="center">3-7</div></td>
+<div align="center">4-6</div></td>
 <td>
-<div align="center">1-3</div></td></tr>
+<div align="center">0-4</div></td></tr>
 <tr valign="top" bgcolor="#ffffff">
-<td colspan="9"><font size="1">z - Clinch Conference, y - Clinch Divison, x - Clinch Wild Card</font></td></tr></tbody></table><br />
+<td colspan="9"><font size="1">z - Clinch Conference, y - Clinch Division, x - Clinch Wild Card</font></td></tr></tbody></table><br />
 </div>
 <div align="center">&nbsp;</div>
 <div align="center">&nbsp;</div>
-<div align="center"><strong><font size="4"><a title="" href="14Box1-7.php">2014 Scores</a></font></strong></div>
+<div align="center"><strong><font size="4"><a title="" href="Copied-Templatewk1-7Box.php">2017 Scores</a></font></strong></div>
 <div align="center">&nbsp;</div>
 <div align="center">
 <table bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1" height="100%" align="center" style="font-size: 12px; width: 848px; border-collapse: collapse">
 <tbody>
 <tr valign="top">
 <td>
-<div align="left"><strong>Week 1</strong><strong>&nbsp;- POW: <font color="#ff0000">Matt Stafford (TS)</font></strong></div></td>
+<div align="left"><strong>Week 1</strong><strong>&nbsp;- POW: <font color="#0000ff">Tyreek Hill (KK)</font></strong></div></td>
 <td>
-<div align="left"><strong>Week 2</strong><strong>&nbsp;- POW: <font color="#ff0000">Jordy Nelson (DTMB)</font></strong><font color="#ff0000"></font></div></td></tr>
+<div align="left"><strong>Week 2</strong><strong>&nbsp;- POW: <font color="#ff0000">Tom Brady (RMO)</font></strong><font color="#ff0000"></font></div></td></tr>
 <tr valign="top">
 <td>
-<div align="left">Team Bean 868, Marauding Nomads 796&nbsp;</div>
-<div align="left">Truffle Shuffle 1093, Dont Tase Me Bro 1067</div>
+<div align="left">Team Bean 896, Marauding Nomads 882</div>
+<div align="left">Truffle Shuffle 928, Suck My Hawks 450&nbsp;</div>
+<div align="left">Phantoms 1018, Just Too Lucky 691&nbsp;</div>
+<div align="left">Sporky's Revenge 940, Rocky Mountain Oysters 642</div>
+<div align="left">The TecmoBowlers 934, Dominators 717&nbsp;</div>
+<div align="left">Kumar's Klan 406, Ultracogs 354</div>
+<div align="left">Wolves 1003, Monica Loves Clinton Dix 518</div>
+<div align="left">Bayou Boys 777, Speed Demons 765&nbsp;</div></td>
+<td>
+<div align="left">Marauding Nomads 1251, Suck My Hawks 1116</div>
+<div align="left">Team Bean 854, Truffle Shuffle 700&nbsp;</div>
+<div align="left">Sporky's Revenge 913, Phantoms 551&nbsp;</div>
+<div align="left">Rocky Mountain Oysters 1251, Just Too Lucky 880</div>
 <div align="left">
-<div>Just Too Lucky 885, Phantoms 647</div></div>
-<div align="left">Sporky's Revenge 1073, Rocky Mountain Oysters 766&nbsp;</div>
-<div align="left">Doom Patrol 1231, Ultracogs 689 &nbsp;</div>
-<div align="left">Fighting Calrissians 1037, Dominators 942</div>
-<div align="left">Bayou Boys 1192, X-Factor 613</div>
-<div align="left">Speed Demons 1236, Wolves 497 &nbsp;</div></td>
+<div>The TecmoBowlers 870, Kumar's Klan 325</div></div>
+<div align="left">Dominators 1276, Ultracogs 672&nbsp;</div>
+<div align="left">Speed Demons 695, Monica Loves Clinton Dix 660&nbsp;</div>
+<div align="left">Bayou Boys 801, Wolves 599</div></td></tr>
+<tr valign="top">
 <td>
-<div align="left">Truffle Shuffle 963, Marauding Nomads 670 &nbsp;<font color="#000000">&nbsp;</font></div>
-<div align="left">Dont Tase Me Bro 1455, Team Bean 757 &nbsp;&nbsp;</div>
+<div align="left"><strong>Week 3</strong><strong>&nbsp;- POW: <font color="#0000ff">Stefon Diggs (KK)</font></strong></div></td>
+<td>
+<div align="left"><strong>Week 4</strong><strong>&nbsp;- POW: <font color="#ff0000">Greg Zuerlein (JTL)</font></strong><font color="#ff0000"></font></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Truffle Shuffle 882, Marauding Nomads 679</div>
+<div align="left">Team Bean 783, Suck My Hawks 563</div>
+<div align="left">Just Too Lucky 1325, Sporky's Revenge 1175</div>
+<div align="left">Rocky Mountain Oysters 1513, Phantoms 732</div>
+<div align="left">The TecmoBowlers 854, Ultracogs 710&nbsp;</div>
+<div align="left">Kumar's Klan 1430, Dominators 893&nbsp;</div>
+<div align="left">Speed Demons 896, Wolves 848&nbsp;</div>
+<div align="left">Bayou Boys 566, Monica Loves Clinton Dix 558</div></td>
+<td>
+<div align="left">Marauding Nomads 707, Phantoms 669</div>
+<div align="left">Rocky Mountain Oysters 848, Truffle Shuffle 687&nbsp;</div>
+<div align="left">Just Too Lucky 920, Team Bean 616&nbsp;</div>
+<div align="left">Suck My Hawks 1059, Sporky's Revenge 902</div>
+<div align="left">Ultracogs 1584, Bayou Boys 1036</div>
+<div align="left">Dominators 552, Wolves 543</div>
 <div align="left">
-<div>Rocky Mountain Oysters 920, Just Too Lucky 691 &nbsp; &nbsp;</div></div>
-<div align="left">Sporky's Revenge 855, Phantoms 751 &nbsp; &nbsp;&nbsp;</div>
-<div align="left">Fighting Calrissians 693,&nbsp;Ultracogs 596 &nbsp;</div>
-<div align="left">Doom Patrol 798, Dominators 610 &nbsp; &nbsp;&nbsp;</div>
-<div align="left">Speed Demons 1016, Bayou Boys 739</div>
-<div align="left">X-Factor 922, Wolves 790</div></td></tr>
+<div>Monica Loves Clinton Dix 1040, The TecmoBowlers 429&nbsp;</div></div>
+<div align="left">Speed Demons 1042, Kumar's Klan 1031&nbsp;</div></td></tr>
 <tr valign="top">
 <td>
-<div align="left"><strong>Week 3</strong><strong>&nbsp;- POW: <font color="#ff0000">Kirk Cousins (RMO)</font></strong></div></td>
+<div align="left"><strong>Week 5</strong><strong>&nbsp;- POW: <font color="#ff0000">Leonard Fournette (TS)</font></strong><font color="#0000ff"></font></div></td>
 <td>
-<div align="left"><strong>Week 4</strong><strong>&nbsp;- POW: <font color="#ff0000">Miami Dolphins DST (MN)</font></strong><font color="#ff0000"></font></div></td></tr>
+<div align="left"><strong>Week 6</strong><strong>&nbsp;- POW: <font color="#0000ff">Houston Texans DST (SD)</font></strong></div></td></tr>
 <tr valign="top">
 <td>
-<div align="left">Marauding Nomads 863, Dont Tase Me Bro 739&nbsp;</div>
-<div align="left">Team Bean 925, Truffle Shuffle 737</div>
+<div align="left">Rocky Mountain Oysters 996, Marauding Nomads 352</div>
+<div align="left">Just Too Lucky 1035, Suck My Hawks 335</div>
+<div align="left">Truffle Shuffle 1049, Phantoms 777</div>
+<div align="left">Sporky's Revenge 1400, Team Bean 421</div>
+<div align="left">The TecmoBowlers 1691, Bayou Boys 925&nbsp;</div>
+<div align="left">Kumar's Klan 958, Wolves 699&nbsp;</div>
+<div align="left">Ultracogs 912, Monica Loves Clinton Dix 256&nbsp;</div>
+<div align="left">Speed Demons 735, Dominators 467</div></td>
+<td>
+<div align="left">Bayou Boys 977, Marauding Nomads 588</div>
+<div align="left">Truffle Shuffle 798, Wolves 596&nbsp;</div>
+<div align="left">Suck My Hawks 800, Monica Loves Clinton Dix 707&nbsp;</div>
+<div align="left">Speed Demons 915, Team Bean 777</div>
+<div align="left">Rocky Mountain Oysters 1102, Ultracogs 954&nbsp;</div>
+<div align="left">Just Too Lucky 1320, Dominators 619&nbsp;</div>
 <div align="left">
-<div>Just Too Lucky 931, Sporky's Revenge 660</div></div>
-<div align="left">Rocky Mountain Oysters 1064, Phantoms 590&nbsp;</div>
-<div align="left">Dominators 888, Ultracogs 855</div>
-<div align="left">Doom Patrol 1293, Fighting Calrissians 1048&nbsp;</div>
-<div align="left">Bayou Boys 1082, Wolves 835 &nbsp;&nbsp;</div>
-<div align="left">Speed Demons 1088, X-Factor 526&nbsp;</div></td>
-<td>
-<div align="left">Marauding Nomads 918, Rocky Mountain Oysters 613</div>
-<div align="left">Team Bean 1619, Just Too Lucky 1443</div>
-<div align="left">Phantoms 1166, Truffle Shuffle 990 &nbsp; &nbsp;</div>
-<div align="left">Dont Tase Me Bro 758, Sporky's Revenge 629&nbsp;</div>
-<div align="left">Dominators 1366, Bayou Boys 544&nbsp;</div>
-<div align="left">Ultracogs 1004, Wolves 787&nbsp;</div>
-<div align="left">Speed Demons 1025, Doom Patrol 921</div>
-<div align="left">Fighting Calrissians 952, X-Factor 724 &nbsp;</div></td></tr>
+<div>The TecmoBowlers 1095, Phantoms 864</div></div>
+<div align="left">Sporky's Revenge 844, Kumar's Klan 777&nbsp;</div></td></tr>
 <tr valign="top">
 <td>
-<div align="left"><strong>Week 5</strong><strong>&nbsp;- POW: <font color="#0000ff">Demaryius Thomas (U)</font></strong><font color="#0000ff"></font></div></td>
+<div align="left"><strong>Week 7</strong><strong>&nbsp;- POW: <font color="#ff0000">Derek Carr/Amari Cooper (MN)</font></strong></div></td>
 <td>
-<div align="left"><strong>Week 6</strong><strong>&nbsp;- POW: <font color="#ff0000">Colin Kaepernick (DTMB)</font></strong></div></td></tr>
+<div align="left"><strong>Week 8</strong>&nbsp;<strong>- POW: <font color="#0000ff">DeShaun Watson (TTB)</font></strong></div></td></tr>
 <tr valign="top">
 <td>
-<div align="left">
-<div>Just Too Lucky 851, Marauding Nomads 376</div></div>
-<div align="left">Sporkey's Revenge 1141, Truffle Shuffle 685&nbsp;</div>
-<div align="left">Dont Tase Me Bro 942, Phantoms 761&nbsp;</div>
-<div align="left">Rocky Mountain Oysters 1078, Team Bean 976&nbsp;</div>
-<div align="left">Ultracogs 1590, Bayou Boys 604</div>
-<div align="left">Speed Demons 1080, Fighting Calrissians 934&nbsp;</div>
-<div align="left">Wolves 882, Dominators 853&nbsp;</div>
-<div align="left">Doom Patrol 852, X-Factor 688</div></td>
-<td>
-<div align="left">Marauding Nomads 920, Fighting Calrissians 734</div>
-<div align="left">Team Bean 1264, Doom Patrol 823</div>
-<div align="left">Dominators 946, Truffle Shuffle 832&nbsp;</div>
-<div align="left">Dont Tase Me Bro 1593, Ultracogs 1316</div>
-<div align="left">
-<div>Wolves 763, Just Too Lucky 535&nbsp;</div></div>
-<div align="left">Rocky Mountain Oysters 1233, Speed Demons 848</div>
-<div align="left">Sporky's Revenge 1187, Bayou Boys 877</div>
-<div align="left">Phantoms 875, X-Factor 756</div></td></tr>
-<tr valign="top">
-<td>
-<div align="left"><strong>Week 7</strong><strong>&nbsp;- POW:&nbsp;</strong><strong><font color="#0000ff">Demaryius Thomas (U)</font></strong></div></td>
-<td>
-<div align="left"><strong>Week 8</strong>&nbsp;<strong>- POW:<font color="#0000ff"> Jeremy Maclin (DP)</font></strong></div></td></tr>
-<tr valign="top">
-<td>
-<div align="left">Dominators 728, Marauding Nomads 656</div>
-<div align="left">Fighting Calrissians 1139, Truffle Shuffle 936</div>
-<div align="left">Dont Tase Me Bro 871, Doom Patrol 761&nbsp;</div>
-<div align="left">Ultracogs 1055, Team Bean 879</div>
-<div align="left">Sporky's Revenge 672, Wolves 670&nbsp;</div>
-<div align="left">Speed Demons 829, Phantoms 495</div>
-<div align="left">X-Factor 986, Just Too Lucky 766</div>
-<div align="left">Rocky Mountain Oysters 984, Bayou Boys 583 &nbsp;</div></td>
+<div align="left">Marauding Nomads 1385, Wolves 838</div>
+<div align="left">Monica Loves Clinton Dix 471, Truffle Shuffle 364&nbsp;</div>
+<div align="left">Speed Demons 738, Suck My Hawks 591&nbsp;</div>
+<div align="left">Bayou Boys 1118, Team Bean 570</div>
+<div align="left">Rocky Mountain Oysters 635, Dominators 501</div>
+<div align="left">Just Too Lucky 1093, The TecmoBowlers 508</div>
+<div align="left">Phantoms 1086, Kumar's Klan 993</div>
+<div align="left">Sporky's Revenge 666, Ultracogs 597</div></td>
 <td>
 <div align="left">
-<div align="left">Ultracogs 763, Marauding Nomads 680</div>
-<div align="left">Dont Tase Me Bro 1185, Fighting Calrissians 962&nbsp;</div>
-<div align="left">Team Bean 982, Dominators 797 &nbsp;</div>
-<div align="left">Doom Patrol 1403, Truffle Shuffle 1003</div>
-<div align="left">Speed Demons 1174, &nbsp;Just Too Lucky 780</div>
-<div align="left">Bayou Boys 1083, Phantoms 535</div>
-<div align="left">X-Factor 1274, Sporky's Revenge 773</div>
-<div align="left">Rocky Mountain Oysters 1636, Wolves 895 &nbsp;</div></div></td></tr>
-<tr valign="top">
-<td>
-<div align="left"><strong>Week 9</strong><strong>&nbsp;- POW: <font color="#ff0000">Mike Evans (SR)</font></strong></div></td>
-<td>
-<div align="left"><strong>Week 10</strong>&nbsp;<strong>- POW: <font color="#0000ff">Dez Bryant (U)</font></strong></div></td></tr>
-<tr valign="top">
-<td>
-<div align="left">Doom Patrol 1425, Marauding Nomads 988&nbsp;</div>
-<div align="left">Dont Tase Me Bro 987, Dominators 653</div>
-<div align="left">Team Bean 1033, Fighting Calrissians 485&nbsp;</div>
-<div align="left">Truffle Shuffle 1211, Ultracogs 781</div>
-<div align="left">Phantoms 368, Wolves 345</div>
-<div align="left">Sporky's Revenge 1016, Speed Demons 991</div>
+<div align="left">Monica Loves Clinton Dix 918, Marauding Nomads 838</div>
+<div align="left">Speed Demons 1102, Truffle Shuffle 1005</div>
+<div align="left">Bayou Boys 1057, Suck My Hawks 319</div>
+<div align="left">Team Bean 628, Wolves 587&nbsp;</div>
 <div align="left">
-<div>Bayou Boys 1033, Just Too Lucky 945&nbsp;</div></div>
-<div align="left">X-Factor 1116, Rocky Mountain Oysters 690&nbsp;</div></td>
+<div>The TecmoBowlers 1683, Rocky Mountain Oysters 1222</div></div>
+<div align="left">Just Too Lucky 1105, Kumar's Klan 520&nbsp;</div>
+<div align="left">Phantoms 1059, Ultracogs 1050&nbsp;</div>
+<div align="left">Dominators 667, Sporky's Revenge 628</div></div></td></tr>
+<tr valign="top">
 <td>
-<div align="left">Marauding Nomads 1189, Sporky's Revenge 774&nbsp;</div>
-<div align="left">Team Bean 982, Phantoms 624&nbsp;</div>
-<div align="left">Rocky Mountain Oysters 1276, Truffle Shuffle 957</div>
+<div align="left"><strong>Week 9</strong><strong>&nbsp;- POW: <font color="#ff0000">Jacoby Brissett (SMH)</font></strong></div></td>
+<td>
+<div align="left"><strong>Week 10</strong>&nbsp;<strong>- POW: <font color="#ff0000">Jared Goff (MN)</font></strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Marauding Nomads 1060, Speed Demons 443</div>
+<div align="left">Bayou Boys 937, Truffle Shuffle 732&nbsp;</div>
+<div align="left">Suck My Hawks 903, Wolves 837</div>
+<div align="left">Team Bean 571, Monica Loves Clinton Dix 69</div>
+<div align="left">Rocky Mountain Oysters 567, Kumar's Klan 420</div>
+<div align="left">Just Too Lucky 1324, Ultracogs 628</div>
+<div align="left">Phantoms 1028, Dominators 979</div>
+<div align="left">Sporky's Revenge 850, The TecmoBowlers 575</div></td>
+<td>
+<div align="left">Marauding Nomads 1187, Just Too Lucky 1063&nbsp;</div>
+<div align="left">Rocky Mountain Oysters 851, Suck My Hawks 610</div>
+<div align="left">Truffle Shuffle 1102, Sporky's Revenge 577&nbsp;</div>
+<div align="left">Phantoms 1093, Team Bean 692</div>
+<div align="left">The TecmoBowlers 1100, Speed Demons 419&nbsp;</div>
+<div align="left">Monica Loves Clinton Dix 648, Kumar's Klan 314</div>
+<div align="left">Ultracogs 768, Wolves 688&nbsp;</div>
+<div align="left">Bayou Boys 700, Dominators 649</div></td></tr>
+<tr valign="top">
+<td>
+<div align="left"><strong>Week 11</strong>&nbsp;-&nbsp;<strong>POW: <font color="#0000ff">Pittsburgh DST (D)</font></strong></div></td>
+<td>
+<div align="left"><strong>Week 12</strong>&nbsp;-&nbsp;<strong>POW: <font color="#ff0000">Julio Jones (MN)</font></strong></div></td></tr>
+<tr valign="top">
+<td>
+<div align="left">Sporky's Revenge 1049, Marauding Nomads 864&nbsp;</div>
+<div align="left">Phantoms 1040, Suck My Hawks 708&nbsp;</div>
+<div align="left">Just Too Lucky 1049, Truffle Shuffle 486&nbsp;</div>
+<div align="left">Rocky Mountain Oysters 1232, Team Bean 642&nbsp;</div>
 <div align="left">
-<div>Dont Tase Me Bro 1150, Just Too Lucky 622&nbsp;</div></div>
-<div align="left">Fighting Calrissians 962, Wolves 838</div>
-<div align="left">Bayou Boys 882, Doom Patrol 379&nbsp;</div>
-<div align="left">Ultracogs 1370, X-Factor 1331</div>
-<div align="left">Dominators 1200, Speed Demons 885</div></td></tr>
-<tr valign="top">
-<td>
-<div align="left"><strong>Week 11</strong>&nbsp;-&nbsp;<strong>POW: <font color="#0000ff">Jonas Gray (D)</font></strong></div></td>
-<td>
-<div align="left"><strong>Week 12</strong>&nbsp;-&nbsp;<strong>POW: <font color="#ff0000">Justin Forsett (MN)</font></strong></div></td></tr>
-<tr valign="top">
-<td>
-<div align="left">Phantoms 678, Marauding Nomads 424 &nbsp;</div>
-<div align="left">Dont Tase Me Bro 1042, Rocky Mountain Oysters 971</div>
-<div align="left">Sporky's Revenge 1222, Team Bean 850 &nbsp;</div>
-<div align="left">Just Too Lucky 721, Truffle Shuffle 698&nbsp;</div>
-<div align="left">Fighting Calrissians 1191, Bayou Boys 1012&nbsp;</div>
-<div align="left">Dominators 1160, X-Factor 898&nbsp;</div>
-<div align="left">Ultracogs 1078, Speed Demons 735 &nbsp;&nbsp;</div>
-<div align="left">Wolves 880, Doom Patrol 466</div></td>
+<div>The TecmoBowlers 916, Wolves 385</div></div>
+<div align="left">Bayou Boys 777, Kumar's Klan 464&nbsp;</div>
+<div align="left">Speed Demons 840, Ultracogs 383&nbsp;</div>
+<div align="left">Dominators 1350, Monica Loves Clinton Dix 1205&nbsp;</div></td>
 <td>
 <div align="left">
-<div align="left">Marauding Nomads 1055, Dont Tase Me Bro 991</div>
-<div align="left">Truffle Shuffle 1001, Team Bean 747</div>
-<div align="left">Just Too Lucky 728, Sporky's Revenge 498&nbsp;</div>
-<div align="left">Rocky Mountain Oysters 1192, Phantoms 917</div>
-<div align="left">Dominators 874, Ultracogs 801&nbsp;</div>
-<div align="left">Fighting Calrissians 1017, Doom Patrol 570 &nbsp;</div>
-<div align="left">Bayou Boys 792, Wolves 788</div>
-<div align="left">Speed Demons 1000, X-Factor 518</div></div></td></tr>
+<div align="left">Marauding Nomads 1629, Truffle Shuffle 505</div>
+<div align="left">Suck My Hawks 918, Team Bean 843</div>
+<div align="left">Just Too Lucky 1106, Sporky's Revenge 639&nbsp;</div>
+<div align="left">Rocky Mountain Oysters 942, Phantoms 826&nbsp;</div>
+<div align="left">
+<div>Ultracogs 877, The TecmoBowlers 635&nbsp;</div></div>
+<div align="left">Dominators 653, Kumar's Klan 458&nbsp;</div>
+<div align="left">Wolves 428, Speed Demons 386&nbsp;</div>
+<div align="left">Monica Loves Clinton Dix 1179, Bayou Boys 906</div></div></td></tr>
 <tr valign="top">
 <td>
-<div align="left"><strong>Week 13</strong><strong>&nbsp;- POW: <font color="#0000ff">DeAndre Hopkins (SD)</font></strong></div></td>
+<div align="left"><strong>Week 13</strong><strong>&nbsp;- POW: <font color="#0000ff">Tyreek Hill (KK)</font></strong></div></td>
 <td>
-<div align="left"><strong>Week 14</strong><strong>&nbsp;- POW: <font color="#0000ff">Le'Veon Bell (FC)</font></strong></div></td></tr>
+<div align="left"><strong>Week 14</strong><strong>&nbsp;- POW: <font color="#0000ff">Ben Roethlisberger (MLCD)</font></strong></div></td></tr>
 <tr valign="top">
 <td>
-<div align="left">Truffle Shuffle 1189, Marauding Nomads 895</div>
-<div align="left">Dont Tase Me Bro 964, Team Bean 498<font color="#000000">
-<div align="left">Rocky Mountain Oysters 997, Just Too Lucky 774</div></font><font color="#000000">
-<div align="left">Phantoms 1374, Sporky's Revenge 618 &nbsp; &nbsp;&nbsp;</div></font><font color="#000000">
-<div align="left">Fighting Calrissians 887, Ultracogs 738</div></font><font color="#000000">
-<div align="left">Doom Patrol 1150, Dominators 748</div></font><font color="#000000">
-<div align="left">Speed Demons 1483, Bayou Boys 484&nbsp;</div></font><font color="#000000">
-<div align="left">Wolves 930, X-Factor 872</div></font></div></td>
+<div align="left">Marauding Nomads 818, Team Bean 719</div>
+<div align="left">Suck My Hawks 1080, Truffle Shuffle 620&nbsp;</div>
+<div align="left">Just Too Lucky 1194, Phantoms 808</div>
+<div align="left">Sporky's Revenge 780, Rocky Mountain Oysters 529&nbsp;</div>
+<div align="left">
+<div>The TecmoBowlers 673, Dominators 627</div></div>
+<div align="left">Kumar's Klan 921, Ultracogs 887&nbsp;</div>
+<div align="left">Wolves 996, Monica Loves Clinton Dix 872&nbsp;</div>
+<div align="left">Bayou Boys 1329, Speed Demons 703</div></td>
 <td>
-<div align="left">Marauding Nomads 948, Team Bean 594&nbsp;</div>
-<div align="left">Dont Tase Me Bro 986, Truffle Shuffle 770</div>
-<div align="left">Just Too Lucky 1019, Phantoms 493</div>
-<div align="left">Sporky's Revenge 1260, Rocky Mountain Oysters 1247</div>
-<div align="left">Doom Patrol 784, Ultracogs 701</div>
-<div align="left">Dominators 1275, Fighting Calrissians 991</div>
-<div align="left">X-Factor 1084, Bayou Boys 368</div>
-<div align="left">Speed Demons 1210, Wolves 664</div></td></tr></tbody></table></div>
+<div align="left">Suck My Hawks 843, Marauding Nomads 828</div>
+<div align="left">Truffle Shuffle 1170, Team Bean 544&nbsp;</div>
+<div align="left">Phantoms 1141, Sporky's Revenge 549&nbsp;</div>
+<div align="left">Just Too Lucky 1266, Rocky Mountain Oysters 433</div>
+<div align="left">The TecmoBowlers 698, Kumar's Klan 688&nbsp;</div>
+<div align="left">Dominators 1065, Ultracogs 946</div>
+<div align="left">Monica Loves Clinton Dix 1382, Speed Demons 1193&nbsp;</div>
+<div align="left">Wolves 1212, Bayou Boys 684</div></td></tr></tbody></table></div>
 <div align="center">&nbsp;</div>
-<div align="center"><strong><font size="4">2014 WaFFL Playoffs</font></strong></div>
+<div align="center"><strong><font size="4">2017 WaFFL Playoffs</font></strong></div>
 <div align="center">&nbsp;</div>
 <div align="center">
 <table bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1" style="font-size: 12px; width: 799px; border-collapse: collapse">
@@ -1004,27 +1012,27 @@ padding:5px;
 <td colspan="2"><strong>Conference Championship</strong></td></tr>
 <tr valign="top">
 <td colspan="2">
-<div><span style="color: #ff0000">Rocky Mountain Oysters 813,&nbsp;</span><font color="#ff0000">Sporky's Revenge 224&nbsp;</font></div>
-<div><span style="color: #ff0000">Dont Tase Me Bro 1237,&nbsp;</span><font color="#ff0000">Team Bean 910&nbsp;</font></div>
-<div><span style="color: #0000ff">Doom Patrol 724,&nbsp;</span><font color="#0000ff">Fighting Calrissians 687 &nbsp;</font></div>
-<div><font color="#0000ff">Dominators 786, Speed Demons 750</font></div>
+<div><font color="#ff0000">Just Too Lucky 1010, Sporky's Revenge 933&nbsp; &nbsp;</font></div>
+<div><font color="#ff0000">Rocky Mountain Oysters 1117, Marauding Nomads 535</font></div>
+<div><font color="#0000ff">Dominators 748, The TecmoBowlers 688&nbsp; &nbsp;</font></div>
+<div><font color="#0000ff">Bayou Boys 959,&nbsp;Speed Demons 869&nbsp;</font></div>
 <div>&nbsp;</div></td>
 <td colspan="2">
-<div><font color="#ff0000">Rocky Mountain Oysters 970, Dont Tase Me Bro 949</font></div>
-<div><font color="#0000ff">Doom Patrol 751, Dominators 391&nbsp;</font></div></td></tr>
+<div><font color="#ff0000"><font color="#ff0000"><font color="#0000ff"><font color="#ff0000">Rocky Mountain Oysters 925, Just Too Lucky 530</font></font></font></font></div>
+<div><font color="#0000ff">Bayou Boys 1159, Dominators 804&nbsp;</font></div></td></tr>
 <tr valign="top">
 <td colspan="4">
-<div align="center"><strong>Fantasy Bowl XIX</strong>&nbsp;</div></td></tr>
+<div align="center"><strong>Fantasy Bowl XXII</strong>&nbsp;</div></td></tr>
 <tr align="center">
 <td colspan="4" align="center">
-<div align="center"><span style="color: #ff0000"><font color="#000000">&nbsp;</font></span><span style="color: #0000ff; text-align: start">Doom Patrol 999&nbsp;</span><span style="color: #ff0000"><font color="#000000">,&nbsp;</font></span><span style="color: #ff0000; text-align: start">Rocky Mountain Oysters 906</span></div>
-<div align="center">MVP: &nbsp;Michael Floyd (DP)</div></td></tr></tbody></table></div>
+<div align="center"><span style="color: #ff0000; text-align: start">Rocky Mountain Oysters 741</span><span style="text-align: left">,&nbsp;</span><font color="#0000ff"><span style="text-align: left">Bayou Boys</span><span style="text-align: left">&nbsp;416</span><span style="color: #0000ff; text-align: start">&nbsp;</span></font><span style="text-align: left">&nbsp;</span></div>
+<div align="center">MVP: Dion Lewis (RMO)</div></td></tr></tbody></table></div>
 <div align="center">&nbsp;</div>
 <div align="center">&nbsp;</div>
 <div align="center">&nbsp;</div>
-<div align="center"><strong><font size="4">2014 WaFFL All-Pro's</font></strong></div>
+<div align="center"><strong><font size="4">2017 WaFFL All-Pro's</font></strong></div>
 <div align="center">&nbsp;</div>
-<div align="justify">The WaFFL All-Pro's were selected based on scoring the most points in their respective positions during the 2014 WaFFL Season.&nbsp; The MVP Award is voted on by the owners from the list of All-Pro's.</div>
+<div align="justify">The WaFFL All-Pro's were selected based on scoring the most points in their respective positions during the 2017 WaFFL Season.&nbsp; The MVP Award is voted on by the owners from the list of All-Pro's.</div>
 <div align="justify">&nbsp;</div>
 <div align="justify">&nbsp;</div>
 <div align="justify">
@@ -1032,53 +1040,50 @@ padding:5px;
 <tbody>
 <tr valign="top">
 <td>
-<div align="center"><img src="http://thewaffl.net/images/Rodgers2014.jpg" width="80" height="120" border="0" title="" alt="" /></div></td>
-<td align="center"><img src="http://thewaffl.net/images/Murray2014.jpg" width="80" height="120" border="0" title="" alt="" /><br />
+<div align="center"><img src="http://thewaffl.net/images/Brady2017.jpg" width="80" height="108" border="0" title="" alt="" /></div></td>
+<td align="center"><img src="http://thewaffl.net/images/bell2017.jpg" width="80" height="108" border="0" title="" alt="" /><br />
 <div align="center"></div></td>
-<td align="center"><img src="http://thewaffl.net/images/Bell2014.jpg" width="80" height="120" border="0" title="" alt="" /><br />
+<td align="center"><img src="http://thewaffl.net/images/Gurley2017.jpg" width="80" height="108" border="0" title="" alt="" /><br />
 </td>
-<td align="center"><img src="http://thewaffl.net/images/Nelson2014.jpg" width="80" height="120" border="0" title="" alt="" /><br />
+<td align="center"><img src="http://thewaffl.net/images/Brown2017.jpg" width="80" height="108" border="0" title="" alt="" /><br />
 </td>
-<td align="center"><img src="http://thewaffl.net/images/Jones2014.jpg" width="80" height="120" border="0" title="" alt="" /><br />
+<td align="center"><img src="http://thewaffl.net/images/Hill2017.jpg" width="80" height="108" border="0" title="" alt="" /><br />
 </td>
-<td align="center"><img src="http://thewaffl.net/images/Vinatieri2014.jpg" width="80" height="120" border="0" title="" alt="" /><br />
+<td align="center"><img src="http://thewaffl.net/images/Zuerlein2017.jpg" width="80" height="108" border="0" title="" alt="" /><br />
 </td>
 <td>
-<div align="center"><img src="http://thewaffl.net/images/Hou2014.jpg" width="80" height="120" border="0" title="" alt="" /></div></td></tr>
+<div align="center"><img src="http://thewaffl.net/images/Jax2017.jpg" width="80" height="108" border="0" title="" alt="" /><br />
+</div></td></tr>
 <tr valign="top">
-<td align="center">Aaron Rodgers
-<div align="center"></div></td>
-<td align="center">DeMarco Murray<br />
-<strong>MVP</strong></td>
+<td align="center">Tom Brady</td>
+<td align="center">LeVeon Bell</td>
 <td align="center">
-<div align="center">Le'Veon Bell</div></td>
-<td align="center">Jordy Nelson
+<div align="center">Todd Gurley</div></td>
+<td align="center">Antonio Brown - <strong>MVP</strong><br />
 <div align="center"></div></td>
 <td align="center">
-<div align="center">Julio Jones</div></td>
-<td align="center">Adam Vinatieri
+<div align="center"><span style="text-align: left">Tyreek Hill</span></div></td>
+<td align="center">Greg Zuerlein<br />
 <div align="center"></div></td>
 <td align="center">
-<div align="center">Houston Texans</div></td></tr>
+<div align="center">Jacksonville</div></td></tr>
 <tr valign="top">
-<td align="center">XF
+<td align="center">Rocky Mountain Oysters</td>
+<td align="center">Ultracogs
 <div align="center"></div></td>
 <td>
-<div align="center">SD</div></td>
-<td>
-<div align="center">FC</div></td>
-<td align="center">DTMB
+<div align="center">Suck My Hawks</div></td>
+<td align="center">Just Too Lucky</td>
+<td align="center">Kumar's Klan</td>
+<td align="center">Just Too Lucky
 <div align="center"></div></td>
-<td align="center">RMO
-<div align="center"></div></td>
-<td>
-<div align="center">XF</div></td>
-<td align="center">JTL
+<td align="center">Sporky's Revenge
 <div align="center"></div></td></tr></tbody></table></div>
 <div align="center">&nbsp;</div>
 <div align="center">
-<p align="center" style="font-size: 12.16px"><strong><font size="3"><strong><font size="3"><strong><font size="3"><span style="font-weight: normal; font-size: 12px"><strong><font size="3">League Leaders (Top 5)</font></strong></span></font></strong></font></strong></font></strong></p>
-<table bordercolor="#000000" cellspacing="0" cellpadding="3" border="1" bgcolor="#ffffcc" style="font-size: 12px; text-align: left; width: 1143px; border-collapse: collapse">
+<p align="center" style="font-size: 12.16px"><strong style="font-size: 12.16px"><font size="3"><strong><font size="3"><strong><font size="3"><span style="font-weight: normal; font-size: 12px"><strong><font size="3">League Leaders (Top 5)</font></strong></span></font></strong></font></strong></font></strong><strong style="font-size: 12.16px"><font size="3"><strong><font size="3"><strong><font size="3"><span style="font-weight: normal; font-size: 12px"><strong><font size="3"><br />
+</font></strong></span></font></strong></font></strong></font></strong></p>
+<table bordercolor="#000000" cellspacing="0" cellpadding="3" border="1" bgcolor="#ffffcc" style="font-size: 12.16px; text-align: left; width: 1143px; border-collapse: collapse">
 <tbody>
 <tr valign="top">
 <th scope="col">
@@ -1092,48 +1097,46 @@ padding:5px;
 <th scope="col" align="center">
 <div align="center">DST</div></th></tr>
 <tr valign="top">
-<td>Aaron Rodgers (XF): 5380
-<div></div></td>
-<td>DeMarco Murray (SD): 2591<br />
-</td>
-<td>Jordy Nelson (DTMB): 2448</td>
-<td>Adam Vinatieri (XF): 2001</td>
-<td>Houston (JTL): 2317</td></tr>
+<td>Tom Brady (RMO): 4399</td>
+<td><span style="font-size: 12.16px">LeVeon Bell (U)</span><span style="font-size: 12.16px">: 1962</span></td>
+<td>Antonio Brown (JTL): 2445</td>
+<td><span style="font-size: 12.16px">Greg Zuerlein (JTL)</span>:&nbsp; 2521</td>
+<td>Jacksonville (SR): 2426</td></tr>
 <tr valign="top">
-<td>Andrew Luck (DP): 5240<br />
-</td>
-<td>LeVeon Bell (FC): 2470</td>
-<td>Julio Jones (RMO): 2094</td>
-<td>Stephan Gostkowski (TS): 1892</td>
-<td>Philadelphia (D): 2116<br />
-</td></tr>
+<td>Russell Wilson (JTL)<span style="font-size: 12.16px">: 4274</span></td>
+<td><span style="font-size: 12.16px">Todd Gurley (SMH</span><span style="font-size: 12.16px">)</span>: 1958</td>
+<td>Tyreek Hill (KK): 1740</td>
+<td><span style="font-size: 12.16px">Matt Prater (MN)</span>: 2166</td>
+<td>LA Rams (W)<span style="font-size: 12.16px">: 2059</span></td></tr>
 <tr valign="top">
-<td>Peyton Manning (TB):&nbsp;4579</td>
-<td>Arian Foster (DP): 1894</td>
-<td>Demaryius Thomas (U): 2041</td>
-<td>Mason Crosby (P): 1800<br />
-</td>
-<td>Miami (XF): 1750<br />
-</td></tr>
+<td>Philip Rivers (SMH): 4118</td>
+<td>Leonard Fournette (D)<span style="font-size: 12.16px">: 1724</span></td>
+<td><span style="font-size: 12.16px">DeAndre Hopkins (U)</span><span style="font-size: 12.16px">: 1722</span></td>
+<td><span style="font-size: 12.16px">Justin Tucker (P)</span><span style="font-size: 12.16px">: 2165</span></td>
+<td>Seattle (RMO): 1578</td></tr>
 <tr valign="top">
-<td>Drew Brees (DTMB): 4281</td>
-<td>Matt Forte (JTL): 1834<br />
+<td><span style="font-size: 12.16px">Matt Stafford (P)</span>: 3847</td>
+<td>LeSean McCoy (SD): 1677<br />
 </td>
-<td>TY Hilton (RMO): 1953<br />
-</td>
-<td>Dan Bailey (TB): 1769</td>
-<td>New England (DTMB): 1648</td></tr>
+<td>Julio Jones (MN)<span style="font-size: 12.16px">&nbsp;1603</span></td>
+<td><span style="font-size: 12.16px">Will Lutz (TB)</span>: 2113</td>
+<td>Philadelphia (BB): 1493</td></tr>
 <tr valign="top">
-<td>Matt Ryan (SD): 4118</td>
-<td>Marshawn Lynch (DTMB): 1630</td>
-<td>Jeremy Maclin (DP): 1908<br />
-</td>
-<td>Justin Tucker (SD): 1662<br />
-</td>
-<td>Green Bay (RMO): 1573</td></tr></tbody></table></div></td></tr></tbody></table></td>
+<td>Kirk Cousins (SR): 3737</td>
+<td><span style="font-size: 12.16px">Kareem Hunt (RMO)</span>: 1475</td>
+<td><span style="font-size: 12.16px">AJ Green (TTB)</span>: 1438</td>
+<td><span style="font-size: 12.16px">Matt Bryant (D)</span>: 2023</td>
+<td>Baltimore (JTL): 1437</td></tr></tbody></table></div></td></tr></tbody></table></td>
 <td valign="top">
-<table cellspacing="0" cellpadding="0" style="font-size: 12px">
-<tbody></tbody></table></td></tr></tbody></table></td>  </tr></table>
+<table cellspacing="0" cellpadding="0" style="font-size: 12px"></table></td></tr></tbody></table><br style="font-size: 12.16px" />
+<style id="style1" type="text/css">.type8margin {
+padding:5px;
+}
+--></style><br />
+<style id="style1" type="text/css">.type8margin {
+padding:5px;
+}
+--></style></td>  </tr></table>
 </div></td>
 											<!-- Begin SIDE2 -->
 											<td width="160" align="center" valign="top" class="magin"><div><strong>2017 WaFFL Champs</strong></div>

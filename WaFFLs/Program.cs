@@ -17,7 +17,7 @@ namespace WaFFLs
 
         static void Main(string[] args)
         {
-            //UpdateYear(2015);
+            UpdateYear(2014);
 
 
             League leagueData = new League();
@@ -31,29 +31,29 @@ namespace WaFFLs
 
 //            GetAllTeamsInSeason(leagueData, 2016);
 
-            var team2 = leagueData.Teams.Single(t => t.Name == "Washington Whompers");
-            GetAverages(team2);
 
-
-            var team = leagueData.Teams.Single(t => t.Name == "Just Too Lucky");
+            //var team = leagueData.Teams.Single(t => t.Name == "Just Too Lucky");
            // GetAllTimeRecordFor(team);
            // GetHeadToHeadRecordsFor(team);
            // ListAllGamesBySeasonForTeam(team);
-            GetAverages(team);
+            //GetAverages(team);
 
 
-//            GetTopAllTimeScores(leagueData);
-//            GetTopLosingScores(leagueData);
-//            GetTeamsWithMost1000PointGames(leagueData);
-//            GetHighestScoringGames(leagueData);
+            GetTopAllTimeScores(leagueData);
+            GetTopLosingScores(leagueData);
+            GetTeamsWithMost1000PointGames(leagueData);
+            GetHighestScoringGames(leagueData);
+            GetMostPointsScoredAllTime(leagueData);
+            GetLongestWinningStreaks(leagueData);
+            GetLongestLosingStreaks(leagueData);
+            GetLongest1000PointStreaks(leagueData);
+
+            GetMostPointsScoredInASeason(leagueData);
 
 
-
-
-
-//            GetTeamsAndYearsPlayed(leagueData);
-//            GetTeamsAndPlayoffAppearances(leagueData);
-//            GetChampionships(leagueData);
+            GetTeamsAndYearsPlayed(leagueData);
+            GetTeamsAndPlayoffAppearances(leagueData);
+            GetChampionships(leagueData);
 
             GetAverages(leagueData);
 
@@ -203,6 +203,8 @@ namespace WaFFLs
 
         private static void GetTopAllTimeScores(League leagueData, int count = 10)
         {
+            Console.WriteLine("Top High Scores");
+
             var scores = leagueData.Seasons.SelectMany(s => s.Weeks)
                                            .SelectMany(w => w.Games)
                                            .SelectMany(g => new[] { g.Home, g.Away });
@@ -214,10 +216,14 @@ namespace WaFFLs
             {
                 Console.WriteLine("{4,2}. {0,-4} {1,-30} {2}, {3}", score.Score, score.Team.Name, score.Game.Week.Name, score.Game.Week.Season.Year, index++);
             }
+
+            Console.WriteLine();
         }
 
         private static void GetTopLosingScores(League leagueData, int count = 10)
         {
+            Console.WriteLine("Top Losing Scores");
+
             var scores = leagueData.Seasons.SelectMany(s => s.Weeks)
                                            .SelectMany(w => w.Games)
                                            .SelectMany(g => new[] { g.Home, g.Away });
@@ -229,10 +235,14 @@ namespace WaFFLs
             {
                 Console.WriteLine("{4,2}. {0,-4} {1,-30} {2}, {3}", score.Score, score.Team.Name, score.Game.Week.Name, score.Game.Week.Season.Year, index++);
             }
+
+            Console.WriteLine();
         }
 
         private static void GetTeamsWithMost1000PointGames(League leagueData, int count = 10)
         {
+            Console.WriteLine("1000 point games");
+
             var scores = leagueData.Seasons.SelectMany(s => s.Weeks)
                                .SelectMany(w => w.Games)
                                .SelectMany(g => new[] { g.Home, g.Away })
@@ -246,6 +256,8 @@ namespace WaFFLs
             {
                 Console.WriteLine("{2,2}. {1,-5} {0}", team.Key.Name, team.Count(), index++);
             }
+
+            Console.WriteLine();
         }
 
         private static void GetTeamsAndYearsPlayed(League leagueData)
@@ -414,6 +426,8 @@ namespace WaFFLs
 
         private static void GetHighestScoringGames(League leagueData, int count = 10)
         {
+            Console.WriteLine("Highest scoring games");
+
             var orderedGames = leagueData.Seasons.SelectMany(s => s.Weeks)
                                            .SelectMany(w => w.Games)
                                            .OrderByDescending(g => g.Home.Score + g.Away.Score)
@@ -424,6 +438,161 @@ namespace WaFFLs
             {
                 Console.WriteLine("{6,2}. {0,4}-{1,-4}   {2} vs {3}   {4} {5}", game.Home.Score, game.Away.Score, game.Home.Team.Name, game.Away.Team.Name, game.Week.Name, game.Week.Season.Year, index++);
             }
+
+            Console.WriteLine();
+        }
+
+        private static void GetMostPointsScoredAllTime(League leagueData, int count = 10)
+        {
+            Console.WriteLine("All Time Points");
+
+            var teams = leagueData.Teams.Select(t => new { Team = t, PointsScored = t.Games.Sum(g => g.GetTeamScore(t)) })
+                                        .OrderByDescending(x => x.PointsScored)
+                                        .Take(count);
+
+            int index = 1;
+            foreach (var team in teams)
+            {
+                Console.WriteLine("{2,2}. {0,-15}   {1}", team.PointsScored, team.Team.Name, index++);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void GetMostPointsScoredInASeason(League leagueData, int count = 10)
+        {
+            Console.WriteLine("Points in a season");
+
+            var teams = leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.Name.StartsWith("Week "))
+                                                                .GroupBy(g => g.Week.Season.Year)
+                                                                .Select(s => new { Team = t, Year = s.Key, PointsScored = s.Sum(g => g.GetTeamScore(t))}))
+                                        .OrderByDescending(x => x.PointsScored)
+                                        .Take(count);
+
+            int index = 1;
+            foreach (var team in teams)
+            {
+                Console.WriteLine("{3,2}. {0,-15}   {1} {2}", team.PointsScored, team.Year, team.Team.Name, index++);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void GetLongestWinningStreaks(League leagueData, int count = 10)
+        {
+            Console.WriteLine("Winning Streaks");
+
+            var allStreaks = new List<List<Game>>();
+            foreach (var team in leagueData.Teams)
+            {
+                var t = team;
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.Name.StartsWith("Week ")).ToList();
+                var teamStreaks = GetAllStreaks(orderedGames, g => g.IsWinningTeam(t)).ToList();
+                allStreaks.AddRange(teamStreaks);
+            }
+
+            int index = 1;
+            var topStreaks = allStreaks.OrderByDescending(s => s.Count).Take(count);
+            foreach (var streak in topStreaks)
+            {
+                Console.WriteLine("{4,2}. {0,-30} {1,-2} games ({2} - {3})", streak.First().GetWinningTeam().GetDisplayName(), streak.Count, streak.First().Week.GetDisplayName(), streak.Last().Week.GetDisplayName(), index++);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void GetLongestLosingStreaks(League leagueData, int count = 10)
+        {
+            Console.WriteLine("Losing Streaks");
+
+            var allStreaks = new List<List<Game>>();
+            foreach (var team in leagueData.Teams)
+            {
+                var t = team;
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.Name.StartsWith("Week ")).ToList();
+
+                var x = orderedGames.Select(g => g.Week.GetDisplayName());
+                
+                var teamStreaks = GetAllStreaks(orderedGames, g => g.IsLosingTeam(t)).ToList();
+                allStreaks.AddRange(teamStreaks);
+            }
+
+            int index = 1;
+            var topStreaks = allStreaks.OrderByDescending(s => s.Count).Take(count);
+            foreach (var streak in topStreaks)
+            {
+                Console.WriteLine("{4,2}. {0,-30} {1,-2} games ({2} - {3})", streak.First().GetLosingTeam().GetDisplayName(), streak.Count, streak.First().Week.GetDisplayName(), streak.Last().Week.GetDisplayName(), index++);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void GetLongest1000PointStreaks(League leagueData, int count = 10)
+        {
+            Console.WriteLine("1000+ Game Streaks");
+
+            var allStreaks = new List<List<Game>>();
+            foreach (var team in leagueData.Teams)
+            {
+                var t = team;
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.Name.StartsWith("Week ")).ToList();
+                var teamStreaks = GetAllStreaks(orderedGames, g => g.GetTeamScore(t) >= 1000).ToList();
+                allStreaks.AddRange(teamStreaks);
+            }
+
+            int index = 1;
+            var topStreaks = allStreaks.OrderByDescending(s => s.Count).Take(count);
+            foreach (var streak in topStreaks)
+            {
+                var team = streak.First().Home.Team;
+                if (!streak.TrueForAll(g => g.Away.Team == team || g.Home.Team == team))
+                {
+                    team = streak.First().Away.Team;
+                    if (!streak.TrueForAll(g => g.Away.Team == team || g.Home.Team == team))
+                    {
+                        throw new Exception();
+                    }
+                }
+
+                Console.WriteLine("{4,2}. {0,-30} {1,-2} games ({2} - {3})", team.GetDisplayName(), streak.Count, streak.First().Week.GetDisplayName(), streak.Last().Week.GetDisplayName(), index++);
+            }
+
+            Console.WriteLine();
+        }
+
+        public static List<List<TSource>> GetAllStreaks<TSource>(List<TSource> source, Func<TSource, bool> predicate)
+        {
+            var streaks = new List<List<TSource>>();
+
+            List<TSource> current = null;
+            foreach (var item in source)
+            {
+                if (predicate(item))
+                {
+                    if (current == null)
+                    {
+                        current = new List<TSource>();
+                    }
+
+                    current.Add(item);
+                }
+                else
+                {
+                    if (current != null && current.Count > 1)
+                    {
+                        streaks.Add(current);
+                    }
+
+                    current = null;
+                }
+            }
+
+            if (current != null && current.Count > 1)
+            {
+                streaks.Add(current);
+            }
+
+            return streaks;
         }
     }
 }
