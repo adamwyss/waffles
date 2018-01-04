@@ -3,27 +3,31 @@ using WaFFLs.Generation.Models;
 
 namespace WaFFLs.Generation
 {
-    public interface ISeasonRecordProvider
+    public interface IProvider
+    {
+    }
+
+    public interface ISeasonRecordProvider : IProvider
     {
         List<SeasonRecord> GetData();
     }
 
-    public interface IGameRecordProvider
+    public interface IGameRecordProvider : IProvider
     {
         List<GameRecord> GetData();
     }
 
-    public interface IIndividualGameRecordProvider
+    public interface IIndividualGameRecordProvider : IProvider
     {
         List<IndividualGameRecord> GetData();
     }
 
-    public interface ICareerRecordProvider
+    public interface ICareerRecordProvider : IProvider
     {
         List<CareerRecord> GetData();
     }
 
-    public interface IStreakRecordProvider
+    public interface IStreakRecordProvider : IProvider
     {
         List<StreakRecord> GetData();
 

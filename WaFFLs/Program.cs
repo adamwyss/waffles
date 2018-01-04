@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.Remoting;
 using WaFFLs.Generation;
-using WaFFLs.Generation.Models;
 
 namespace WaFFLs
 {
@@ -34,34 +32,25 @@ namespace WaFFLs
 
             var providers =
                 typeof(Program).Assembly.GetTypes()
-                    .Where(t => !t.IsInterface && (
-                                typeof(ICareerRecordProvider).IsAssignableFrom(t) ||
-                                typeof(ISeasonRecordProvider).IsAssignableFrom(t) ||
-                                typeof(IStreakRecordProvider).IsAssignableFrom(t) ||
-                                typeof(IGameRecordProvider).IsAssignableFrom(t) ||
-                                typeof(IIndividualGameRecordProvider).IsAssignableFrom(t)))
+                    .Where(t => !t.IsInterface && typeof(IProvider).IsAssignableFrom(t))
                     .Select(t => (object)Activator.CreateInstance(t, leagueData, 25))
                     .ToList();
 
-
             e.Generate(providers);
+
+            Process.Start("s:\\temp\\index.htm");
 
 
             //GetAllTeamsEverInLeague(leagueData);
             //GetAllTeamsInSeason(leagueData, 2016);
             //GetTeamsAndYearsPlayed(leagueData);
             //GetTeamsAndPlayoffAppearances(leagueData);
-            GetChampionships(leagueData);
+            //GetChampionships(leagueData);
             //GetAverages(leagueData);
             //var team = leagueData.Teams.Single(t => t.Name == "Rocky Mountain Oysters");
             //GetAverages(team);
 
             Console.WriteLine("Completed");
-
-            if (Debugger.IsAttached)
-            {
-                Console.ReadKey();
-            }
         }
 
         private static void GetAllTeamsEverInLeague(League leagueData)
@@ -224,8 +213,8 @@ namespace WaFFLs
         private static void GetAverages(Team team)
         {
             {
-                var seasonGames = team.Games.Where(g => g.Week.Name.StartsWith("Week ")).ToArray();
-                var playoffGames = team.Games.Where(g => !g.Week.Name.StartsWith("Week")).ToArray(); ;
+                var seasonGames = team.Games.Where(g => g.Week.IsRegular()).ToArray();
+                var playoffGames = team.Games.Where(g => g.Week.IsPlayoff()).ToArray(); ;
 
                 double avgSeasonWin = seasonGames.Where(g => g.IsWinningTeam(team)).AverageSafe(x => x.GetWinningScore().Score);
                 double avgSeasonLosing = seasonGames.Where(g => g.IsLosingTeam(team)).AverageSafe(x => x.GetLosingScore().Score);
