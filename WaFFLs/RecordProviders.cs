@@ -7,12 +7,12 @@ using WaFFLs.Generation.Models;
 namespace WaFFLs
 {
 
-    public class GetMostPointsScoredInASeason : ISeasonRecordProvider
+    public class MostPointsScoredInASeason : ISeasonRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetMostPointsScoredInASeason(League leagueData, int count = 10)
+        public MostPointsScoredInASeason(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -20,7 +20,7 @@ namespace WaFFLs
 
         public List<SeasonRecord> GetData()
         {
-            var teams = _leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.Name.StartsWith("Week "))
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.IsRegular())
                                                            .GroupBy(g => g.Week.Season.Year)
                                                            .Select(s => new { Team = t, Year = s.Key, PointsScored = s.Sum(g => g.GetTeamScore(t)) }))
                                          .OrderByDescending(x => x.PointsScored)
@@ -30,12 +30,12 @@ namespace WaFFLs
         }
     }
 
-    public class GetMostPointsScoredAllTime : ICareerRecordProvider
+    public class MostPointsScoredInCareer : ICareerRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetMostPointsScoredAllTime(League leagueData, int count = 10)
+        public MostPointsScoredInCareer(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -51,12 +51,12 @@ namespace WaFFLs
         }
     }
 
-    public class GetTeamsWithMost1000PointGames : ICareerRecordProvider
+    public class Most1000PointGames : ICareerRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetTeamsWithMost1000PointGames(League leagueData, int count = 10)
+        public Most1000PointGames(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -64,7 +64,7 @@ namespace WaFFLs
 
         public List<CareerRecord> GetData()
         {
-            var scores = _leagueData.Seasons.SelectMany(s => s.Weeks)
+            var scores = _leagueData.Seasons.SelectMany(s => s.WeeksIncludingPlayoffs())
                                .SelectMany(w => w.Games)
                                .SelectMany(g => new[] { g.Home, g.Away })
                                .Where(s => s.Score >= 1000);
@@ -76,12 +76,62 @@ namespace WaFFLs
         }
     }
 
-    public class GetTopAllTimeScores : IIndividualGameRecordProvider
+    public class Most1000PointGamesInASeasonAndPlayoffs : ISeasonRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetTopAllTimeScores(League leagueData, int count = 10)
+        public Most1000PointGamesInASeasonAndPlayoffs(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<SeasonRecord> GetData()
+        {
+            var scores = _leagueData.Seasons.SelectMany(s => s.WeeksIncludingPlayoffs())
+                               .SelectMany(w => w.Games)
+                               .SelectMany(g => new[] { g.Home, g.Away })
+                               .Where(s => s.Score >= 1000);
+
+            var groupedScores = scores.GroupBy(g => new { g.Game.Week.Season.Year, g.Team }).OrderByDescending(x => x.Count())
+                                      .Take(_count);
+
+            return groupedScores.Select(t => new SeasonRecord() { Value = t.Count(), Team = t.Key.Team, Year = t.Key.Year}).ToList();
+        }
+    }
+
+    public class Most1000PointGamesInASeason : ISeasonRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public Most1000PointGamesInASeason(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<SeasonRecord> GetData()
+        {
+            var scores = _leagueData.Seasons.SelectMany(s => s.Weeks)
+                               .SelectMany(w => w.Games)
+                               .SelectMany(g => new[] { g.Home, g.Away })
+                               .Where(s => s.Score >= 1000);
+
+            var groupedScores = scores.GroupBy(g => new { g.Game.Week.Season.Year, g.Team }).OrderByDescending(x => x.Count())
+                                      .Take(_count);
+
+            return groupedScores.Select(t => new SeasonRecord() { Value = t.Count(), Team = t.Key.Team, Year = t.Key.Year }).ToList();
+        }
+    }
+
+    public class BestSingleGameScores : IIndividualGameRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public BestSingleGameScores(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -105,12 +155,41 @@ namespace WaFFLs
         }
     }
 
-    public class GetTopLosingScores : IIndividualGameRecordProvider
+    public class WorstSingleGameScores : IIndividualGameRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetTopLosingScores(League leagueData, int count = 10)
+        public WorstSingleGameScores(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<IndividualGameRecord> GetData()
+        {
+            var scores = _leagueData.Seasons.SelectMany(s => s.WeeksIncludingPlayoffs())
+                                           .SelectMany(w => w.Games)
+                                           .SelectMany(g => new[] { g.Home, g.Away });
+
+            var orderedScores = scores.OrderBy(s => s.Score).Take(_count);
+
+            return orderedScores.Select(t =>
+                new IndividualGameRecord()
+                {
+                    Value = t.Score,
+                    Team = t.Team,
+                    Game = t.Game.Week,
+                }).ToList();
+        }
+    }
+
+    public class BestSingleGameLosingScores : IIndividualGameRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public BestSingleGameLosingScores(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -134,12 +213,12 @@ namespace WaFFLs
         }
     }
 
-    public class GetHighestScoringGames : IGameRecordProvider
+    public class HighestScoringGames : IGameRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetHighestScoringGames(League leagueData, int count = 10)
+        public HighestScoringGames(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -156,7 +235,7 @@ namespace WaFFLs
             return orderedGames.Select(t =>
                 new GameRecord()
                 {
-                    Value = $"{t.Home.Score,4}-{t.Away.Score,-4}",
+                    Value = $"{t.Home.Score}-{t.Away.Score}",
                     Team1 = t.Home.Team,
                     Team2 = t.Away.Team,
                     Game = t.Week,
@@ -164,12 +243,42 @@ namespace WaFFLs
         }
     }
 
-    public class GetLongestWinningStreaks : IStreakRecordProvider
+    public class ClosestGames : IGameRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetLongestWinningStreaks(League leagueData, int count = 10)
+        public ClosestGames(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<GameRecord> GetData()
+        {
+
+            var orderedGames = _leagueData.Seasons.SelectMany(s => s.WeeksIncludingPlayoffs())
+                                          .SelectMany(w => w.Games)
+                                          .OrderBy(g => Math.Abs(g.Home.Score - g.Away.Score))
+                                          .Take(_count);
+
+            return orderedGames.Select(t =>
+                new GameRecord()
+                {
+                    Value = $"{t.Home.Score}-{t.Away.Score}",
+                    Team1 = t.Home.Team,
+                    Team2 = t.Away.Team,
+                    Game = t.Week,
+                }).ToList();
+        }
+    }
+
+    public class LongestWinningStreaks : IStreakRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public LongestWinningStreaks(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -181,7 +290,7 @@ namespace WaFFLs
             foreach (var team in _leagueData.Teams)
             {
                 var t = team;
-                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.Name.StartsWith("Week ")).ToList();
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.IsRegular()).ToList();
                 var teamStreaks = StreakHelper.GetAllStreaks(orderedGames, g => g.IsWinningTeam(t)).ToList();
                 allStreaks.AddRange(teamStreaks);
             }
@@ -198,12 +307,12 @@ namespace WaFFLs
         }
     }
 
-    public class GetLongestLosingStreaks : IStreakRecordProvider
+    public class LongestLosingStreaks : IStreakRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetLongestLosingStreaks(League leagueData, int count = 10)
+        public LongestLosingStreaks(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -215,7 +324,7 @@ namespace WaFFLs
             foreach (var team in _leagueData.Teams)
             {
                 var t = team;
-                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.Name.StartsWith("Week ")).ToList();
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.IsRegular()).ToList();
 
                 var teamStreaks = StreakHelper.GetAllStreaks(orderedGames, g => g.IsLosingTeam(t)).ToList();
                 allStreaks.AddRange(teamStreaks);
@@ -233,12 +342,12 @@ namespace WaFFLs
         }
     }
 
-    public class GetLongest1000PointStreaks : IStreakRecordProvider
+    public class Longest1000PointStreaks : IStreakRecordProvider
     {
         private readonly League _leagueData;
         private readonly int _count;
 
-        public GetLongest1000PointStreaks(League leagueData, int count = 10)
+        public Longest1000PointStreaks(League leagueData, int count = 10)
         {
             _leagueData = leagueData;
             _count = count;
@@ -250,7 +359,7 @@ namespace WaFFLs
             foreach (var team in _leagueData.Teams)
             {
                 var t = team;
-                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.Name.StartsWith("Week ")).ToList();
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.IsRegular()).ToList();
                 var teamStreaks = StreakHelper.GetAllStreaks(orderedGames, g => g.GetTeamScore(t) >= 1000).ToList();
                 allStreaks.AddRange(teamStreaks);
             }

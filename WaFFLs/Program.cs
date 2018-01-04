@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Remoting;
 using WaFFLs.Generation;
 using WaFFLs.Generation.Models;
 
@@ -29,32 +30,21 @@ namespace WaFFLs
             var parser = new HtmlPageParser(dataProvider, teamResolver);
             parser.Parse(leagueData);
 
-
-            const int max = 25;
-
-            List<object> providers = new List<object>
-            {
-                new GetMostPointsScoredInASeason(leagueData, max),
-                new GetMostPointsScoredAllTime(leagueData, max),
-                new GetTeamsWithMost1000PointGames(leagueData, max),
-                new GetTopAllTimeScores(leagueData, max),
-                new GetTopLosingScores(leagueData, max),
-                new GetHighestScoringGames(leagueData, max),
-                new GetLongestWinningStreaks(leagueData, max),
-                new GetLongestLosingStreaks(leagueData, max),
-                new GetLongest1000PointStreaks(leagueData, max),
-        };
-
-
-
             var e = new Engine(leagueData, "s:\\temp\\");
+
+            var providers =
+                typeof(Program).Assembly.GetTypes()
+                    .Where(t => !t.IsInterface && (
+                                typeof(ICareerRecordProvider).IsAssignableFrom(t) ||
+                                typeof(ISeasonRecordProvider).IsAssignableFrom(t) ||
+                                typeof(IStreakRecordProvider).IsAssignableFrom(t) ||
+                                typeof(IGameRecordProvider).IsAssignableFrom(t) ||
+                                typeof(IIndividualGameRecordProvider).IsAssignableFrom(t)))
+                    .Select(t => (object)Activator.CreateInstance(t, leagueData, 25))
+                    .ToList();
+
+
             e.Generate(providers);
-
-
-
-//            var team = leagueData.Teams.Single(t => t.Name == "Rocky Mountain Oysters");
-//            GetAverages(team);
-
 
 
             //GetAllTeamsEverInLeague(leagueData);
@@ -63,6 +53,8 @@ namespace WaFFLs
             //GetTeamsAndPlayoffAppearances(leagueData);
             GetChampionships(leagueData);
             //GetAverages(leagueData);
+            //var team = leagueData.Teams.Single(t => t.Name == "Rocky Mountain Oysters");
+            //GetAverages(team);
 
             Console.WriteLine("Completed");
 

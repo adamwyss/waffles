@@ -10,7 +10,7 @@
 <ol>
     @foreach (var x in Model)
     {
-        <li>@x.Value @x.Team1.GetDisplayName() vs @x.Team2.GetDisplayName() @x.Game</li>
+        <li>@x.Value @x.Team1.GetDisplayName() vs @x.Team2.GetDisplayName() @x.Game.GetDisplayName()</li>
     }
 </ol>
 

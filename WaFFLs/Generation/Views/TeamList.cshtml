@@ -1,25 +1,21 @@
 ﻿@using System.Collections.Generic
+@using System.Linq
 @using WaFFLs.Generation.Models
 @inherits RazorEngine.Templating.TemplateBase<List<TeamInfo>>
 
 <html>
 <head>
     <style>
-div {
-column-count: 3
-}
     </style>
 </head>
 <body>
-    
     <div>
         <ul>
-            @foreach (var x in Model)
+            @foreach (var x in Model.OrderByDescending(x => x.SeasonRecord.Wins).ThenByDescending(x => x.LastSeason))
             {
-                <li><a href="@x.Filename">@x.Name</a></li>
+                <li><a href="@x.Filename">@x.Name</a> @x.SeasonRecord.Wins-@x.SeasonRecord.Losses @x.PlayoffRecord.Wins-@x.PlayoffRecord.Losses</li>
             }
         </ul>
     </div>
-
 </body>
 </html>

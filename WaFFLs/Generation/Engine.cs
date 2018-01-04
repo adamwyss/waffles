@@ -42,12 +42,22 @@ namespace WaFFLs.Generation
             using (IRazorEngineService razor = RazorEngineService.Create(config))
             {
                 CacheViews(razor);
+                GenerateHome(razor, providers);
                 GenerateTeams(razor);
                 GenerateRecords<ICareerRecordProvider>(razor, "career-record-list", providers, x => x.GetData());
                 GenerateRecords<ISeasonRecordProvider>(razor, "season-record-list", providers, x => x.GetData());
                 GenerateRecords<IGameRecordProvider>(razor, "game-record-list", providers, x => x.GetData());
                 GenerateRecords<IIndividualGameRecordProvider>(razor, "individual-game-record-list", providers, x => x.GetData());
                 GenerateRecords<IStreakRecordProvider>(razor, "streak-record-list", providers, x => x.GetData());
+            }
+        }
+
+        private void GenerateHome(IRazorEngineService razor, List<object> providers)
+        {
+            using (var writer = new StreamWriter(_root + "index.htm"))
+            {
+                object model = providers.Select(p => p.GetType()).OrderBy(t => t.Name).ToList();
+                razor.RunCompile("home", writer, null, model);
             }
         }
 
@@ -72,6 +82,7 @@ namespace WaFFLs.Generation
             razor.AddTemplate("season-record-list", View.Get("SeasonRecordList.cshtml"));
             razor.AddTemplate("career-record-list", View.Get("CareerRecordList.cshtml"));
             razor.AddTemplate("streak-record-list", View.Get("StreakRecordList.cshtml"));
+            razor.AddTemplate("home", View.Get("Home.cshtml"));
         }
 
         private void GenerateTeams(IRazorEngineService razor)

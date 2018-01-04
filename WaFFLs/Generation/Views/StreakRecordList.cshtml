@@ -10,7 +10,7 @@
 <ol>
     @foreach (var x in Model)
     {
-        <li>@x.Team.GetDisplayName() @x.Value (@x.From - @x.To)</li>
+        <li>@x.Team.GetDisplayName() @x.Value (@x.From.GetDisplayName() - @x.To.GetDisplayName())</li>
     }
 </ol>
 
