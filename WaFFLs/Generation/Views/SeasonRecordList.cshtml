@@ -1,0 +1,18 @@
+﻿@using System.Collections.Generic
+@using WaFFLs.Generation
+@using WaFFLs.Generation.Models
+@inherits RazorEngine.Templating.TemplateBase<List<SeasonRecord>>
+
+<html>
+<head></head>
+<body>
+
+<ol>
+    @foreach (var x in Model)
+    {
+        <li>@x.Value @x.Year @x.Team.GetDisplayName()</li>
+    }
+</ol>
+
+</body>
+</html>

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Diagnostics;
-using System.Runtime.Remoting;
-using System.Runtime.Remoting.Messaging;
 
 namespace WaFFLs
 {
@@ -17,7 +14,7 @@ namespace WaFFLs
         }
 
         public List<Season> Seasons { get; private set; }
-        public List<Team> Teams { get; private set; } 
+        public List<Team> Teams { get; private set; }
     }
 
     [DebuggerDisplay("Season {Year}")]
@@ -31,8 +28,8 @@ namespace WaFFLs
 
         public int Year { get; set; }
 
-        public List<Week> Weeks { get; private set; } 
-        public List<Week> Playoffs { get; private set; } 
+        public List<Week> Weeks { get; private set; }
+        public List<Week> Playoffs { get; private set; }
     }
 
     [DebuggerDisplay("Week {Name}")]
@@ -46,7 +43,8 @@ namespace WaFFLs
         public Season Season { get; set; }
 
         public string Name { get; set; }
-        public List<Game> Games { get; set; } 
+
+        public List<Game> Games { get; set; }
     }
 
     [DebuggerDisplay("{Home.Team.Name} vs {Away.Team.Name}")]
@@ -56,6 +54,30 @@ namespace WaFFLs
 
         public TeamScore Home { get; set; }
         public TeamScore Away { get; set; }
+    }
+
+    public static class SeasonExtensions
+    {
+        public static List<Week> WeeksIncludingPlayoffs(this Season season)
+        {
+            var weeks = new List<Week>();
+            weeks.AddRange(season.Weeks);
+            weeks.AddRange(season.Playoffs);
+            return weeks;
+        }
+    }
+
+    public static class WeekExtensions
+    {
+        public static bool IsRegular(this Week week)
+        {
+            return week.Name.StartsWith("Week ");
+        }
+
+        public static bool IsPlayoff(this Week week)
+        {
+            return !week.IsRegular();
+        }
     }
 
     public static class GameExtensions
@@ -158,28 +180,6 @@ namespace WaFFLs
             }
 
             throw new Exception();
-        }
-    }
-
-    public static class WeekExtensions
-    {
-        public static string GetDisplayName(this Week week)
-        {
-            return string.Format("{0} {1}", week.Name, week.Season.Year);
-        }
-    }
-
-    public static class TeamExtensions
-    {
-        public static string GetDisplayName(this Team team, int maxLength = -1)
-        {
-            string name = team.Name;
-            if (maxLength > 0 && name.Length > maxLength)
-            {
-                name = name.Substring(0, maxLength);
-            }
-
-            return name;
         }
     }
 

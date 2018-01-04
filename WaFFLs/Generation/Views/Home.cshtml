@@ -1,0 +1,26 @@
+﻿@using System.Collections.Generic
+@inherits RazorEngine.Templating.TemplateBase<List<System.Type>>
+
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+    <p>WaFFL Record Book</p>
+
+<p>
+    <a href="teams.htm">All Teams</a>
+</p>
+
+<div>
+    <p>Records</p>
+    <ul>
+        @foreach (var t in Model)
+        {
+            <li><a href="@string.Format("{0}.htm", t.Name)">@t.Name</a></li>
+        }
+    </ul>
+</div>
+</body>
+</html>
