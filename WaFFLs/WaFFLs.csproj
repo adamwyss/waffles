@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WaFFLs</RootNamespace>
     <AssemblyName>WaFFLs</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -24,6 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -33,10 +35,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,15 +56,37 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Generation\DisplayExtensions.cs" />
+    <Compile Include="Generation\Engine.cs" />
+    <Compile Include="Generation\Models\StreakRecord.cs" />
+    <Compile Include="Generation\Models\CareerRecord.cs" />
+    <Compile Include="Generation\Models\IndividualGameRecord.cs" />
+    <Compile Include="Generation\Models\TeamInfo.cs" />
+    <Compile Include="Generation\Models\GameRecord.cs" />
+    <Compile Include="Generation\Models\SeasonRecord.cs" />
+    <Compile Include="Generation\Providers.cs" />
+    <Compile Include="Generation\Views\View.cs" />
     <Compile Include="HtmlPageParser.cs" />
     <Compile Include="IntegerComparer.cs" />
     <Compile Include="ITeamResolver.cs" />
     <Compile Include="IWaFFLDataSource.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordProviders.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <EmbeddedResource Include="Generation\Views\IndividualGameRecordList.cshtml" />
+    <EmbeddedResource Include="Generation\Views\SeasonRecordList.cshtml" />
+    <EmbeddedResource Include="Generation\Views\GameRecordList.cshtml" />
+    <EmbeddedResource Include="Generation\Views\StreakRecordList.cshtml" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Generation\Views\TeamList.cshtml" />
+    <EmbeddedResource Include="Generation\Views\CareerRecordList.cshtml" />
+    <EmbeddedResource Include="Generation\Views\Team.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

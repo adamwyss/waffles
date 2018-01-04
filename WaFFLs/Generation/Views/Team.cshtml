@@ -1,0 +1,54 @@
+﻿@using WaFFLs.Generation
+@using WaFFLs.Generation.Models
+@inherits RazorEngine.Templating.TemplateBase<TeamInfo>
+
+<html>
+<head></head>
+<body>
+<p>@Model.Name 
+@if (@Model.FirstSeason == @Model.LastSeason)
+{
+    <text>(@Model.FirstSeason)</text>
+}
+else
+{
+    <text>(@Model.FirstSeason - @Model.LastSeason)</text>
+}
+</p>
+
+    <p>Record: @Model.SeasonRecord.Wins - @Model.SeasonRecord.Losses (@Model.SeasonRecord.Percentage.AsWinningPercentage())</p>
+    <p>Playoffs: @Model.PlayoffRecord.Wins - @Model.PlayoffRecord.Losses (@Model.PlayoffRecord.Percentage.AsWinningPercentage())</p>
+
+<p>Head to Head:</p>
+<ul>
+    @foreach (var record in Model.HeadToHeadRecords)
+    {
+        <li>@record.Team.GetDisplayName()
+            @record.SeasonRecord.Wins-@record.SeasonRecord.Losses @record.SeasonRecord.Percentage.AsWinningPercentage()
+
+            @if (@record.PlayoffRecord.Wins + @record.PlayoffRecord.Losses > 0)
+            {
+                <text>(@record.PlayoffRecord.Wins - @record.PlayoffRecord.Losses)</text>
+            }
+        </li>
+    }
+</ul>
+
+<p>Seasons:</p>
+<ul>
+    @foreach (var season in Model.Seasons)
+    {
+        <li>
+            <strong>@season.Name</strong> @season.Record.Wins-@season.Record.Losses <i>(@season.Record.Percentage.AsWinningPercentage())</i>
+            <ol>
+                @foreach (var game in season.Games)
+                {
+                    <li>@game.WL @game.Score-@game.OpponentScore vs @game.Opponent.GetDisplayName() @game.Date.GetDisplayName()</li>
+                }
+            </ol>
+        </li>
+    }
+</ul>
+
+</body>
+</html>

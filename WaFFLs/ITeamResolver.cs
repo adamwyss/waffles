@@ -29,6 +29,8 @@ namespace WaFFLs
                 { "Rocky Mountain Oystes", "Rocky Mountain Oysters" },
                 { "Sporkey's Revenge", "Sporky's Revenge" },
                 { "Utracogs", "Ultracogs" },
+                { "Brawlers", "Brawlers II" },
+                { "TeamBean", "Team Bean" },
             };
 
         private readonly League _league;

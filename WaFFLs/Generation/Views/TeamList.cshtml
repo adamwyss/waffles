@@ -1,0 +1,25 @@
+﻿@using System.Collections.Generic
+@using WaFFLs.Generation.Models
+@inherits RazorEngine.Templating.TemplateBase<List<TeamInfo>>
+
+<html>
+<head>
+    <style>
+div {
+column-count: 3
+}
+    </style>
+</head>
+<body>
+    
+    <div>
+        <ul>
+            @foreach (var x in Model)
+            {
+                <li><a href="@x.Filename">@x.Name</a></li>
+            }
+        </ul>
+    </div>
+
+</body>
+</html>
