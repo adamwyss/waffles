@@ -25,7 +25,7 @@ namespace WaFFLs
 
         public void Parse(League leagueData)
         {
-            for (int year = 1996; year <= 2017; year++)
+            for (int year = 1996; year <= 2019; year++)
             {
 //                Console.WriteLine("{0}", year);
 

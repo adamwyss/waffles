@@ -18,8 +18,8 @@ namespace WaFFLs
 
         static void Main(string[] args)
         {
-            //            UpdateYear(2014);
-
+            //    for (int i = 1996; i <= 2019; i++)
+            //        UpdateYear(i);
 
             League leagueData = new League();
 
@@ -48,7 +48,7 @@ namespace WaFFLs
             //GetChampionships(leagueData);
             //GetAverages(leagueData);
             //var team = leagueData.Teams.Single(t => t.Name == "Rocky Mountain Oysters");
-            //GetAverages(team);
+            GetAverages(leagueData);
 
             Console.WriteLine("Completed");
         }

@@ -16,6 +16,14 @@ namespace WaFFLs
         public string GetStandingsDataForYear(int year)
         {
             string url = string.Format(UrlFormat, year);
+            if (year == 2018)
+            {
+                url = string.Format(UrlFormat, "Copied-2017");
+            }
+            else if (year == 2019)
+            {
+                url = string.Format(UrlFormat, "Copied-2018");
+            }
 
             using (WebClient client = new WebClient())
             {
@@ -26,7 +34,7 @@ namespace WaFFLs
 
     public class CachedWaFFLDataSource : IWaFFLDataSource
     {
-        public const string PathFormat = @"C:\Users\adamwy\Documents\visual studio 2010\Projects\WaFFLs\WaFFLs\TestData\{0}.txt";
+        public const string PathFormat = @"S:\waffles\WaFFLs\TestData\{0}.txt";
 
         public string GetStandingsDataForYear(int year)
         {
