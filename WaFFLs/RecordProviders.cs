@@ -6,6 +6,93 @@ using WaFFLs.Generation.Models;
 
 namespace WaFFLs
 {
+    public class MostWinsInCareerIncludingPlayoffs : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostWinsInCareerIncludingPlayoffs(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            var teams = _leagueData.Teams.Select(t => new { Team = t, Wins = t.Games.Count(g => g.IsWinningTeam(t)) })
+                                        .OrderByDescending(x => x.Wins)
+                                        .Take(_count);
+
+            return teams.Select(t => new CareerRecord() { Value = t.Wins, Team = t.Team }).ToList();
+        }
+    }
+
+    public class MostLossesInCareerIncludingPlayoffs : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostLossesInCareerIncludingPlayoffs(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            var teams = _leagueData.Teams.Select(t => new { Team = t, Wins = t.Games.Count(g => g.IsLosingTeam(t)) })
+                                        .OrderByDescending(x => x.Wins)
+                                        .Take(_count);
+
+            return teams.Select(t => new CareerRecord() { Value = t.Wins, Team = t.Team }).ToList();
+        }
+    }
+
+    public class MostWinsInASeason : ISeasonRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostWinsInASeason(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<SeasonRecord> GetData()
+        {
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.IsRegular())
+                                                           .GroupBy(g => g.Week.Season.Year)
+                                                           .Select(s => new { Team = t, Year = s.Key, Wins = s.Count(g => g.IsWinningTeam(t)) }))
+                                         .OrderByDescending(x => x.Wins)
+                                         .Take(_count);
+
+            return teams.Select(t => new SeasonRecord() { Value = t.Wins, Team = t.Team, Year = t.Year }).ToList();
+        }
+    }
+
+    public class MostLossesInASeason : ISeasonRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostLossesInASeason(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<SeasonRecord> GetData()
+        {
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.IsRegular())
+                                                           .GroupBy(g => g.Week.Season.Year)
+                                                           .Select(s => new { Team = t, Year = s.Key, Losses = s.Count(g => g.IsLosingTeam(t)) }))
+                                         .OrderByDescending(x => x.Losses)
+                                         .Take(_count);
+
+            return teams.Select(t => new SeasonRecord() { Value = t.Losses, Team = t.Team, Year = t.Year }).ToList();
+        }
+    }
 
     public class MostPointsScoredInASeason : ISeasonRecordProvider
     {

@@ -68,7 +68,11 @@ namespace WaFFLs.Generation
                 using (var writer = new StreamWriter(_root + recordProvider.GetType().Name + ".htm"))
                 {
                     object model = modelResolver(recordProvider);
-                    razor.RunCompile(template, writer, null, model);
+
+                    var viewBag = new DynamicViewBag();
+                    viewBag.AddValue("Title", recordProvider.GetType().Name);
+                    
+                    razor.RunCompile(template, writer, null, model, viewBag);
                 }
             }
         }

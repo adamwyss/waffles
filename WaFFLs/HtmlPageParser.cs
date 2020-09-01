@@ -221,6 +221,11 @@ namespace WaFFLs
                             var newwrapper = new XElement("temp", unwrappedItems);
                             individualGames = new[] { newwrapper };
                         }
+                        else if (count == 1 && year == 2019 && text == "Week 8")
+                        {
+                            // lots of nested div's for this week. 
+                            individualGames = individualGames.Single().Elements("div").Elements("div").ToArray();
+                        }
                         else if (count == 1)
                         {
                             individualGames = individualGames.Elements("font").ToArray();
@@ -309,6 +314,8 @@ namespace WaFFLs
 
                     if (year == 2015 && weekData.Name == "Week 11")
                     {
+                        // score mis-recorded as 10,069 - assuming 1,069
+
                         foreach (var element in individualGames)
                         {
                             if (element.Value == "Dont Tase Me Bro 10069, Rocky Mountain Oysters 907")
@@ -320,6 +327,9 @@ namespace WaFFLs
 
                     if (year == 2016 && weekData.Name == "Week 2")
                     {
+                        // two scores were recorded in a single cell, so adding an additional cell with
+                        // the second value
+
                         foreach (var element in individualGames)
                         {
                             if (element.Value == "Speed Demons 1015, Bayou Boys 971 \nWolves 846, Monica Loves Clinton Dix 732")
@@ -329,8 +339,21 @@ namespace WaFFLs
                         }
 
                         int size = individualGames.Length;
-                        Array.Resize(ref individualGames, size+1);
+                        Array.Resize(ref individualGames, size + 1);
                         individualGames[size] = XElement.Parse("<div align=\"left\">Wolves 846, Monica Loves Clinton Dix 732</div>");
+                    }
+
+                    if (year == 2019 && weekData.Name == "Week 10")
+                    {
+                        // dominators had a special character infront of their score.
+
+                        foreach (var element in individualGames)
+                        {
+                            if (element.Value == "Koothrapaulli Browns 915, Dominators @742 ")
+                            {
+                                element.Value = "Koothrapaulli Browns 915, Dominators 742";
+                            }
+                        }
                     }
 
                     foreach (var ig in individualGames)
