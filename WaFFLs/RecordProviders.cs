@@ -6,6 +6,8 @@ using WaFFLs.Generation.Models;
 
 namespace WaFFLs
 {
+    [Title(Text = "Most Wins for a Team")]
+    [Summary(Text = "Includes regular season and playoff wins.")]
     public class MostWinsInCareerIncludingPlayoffs : ICareerRecordProvider
     {
         private readonly League _leagueData;
@@ -27,6 +29,8 @@ namespace WaFFLs
         }
     }
 
+    [Title(Text = "Most Losses for a Team")]
+    [Summary(Text = "Includes regular season and playoff losses.")]
     public class MostLossesInCareerIncludingPlayoffs : ICareerRecordProvider
     {
         private readonly League _leagueData;
@@ -48,6 +52,8 @@ namespace WaFFLs
         }
     }
 
+    [Title(Text = "Most Wins in a Single Season")]
+    [Summary(Text = "Includes regular season wins and playoff wins.")]
     public class MostWinsInASeason : ISeasonRecordProvider
     {
         private readonly League _leagueData;
@@ -61,36 +67,12 @@ namespace WaFFLs
 
         public List<SeasonRecord> GetData()
         {
-            var teams = _leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.IsRegular())
-                                                           .GroupBy(g => g.Week.Season.Year)
-                                                           .Select(s => new { Team = t, Year = s.Key, Wins = s.Count(g => g.IsWinningTeam(t)) }))
-                                         .OrderByDescending(x => x.Wins)
-                                         .Take(_count);
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.GroupBy(g => g.Week.Season.Year)
+                                                                 .Select(s => new { Team = t, Year = s.Key, Wins = s.Count(g => g.IsWinningTeam(t)) }))
+                                                                 .OrderByDescending(x => x.Wins)
+                                                                 .Take(_count);
 
             return teams.Select(t => new SeasonRecord() { Value = t.Wins, Team = t.Team, Year = t.Year }).ToList();
-        }
-    }
-
-    public class MostLossesInASeason : ISeasonRecordProvider
-    {
-        private readonly League _leagueData;
-        private readonly int _count;
-
-        public MostLossesInASeason(League leagueData, int count = 10)
-        {
-            _leagueData = leagueData;
-            _count = count;
-        }
-
-        public List<SeasonRecord> GetData()
-        {
-            var teams = _leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.IsRegular())
-                                                           .GroupBy(g => g.Week.Season.Year)
-                                                           .Select(s => new { Team = t, Year = s.Key, Losses = s.Count(g => g.IsLosingTeam(t)) }))
-                                         .OrderByDescending(x => x.Losses)
-                                         .Take(_count);
-
-            return teams.Select(t => new SeasonRecord() { Value = t.Losses, Team = t.Team, Year = t.Year }).ToList();
         }
     }
 

@@ -70,7 +70,8 @@ namespace WaFFLs.Generation
                     object model = modelResolver(recordProvider);
 
                     var viewBag = new DynamicViewBag();
-                    viewBag.AddValue("Title", recordProvider.GetType().Name);
+                    viewBag.AddValue("Title", TitleAttribute.GetTitleText(recordProvider));
+                    viewBag.AddValue("Summary", SummaryAttribute.GetSummaryText(recordProvider));
                     
                     razor.RunCompile(template, writer, null, model, viewBag);
                 }
