@@ -23,9 +23,9 @@ namespace WaFFLs
             _playoffExtractor = new PlayoffGameExtractor(teamResolver);
         }
 
-        public void Parse(League leagueData)
+        public void Parse(League leagueData, int startYear, int endYear)
         {
-            for (int year = 1996; year <= 2019; year++)
+            for (int year = startYear; year <= endYear; year++)
             {
 //                Console.WriteLine("{0}", year);
 

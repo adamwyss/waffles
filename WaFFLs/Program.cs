@@ -26,7 +26,7 @@ namespace WaFFLs
             IWaFFLDataSource dataProvider = new CachedWaFFLDataSource();
             ITeamResolver teamResolver = new LeagueTeamResolver(leagueData);
             var parser = new HtmlPageParser(dataProvider, teamResolver);
-            parser.Parse(leagueData);
+            parser.Parse(leagueData, 1996, 2020);
 
             var e = new Engine(leagueData, "s:\\temp\\");
 
@@ -42,13 +42,13 @@ namespace WaFFLs
 
 
             //GetAllTeamsEverInLeague(leagueData);
-            //GetAllTeamsInSeason(leagueData, 2016);
+            GetAllTeamsInSeason(leagueData, 2020);
             //GetTeamsAndYearsPlayed(leagueData);
             //GetTeamsAndPlayoffAppearances(leagueData);
             //GetChampionships(leagueData);
             //GetAverages(leagueData);
             //var team = leagueData.Teams.Single(t => t.Name == "Rocky Mountain Oysters");
-            GetAverages(leagueData);
+            //GetAverages(leagueData);
 
             Console.WriteLine("Completed");
         }
