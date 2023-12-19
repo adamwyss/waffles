@@ -11,5 +11,7 @@ namespace WaFFLs.Generation.Models
         public int Value { get; set; }
 
         public Team Team { get; set; }
+
+        public string Notes { get; set; }
     }
 }

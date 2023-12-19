@@ -18,8 +18,8 @@ namespace WaFFLs
 
         static void Main(string[] args)
         {
-            //    for (int i = 1996; i <= 2019; i++)
-            //        UpdateYear(2022);
+            //for (int i = 1996; i <= 2023; i++)
+            //    UpdateYear(2023);
 
             League leagueData = new League();
 
@@ -45,7 +45,6 @@ namespace WaFFLs
             GetAllTeamsInSeason(leagueData, 2022);
             //GetTeamsAndYearsPlayed(leagueData);
             //GetTeamsAndPlayoffAppearances(leagueData);
-            //GetChampionships(leagueData);
             //GetAverages(leagueData);
             //var team = leagueData.Teams.Single(t => t.Name == "Rocky Mountain Oysters");
             //GetAverages(leagueData);
@@ -138,39 +137,6 @@ namespace WaFFLs
                 Console.WriteLine("");
 
             }
-        }
-
-        private static void GetChampionships(League leagueData)
-        {
-            Dictionary<Team, List<int>> cache = new Dictionary<Team, List<int>>();
-
-            foreach (var season in leagueData.Seasons)
-            {
-                var bowl = season.Playoffs.Single(w => w.Name.StartsWith("Fantasy Bowl")).Games.SingleOrDefault();
-                if (bowl == null)
-                    break;
-
-                Team champion = bowl.GetWinningTeam();
-                Console.WriteLine("{0} {1}", season.Year, champion.Name);
-
-                List<int> years;
-                bool exists = cache.TryGetValue(champion, out years);
-                if (!exists)
-                {
-                    years = new List<int>();
-                    cache.Add(champion, years);
-                }
-                years.Add(season.Year);
-            }
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-            foreach (var item in cache.OrderByDescending(x => x.Value.Count))
-            {
-                Console.WriteLine("{0, -30} {1}", item.Key.Name, string.Join(", ", item.Value));
-            }
-
         }
 
         private static void GetAverages(League leagueData)

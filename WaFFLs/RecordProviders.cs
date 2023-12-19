@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RazorEngine.Templating;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WaFFLs.Generation;
@@ -6,6 +7,99 @@ using WaFFLs.Generation.Models;
 
 namespace WaFFLs
 {
+
+    [Title(Text = "Most Fantasy Bowl Appearances")]
+    [Summary(Text = "Who has appeared in the Fantasy bowl the most times.")]
+    public class MostFantasyBowlAppearances : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostFantasyBowlAppearances(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            Dictionary<Team, List<int>> cache = new Dictionary<Team, List<int>>();
+
+            foreach (var season in _leagueData.Seasons)
+            {
+                var bowl = season.Playoffs.Single(w => w.Name.StartsWith("Fantasy Bowl")).Games.SingleOrDefault();
+                if (bowl == null)
+                    break;
+
+                Team champion = bowl.GetWinningTeam();
+                Team runnerup = bowl.GetLosingTeam();
+
+                List<int> years;
+                bool exists = cache.TryGetValue(champion, out years);
+                if (!exists)
+                {
+                    years = new List<int>();
+                    cache.Add(champion, years);
+                }
+                years.Add(season.Year);
+
+
+                exists = cache.TryGetValue(runnerup, out years);
+                if (!exists)
+                {
+                    years = new List<int>();
+                    cache.Add(runnerup, years);
+                }
+                years.Add(season.Year);
+            }
+            
+            return cache.Select(c => new CareerRecord() { Value = c.Value.Count, Team = c.Key, Notes = string.Join(",", c.Value) })
+                        .OrderByDescending(t => t.Value)
+                        .ToList();
+        }
+    }
+
+    [Title(Text = "Most Fantasy Championships")]
+    [Summary(Text = "Who has won the Fantasy bowl the most times.")]
+    public class MostFantasyBowlChampionships : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostFantasyBowlChampionships(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            Dictionary<Team, List<int>> cache = new Dictionary<Team, List<int>>();
+
+            foreach (var season in _leagueData.Seasons)
+            {
+                var bowl = season.Playoffs.Single(w => w.Name.StartsWith("Fantasy Bowl")).Games.SingleOrDefault();
+                if (bowl == null)
+                    break;
+
+                Team champion = bowl.GetWinningTeam();
+
+                List<int> years;
+                bool exists = cache.TryGetValue(champion, out years);
+                if (!exists)
+                {
+                    years = new List<int>();
+                    cache.Add(champion, years);
+                }
+                years.Add(season.Year);
+            }
+
+            return cache.Select(c => new CareerRecord() { Value = c.Value.Count, Team = c.Key, Notes = string.Join(",", c.Value) })
+                        .OrderByDescending(t => t.Value)
+                        .ToList();
+        }
+    }
+
     [Title(Text = "Most Wins for a Team")]
     [Summary(Text = "Includes regular season and playoff wins.")]
     public class MostWinsInCareerIncludingPlayoffs : ICareerRecordProvider

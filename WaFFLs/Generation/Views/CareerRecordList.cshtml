@@ -13,7 +13,14 @@
 <ol>
     @foreach (var x in Model)
     {
-        <li>@x.Value.WithCommas() @x.Team.GetDisplayName()</li>
+        <li>
+            @x.Value.WithCommas()
+            @x.Team.GetDisplayName()
+            @if (!string.IsNullOrWhiteSpace(x.Notes))
+            {
+                <text><small>(<em>@x.Notes</em>)</small></text>
+            }
+        </li>
     }
 </ol>
 
