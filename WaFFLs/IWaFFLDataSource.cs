@@ -34,7 +34,7 @@ namespace WaFFLs
 
     public class CachedWaFFLDataSource : IWaFFLDataSource
     {
-        public const string PathFormat = @"S:\waffles\WaFFLs\TestData\{0}.txt";
+        public const string PathFormat = @"C:\Source\waffles\WaFFLs\TestData\{0}.txt";
 
         public string GetStandingsDataForYear(int year)
         {

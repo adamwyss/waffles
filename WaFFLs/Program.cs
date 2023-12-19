@@ -19,16 +19,16 @@ namespace WaFFLs
         static void Main(string[] args)
         {
             //    for (int i = 1996; i <= 2019; i++)
-            //        UpdateYear(i);
+            //        UpdateYear(2022);
 
             League leagueData = new League();
 
             IWaFFLDataSource dataProvider = new CachedWaFFLDataSource();
             ITeamResolver teamResolver = new LeagueTeamResolver(leagueData);
             var parser = new HtmlPageParser(dataProvider, teamResolver);
-            parser.Parse(leagueData, 1996, 2020);
+            parser.Parse(leagueData, 1996, 2022);
 
-            var e = new Engine(leagueData, "s:\\temp\\");
+            var e = new Engine(leagueData, "c:\\waffles-output");
 
             var providers =
                 typeof(Program).Assembly.GetTypes()
@@ -38,11 +38,11 @@ namespace WaFFLs
 
             e.Generate(providers);
 
-            Process.Start("s:\\temp\\index.htm");
+            Process.Start("c:\\waffles-output\\index.htm");
 
 
             //GetAllTeamsEverInLeague(leagueData);
-            GetAllTeamsInSeason(leagueData, 2020);
+            GetAllTeamsInSeason(leagueData, 2022);
             //GetTeamsAndYearsPlayed(leagueData);
             //GetTeamsAndPlayoffAppearances(leagueData);
             //GetChampionships(leagueData);

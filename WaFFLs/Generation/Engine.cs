@@ -197,7 +197,7 @@ namespace WaFFLs.Generation
         {
             var results = new List<SeasonInfo>();
 
-            var seasonGroups = team.Games.GroupBy(g => g.Week.Season);
+            var seasonGroups = team.Games.GroupBy(g => g.Week.Season).OrderByDescending(g => g.Key.Year);
             foreach (var games in seasonGroups)
             {
                 var regularGames = games.Where(g => g.Week.Name.StartsWith("Week ")).ToList();

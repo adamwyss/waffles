@@ -67,6 +67,12 @@ namespace WaFFLs
         {
             var weeks = postseason.Element("tbody").Elements("tr").ToArray();
 
+            if ((year == 2021 || year == 2022) && weeks.Length == 5)
+            {
+                // an extra element was added in 2021
+                weeks = weeks.Take(weeks.Length - 1).ToArray();
+            }
+
             for (int i = 0; i < weeks.Length; i += 2)
             {
                 var headers = weeks[i].Elements("td").ToArray();
@@ -86,6 +92,17 @@ namespace WaFFLs
                     seasonData.Playoffs.Add(weekData);
 
                     var individualGames = games[j].Elements("div").ToArray();
+                    if (individualGames.Length == 0 && year == 2021)
+                    {
+                        if (text == "Fantasy Bowl XXVI")
+                        {
+                            individualGames = new XElement[] { XElement.Parse("<div>Marauding Nomads 1306, Sporky's Revenge 713</div>") };
+                        }
+                        else
+                        {
+                            individualGames = games[j].Elements("font").ToArray();
+                        }
+                    }
 
                     foreach (var g in individualGames)
                     {
@@ -352,6 +369,19 @@ namespace WaFFLs
                             if (element.Value == "Koothrapaulli Browns 915, Dominators @742 ")
                             {
                                 element.Value = "Koothrapaulli Browns 915, Dominators 742";
+                            }
+                        }
+                    }
+
+                    if (year == 2021 && weekData.Name == "Week 12")
+                    {
+                        // Rocky mountian oysters is mis-spelled
+
+                        foreach (var element in individualGames)
+                        {
+                            if (element.Value == "Sporky's Revenge 1043, Rocky Mouyntain Oysters 369 ")
+                            {
+                                element.Value = "Sporky's Revenge 1043, Rocky Mountain Oysters 369";
                             }
                         }
                     }
