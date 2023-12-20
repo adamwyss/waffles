@@ -92,11 +92,15 @@ namespace WaFFLs
                     seasonData.Playoffs.Add(weekData);
 
                     var individualGames = games[j].Elements("div").ToArray();
-                    if (individualGames.Length == 0 && year == 2021)
+                    if (individualGames.Length == 0 && year == 2021 || year == 2022)
                     {
                         if (text == "Fantasy Bowl XXVI")
                         {
                             individualGames = new XElement[] { XElement.Parse("<div>Marauding Nomads 1306, Sporky's Revenge 713</div>") };
+                        }
+                        else if (text == "Fantasy Bowl XXVII")
+                        {
+                            individualGames = new XElement[] { XElement.Parse("<div>Ultracogs 826, Truffle Shuffle 795</div>") };
                         }
                         else
                         {
@@ -278,20 +282,75 @@ namespace WaFFLs
                         individualGames = temp.ToArray();
                     }
 
-                    if (year == 2006 && weekData.Name == "Week 13")
+                    if (year == 2003 && weekData.Name == "Week 1")
                     {
-                        // Data is screwed up in week 13, 2006.  It appears that
-                        // teams were playing the other division in the conference
-                        // there for, Drunken Squirrels must of played the Ultracogs
-                        // since the 'cogs shared a division with Team Bean.
-                        //
-                        // Team Bean[DS] 709, Ultracogs 417
+                        // Data is screwed up in week 1, 2013.  The Phantoms120 and Nuclear181
+                        // were given no score that week. The new scored were calculated by
+                        // totaling the results of all other games and subtracting the seasons
+                        // points for.
 
                         foreach (var element in individualGames)
                         {
-                            if (element.Value == "Team Bean 709, Ultracogs 417")
+                            if (element.Value == "Phantom120, Rocky Mountain Oysters 382")
                             {
-                                element.Value = "Drunken Squirrels 709, Ultracogs 417";
+                                element.Value = "Phantom120 572, Rocky Mountain Oysters 382";
+                            }
+                            else if (element.Value == "Nuclear181, Team Bean 441")
+                            {
+                                element.Value = "Nuclear181 1018, Team Bean 441";
+                            }
+                        }
+                    }
+
+                    if (year == 2006 && weekData.Name == "Week 13")
+                    {
+                        // Data is screwed up in week 13, 2006.  It is nearly a copy of
+                        // week 11.  It is an interdivision week and should be matched
+                        // with Week 2.  Double checked with week 12 & 13 to ensure no
+                        // overlap.  Scores were computed by diffing remingn 13 weeks with 
+                        // points for. Assuming TB & UC core is correct, since it is a delta with
+                        // week 11 - TB matched perfectly, UC was off by 150ish..  BB scored 1757
+                        // via calculation, which is an enormous score, so assuming a -150pt
+                        // mistake - since this would be a top 10 score 
+                        //
+                        // [Correct]  Team Bean 709, Ultracogs 417       
+                        // [Adjusted] Wolfins 782, Overpaid Crybabies 1338
+                        // [Adjusted] Marauding Nomads 670, Eternals 1296
+                        // [Adjusted] Wolves 782, Drunken Squirrels 1081
+                        // [Adjusted] Bayou Boys 1607, Dominators 523
+                        // [Adjusted] Sporky's Revenge 809, Red Raiders 1177
+                        // [Adjusted] Fighting Calrissians 735, TD Matrix 363
+                        // [Adjusted] Phantoms 727, Rocky Mountain Oysters 888
+
+                        foreach (var element in individualGames)
+                        {
+                            if (element.Value == "Overpaid Crybabies 1382, Marauding Nomads 1113")
+                            {
+                                element.Value = "Wolfins 782, Overpaid Crybabies 1338";
+                            }
+                            else if (element.Value == "Team Bean 661, Wolves 510")
+                            {
+                                element.Value = "Marauding Nomads 670, Eternals 1296";
+                            }
+                            else if (element.Value == "Wolfins 752, Eternals 421")
+                            {
+                                element.Value = "Wolves 782, Drunken Squirrels 1081";
+                            }
+                            else if (element.Value == "Dominators 681, Phantoms 488")
+                            {
+                                element.Value = "Bayou Boys 1607, Dominators 523";
+                            }
+                            else if (element.Value == "Sporky's Revenge 888, TD Matrix 500")
+                            {
+                                element.Value = "Sporky's Revenge 809, Red Raiders 1177";
+                            }
+                            else if (element.Value == "Bayou Boys 1008, Rocky Mountain Oysters 779")
+                            {
+                                element.Value = "Fighting Calrissians 735, TD Matrix 363";
+                            }
+                            else if (element.Value == "Fighting Calrissians 1448, Red Raiders 423")
+                            {
+                                element.Value = "Phantoms 727, Rocky Mountain Oysters 888";
                             }
                         }
                     }
@@ -445,14 +504,6 @@ namespace WaFFLs
                 // there is no score data for FC this week, so this was calculated by totaling the
                 // results of all games and subtracting the seaons points for.
                 score = "819";
-            }
-
-            if (scoreData.Game.Week.Name == "Week 1" && scoreData.Game.Week.Season.Year == 2003 &&
-                team == "Phantom")
-            {
-                // in 2003 the team was called the Phantoms, but was recorded as
-                // phantom
-                team = "Phantom120";
             }
 
             int scoreInt = Convert.ToInt32(score);
