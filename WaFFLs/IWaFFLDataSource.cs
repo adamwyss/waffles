@@ -24,6 +24,10 @@ namespace WaFFLs
             {
                 url = string.Format(UrlFormat, "Copied-2018");
             }
+            else if (year== 2023)
+            {
+                url = string.Format(UrlFormat, "Copied-2022");
+            }
 
             using (WebClient client = new WebClient())
             {

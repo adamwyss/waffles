@@ -67,7 +67,7 @@ namespace WaFFLs
         {
             var weeks = postseason.Element("tbody").Elements("tr").ToArray();
 
-            if ((year == 2021 || year == 2022) && weeks.Length == 5)
+            if ((year == 2021 || year == 2022 || year == 2023) && weeks.Length == 5)
             {
                 // an extra element was added in 2021
                 weeks = weeks.Take(weeks.Length - 1).ToArray();

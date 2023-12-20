@@ -26,7 +26,7 @@ namespace WaFFLs
             IWaFFLDataSource dataProvider = new CachedWaFFLDataSource();
             ITeamResolver teamResolver = new LeagueTeamResolver(leagueData);
             var parser = new HtmlPageParser(dataProvider, teamResolver);
-            parser.Parse(leagueData, 1996, 2022);
+            parser.Parse(leagueData, 1996, 2023);
 
             var e = new Engine(leagueData, "c:\\waffles-output");
 
@@ -42,7 +42,7 @@ namespace WaFFLs
 
 
             //GetAllTeamsEverInLeague(leagueData);
-            GetAllTeamsInSeason(leagueData, 2022);
+            GetAllTeamsInSeason(leagueData, 2023);
             //GetTeamsAndYearsPlayed(leagueData);
             //GetTeamsAndPlayoffAppearances(leagueData);
             //GetAverages(leagueData);
