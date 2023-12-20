@@ -13,7 +13,7 @@
         <ul>
             @foreach (var x in Model.OrderByDescending(x => x.SeasonRecord.Wins).ThenByDescending(x => x.LastSeason))
             {
-                <li><a href="@x.Filename">@x.Name</a> @x.SeasonRecord.Wins-@x.SeasonRecord.Losses @x.PlayoffRecord.Wins-@x.PlayoffRecord.Losses</li>
+                <li><a href="@x.Filename">@x.Name</a> @x.SeasonRecord.Wins-@x.SeasonRecord.Losses <small>@x.PlayoffRecord.Wins-@x.PlayoffRecord.Losses</small></li>
             }
         </ul>
     </div>

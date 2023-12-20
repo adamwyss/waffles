@@ -8,6 +8,8 @@ namespace WaFFLs.Generation.Models
 
         public string Name { get; set; }
 
+        public string Owner { get; set; }
+
         public int FirstSeason { get; set; }
 
         public int LastSeason { get; set; }

@@ -134,6 +134,7 @@ namespace WaFFLs.Generation
             var teams = _leagueData.Teams.Select(t => new TeamInfo
             {
                 Name = t.Name,
+                Owner = t.Owner,
                 FirstSeason = t.Games.Min(g => g.Week.Season.Year),
                 LastSeason = t.Games.Max(g => g.Week.Season.Year),
                 Filename = GetSafeFilename(t.Name + ".htm"),
