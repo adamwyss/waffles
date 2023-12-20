@@ -16,6 +16,11 @@ else
 {
     <text>(@Model.FirstSeason - @Model.LastSeason)</text>
 }
+<br/>
+@foreach (var team in Model.OtherNames)
+{
+    <small>@team</small><br/>
+}
 </p>
 
     <p>Record: @Model.SeasonRecord.Wins - @Model.SeasonRecord.Losses (@Model.SeasonRecord.Percentage.AsWinningPercentage())</p>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RazorEngine.Templating;
 using System.Collections.Generic;
 using System.IO;
@@ -134,7 +134,8 @@ namespace WaFFLs.Generation
             var teams = _leagueData.Teams.Select(t => new TeamInfo
             {
                 Name = t.Name,
-                Owner = t.Owner,
+                Owner = LeagueTeamResolver.GetOwner(t),
+                OtherNames = LeagueTeamResolver.GetOtherNames(t),
                 FirstSeason = t.Games.Min(g => g.Week.Season.Year),
                 LastSeason = t.Games.Max(g => g.Week.Season.Year),
                 Filename = GetSafeFilename(t.Name + ".htm"),

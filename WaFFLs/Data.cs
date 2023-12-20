@@ -202,8 +202,6 @@ namespace WaFFLs
 
         public string Name { get; set; }
 
-        public string Owner { get; set; }
-
         public List<Game> Games { get; set; }
     }
 

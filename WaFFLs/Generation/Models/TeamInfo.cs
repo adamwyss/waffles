@@ -10,6 +10,8 @@ namespace WaFFLs.Generation.Models
 
         public string Owner { get; set; }
 
+        public List<string> OtherNames { get; set; }
+
         public int FirstSeason { get; set; }
 
         public int LastSeason { get; set; }

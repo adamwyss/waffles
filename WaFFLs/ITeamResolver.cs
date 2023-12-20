@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace WaFFLs
 {
@@ -38,7 +39,7 @@ namespace WaFFLs
             // Ryan Simmons
             { "Avalanche", "Marauding Nomads" }, // 1996-1997
             { "Western Marauders", "Marauding Nomads" }, // 1998
-            { "Blue Thunder", "Marauding Nomads" }, // 1999
+            { "Blue Thunder", "Marauding Nomads" }, // 1999 (?)
 
             // Tad Carlson
             { "Bellevue Renegades", "Sporky's Revenge"}, // 2000
@@ -56,7 +57,10 @@ namespace WaFFLs
             { "Phantom122", "Phantoms"}, // 2005
 
             // Jeannie Thompson
-            { "Housh's Your Daddy", "Truffle Shuffle" }, // 2009
+            { "Housh's Your Daddy", "Truffle Shuffle" }, // 2009 (?)
+
+            // Eric Franklin
+            { "Eternals", "Everett Eternals" }, // 2005-2007
         };
 
         private readonly static Dictionary<string, string> TeamOwners = new Dictionary<string, string>
@@ -79,6 +83,35 @@ namespace WaFFLs
             { "Dominators", "George Demonakos" },
             { "Anal Cleansing Technicians", "Brian Wyss" },
             { "TD Matrix", "Tyler Mellema" },
+            { "Fighting Calrissians", "Chris Rangel (& Theo Fisher for 2015 W8+)" },
+            { "Don't Tase Me Bro", "Darren Divito" },
+            { "X-Factor", "Theo Fisher" },
+            { "Doom Patrol", "Michael Byers" },
+            { "Brawlers II", "Justin Bronn" },
+            { "A-Team", "Jesse Stoner" },
+            { "Red Raiders", "Michael Williams" },
+            { "Monica Loves Clinton Dix", "Greg Rockenstire (& Anthony Davis for 2018 W9+)" },
+            { "Procrastinators", "Richard Scaniffe" },
+            { "Overpaid Crybabies", "Michael Elliott" },
+            { "Fish On", "Cindy Harris" },
+            { "Drunken Squirrels", "Dan Parker" },
+            { "Eskimoes", "Ernie Nieto" },
+            { "Craig's Broncos", "Craig Myrtle" },
+            { "Stormtroopers", "Sean Tindell" },
+            { "Nuclear181", "Nickolas Hanson" },
+            { "Everett Eternals", "Eric Franklin" },
+            { "Erasers", "Matt Charleton" },
+            { "Nick Baker's Touchdown Makers", "Nick Baker" },
+            { "Buffy's Bombardiers", "Jeff Brister" },
+            { "Nonoxynol Nightmares", "David Tyner" }, 
+            { "Marshal Law", "Marshal Watson" },
+            { "Blitzkrieg ", "Jeremy Whitman" },
+            { "Anayalaters", "Gustavo Anaya" },
+            { "Demons", "Jon Joubert" },
+            { "Big Daddy Spanks", "Tim Bunson" },
+            { "Twin Bombers", "Doug Pell" },
+            { "Kumar's Klan", "Subodh Kumar" },
+            { "Oklahoma City Bombers", "Chris Pilon" },
         };
 
         private readonly League _league;
@@ -88,6 +121,24 @@ namespace WaFFLs
         public LeagueTeamResolver(League league)
         {
             _league = league;
+        }
+
+
+        public static string GetOwner(Team team)
+        {
+            string owner;
+            bool hasOwner = TeamOwners.TryGetValue(team.Name, out owner);
+            if (hasOwner)
+            {
+                return owner;
+            }
+
+            return null;
+        }
+
+        public static List<string> GetOtherNames(Team team)
+        {
+            return TeamNameRenames.Where(p => p.Value == team.Name).Select(p => p.Key).Reverse().ToList();
         }
 
         public Team GetTeamByName(string name)
@@ -128,14 +179,6 @@ namespace WaFFLs
             {
                 team = new Team() { Name = name };
                 _league.Teams.Add(team);
-
-                string owner;
-                bool hasOwner = TeamOwners.TryGetValue(name, out owner);
-                if (hasOwner)
-                {
-                    team.Owner = owner;
-                }
-
             }
 
             return team;
