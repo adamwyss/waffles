@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using RazorEngine.Templating;
 using System.Collections.Generic;
 using System.IO;
@@ -149,13 +149,17 @@ namespace WaFFLs.Generation
                 PlayoffRecord = GetPlayoffRecordForTeam(t),
                 HeadToHeadRecords = GetHeadToHeadRecordsFor(t),
                 Seasons = GetAllGamesBySeasonForTeam(t),
+                ChampionshipYears = GetChampionshipYears(t)
             }).ToList();
 
-
-
-
-
             return teams;
+        }
+
+        private List<int> GetChampionshipYears(Team teamData)
+        {
+            return teamData.Games.Where(g => g.Week.Name.StartsWith("Fantasy Bowl") && g.IsWinningTeam(teamData))
+                                 .Select(g => g.Week.Season.Year)
+                                 .ToList();
         }
 
         private static List<TeamStanding> GetHeadToHeadRecordsFor(Team teamData)
@@ -198,8 +202,6 @@ namespace WaFFLs.Generation
 
             return new Record() { Wins = wins, Losses = losses };
         }
-
-
 
         private static List<SeasonInfo> GetAllGamesBySeasonForTeam(Team team)
         {
@@ -265,8 +267,6 @@ namespace WaFFLs.Generation
 
 
             return "teams/" + string.Join("_", filename.Split(Path.GetInvalidFileNameChars()));
-
         }
-
     }
 }

@@ -9,13 +9,35 @@
     </style>
 </head>
 <body>
-    <div>
-        <ul>
+    <table width="90%">
+        <tbody>
+            <tr>
+                <th>Team</th>
+                <th>Years</th>
+                <th>Record</th>
+                <th>Playoff</th>
+                <th>Championships</th>
+            </tr>
             @foreach (var x in Model.OrderByDescending(x => x.SeasonRecord.Wins).ThenByDescending(x => x.LastSeason))
             {
-                <li><a href="@x.Filename">@x.Name</a> @x.SeasonRecord.Wins-@x.SeasonRecord.Losses <small>@x.PlayoffRecord.Wins-@x.PlayoffRecord.Losses</small></li>
+                <tr>
+                    <td><a href="@x.Filename">@x.Name</a></td>
+                    <td>
+                        @if (x.FirstSeason == x.LastSeason)
+                        {
+                            <text>@x.FirstSeason</text>
+                        }
+                        else
+                        {
+                            <text>@x.FirstSeason-@x.LastSeason</text>
+                        }
+                    </td>
+                    <td>@x.SeasonRecord.Wins-@x.SeasonRecord.Losses</td>
+                    <td>@x.PlayoffRecord.Wins-@x.PlayoffRecord.Losses</td>
+                    <td><small>@string.Join(",", x.ChampionshipYears)</small></td>
+                </tr>
             }
-        </ul>
-    </div>
+        </tbody>
+    </table>
 </body>
 </html>

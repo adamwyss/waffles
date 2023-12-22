@@ -9,14 +9,14 @@
     </style>
 </head>
 <body>
-    <table width="100%">
+    <table width="90%">
         <tbody>
             <tr>
                 <th>Coach</th>
                 <th>Years</th>
                 <th>Record</th>
                 <th>Playoff</th>
-                <th></th>
+                <th>Championships</th>
             </tr>
             @foreach (var x in Model.OrderByDescending(x => x.SeasonRecord.Wins).ThenByDescending(x => x.LastSeason))
             {
@@ -34,6 +34,7 @@
                     </td>
                     <td>@x.SeasonRecord.Wins-@x.SeasonRecord.Losses</td>
                     <td>@x.PlayoffRecord.Wins-@x.PlayoffRecord.Losses</td>
+                    <td><small>@string.Join(",", x.ChampionshipYears)</small></td>
                 </tr>
             }
         </tbody>

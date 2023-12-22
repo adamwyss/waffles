@@ -23,6 +23,8 @@ namespace WaFFLs.Generation.Models
         public List<TeamStanding> HeadToHeadRecords { get; set; }
 
         public List<SeasonInfo> Seasons { get; set; }
+
+        public List<int> ChampionshipYears { get; set; }
     }
 
     public class SeasonInfo
