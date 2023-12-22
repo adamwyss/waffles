@@ -51,7 +51,7 @@ namespace WaFFLs
             { "Anal Retentive Pioneers", "Anal Cleansing Technicians"}, // 1996-1998
 
             // Josh Simmons
-            { "Stanwood Stampede", "Phantoms" }, // 1999 (?)
+            { "Slackers", "Phantoms" }, // 1999
             { "Phantom120", "Phantoms"}, // 2003
             { "Phantom121", "Phantoms"}, // 2004
             { "Phantom122", "Phantoms"}, // 2005
@@ -61,6 +61,22 @@ namespace WaFFLs
 
             // Eric Franklin
             { "Eternals", "Everett Eternals" }, // 2005-2007
+
+            // Jason Stoner
+            { "Screamin' Kookarachas", "M&M Connection" },
+            { "Two Thousand Fifty-Three", "M&M Connection" },
+
+            // Tristian Hampton
+            { "GSH", "Wishbone" },
+
+            // Carl Diana, Jr.
+            { "Lynnwood Parakeets", "Spokanites" },
+
+            // Tyler Mellema
+            { "TD Prowler", "TD Matrix" }, // 2009
+            // not 100% sure, but TD in the name and tyler's career W/L record is missing the exact amount.  leaving name as td matrix
+            // since it was used for 10 years, even though last name used was td prowler
+                                           
         };
 
         private readonly static Dictionary<string, string> TeamOwners = new Dictionary<string, string>
@@ -83,14 +99,14 @@ namespace WaFFLs
             { "Dominators", "George Demonakos" },
             { "Anal Cleansing Technicians", "Brian Wyss" },
             { "TD Matrix", "Tyler Mellema" },
-            { "Fighting Calrissians", "Chris Rangel (& Theo Fisher for 2015 W8+)" },
+            { "Fighting Calrissians", "Chris Rangel" }, // Theo Fisher for 2015 W8+
             { "Don't Tase Me Bro", "Darren Divito" },
             { "X-Factor", "Theo Fisher" },
             { "Doom Patrol", "Michael Byers" },
             { "Brawlers II", "Justin Bronn" },
             { "A-Team", "Jesse Stoner" },
             { "Red Raiders", "Michael Williams" },
-            { "Monica Loves Clinton Dix", "Greg Rockenstire (& Anthony Davis for 2018 W9+)" },
+            { "Monica Loves Clinton Dix", "Greg Rockenstire" }, // Anthony Davis for 2018 W9+
             { "Procrastinators", "Richard Scaniffe" },
             { "Overpaid Crybabies", "Michael Elliott" },
             { "Fish On", "Cindy Harris" },
@@ -105,13 +121,31 @@ namespace WaFFLs
             { "Buffy's Bombardiers", "Jeff Brister" },
             { "Nonoxynol Nightmares", "David Tyner" }, 
             { "Marshal Law", "Marshal Watson" },
-            { "Blitzkrieg ", "Jeremy Whitman" },
+            { "Blitzkrieg", "Jeremy Whitman" },
             { "Anayalaters", "Gustavo Anaya" },
             { "Demons", "Jon Joubert" },
             { "Big Daddy Spanks", "Tim Bunson" },
             { "Twin Bombers", "Doug Pell" },
             { "Kumar's Klan", "Subodh Kumar" },
             { "Oklahoma City Bombers", "Chris Pilon" },
+            { "Wolfins", "Chris Crockett & Tom Allanson"},
+            { "McBoo", "Larry Boushey & Mike Mickleberry"},
+            { "Magic City Rams", "Jay Burroughs"},
+            { "Greatest Show on Paper", "Kate Divito" },
+            { "No Luck Needed", "Jamie Ham" },
+            { "Krypteia", "Patrick Simmons" },
+            { "Wishbone", "Tristian Hampton" },
+            { "Spokanites", "Carl Diana, Jr." },
+
+            // mostly confident
+            { "Spartans", "Tim Miller" },
+
+            // not 100% sure, but the numbers work out
+            { "Baldwin on a Budget", "Jake Frauenholtz" },
+            { "M&M Connection", "Jason Stoner" },  // 100% confident on M&M, but other teams, less sure.
+            { "Stanwood Stampede", "Clint Witherspoon" },
+            { "Fourteen Fourteen", "Will Millard" },
+            { "Suck My Hawks", "Anthony Davis" }
         };
 
         private readonly League _league;

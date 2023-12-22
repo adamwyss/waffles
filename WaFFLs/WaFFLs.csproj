@@ -85,6 +85,7 @@
     <EmbeddedResource Include="Generation\Views\GameRecordList.cshtml" />
     <EmbeddedResource Include="Generation\Views\StreakRecordList.cshtml" />
     <EmbeddedResource Include="Generation\Views\Home.cshtml" />
+    <EmbeddedResource Include="Generation\Views\OwnerList.cshtml" />
     <None Include="packages.config" />
     <EmbeddedResource Include="Generation\Views\TeamList.cshtml" />
     <EmbeddedResource Include="Generation\Views\CareerRecordList.cshtml" />

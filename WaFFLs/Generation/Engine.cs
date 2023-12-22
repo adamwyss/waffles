@@ -81,6 +81,7 @@ namespace WaFFLs.Generation
         private void CacheViews(IRazorEngineService razor)
         {
             razor.AddTemplate("team-list", View.Get("TeamList.cshtml"));
+            razor.AddTemplate("owner-list", View.Get("OwnerList.cshtml"));
             razor.AddTemplate("team-info", View.Get("Team.cshtml"));
             razor.AddTemplate("individual-game-record-list", View.Get("IndividualGameRecordList.cshtml"));
             razor.AddTemplate("game-record-list", View.Get("GameRecordList.cshtml"));
@@ -97,6 +98,11 @@ namespace WaFFLs.Generation
             using (var writer = new StreamWriter(_root + "teams.htm"))
             {
                 razor.RunCompile("team-list", writer, null, teams.OrderBy(t => t.Name).ToList());
+            }
+
+            using (var writer = new StreamWriter(_root + "owners.htm"))
+            {
+                razor.RunCompile("owner-list", writer, null, teams.OrderBy(t => t.Owner).ToList());
             }
 
             foreach (var team in teams)

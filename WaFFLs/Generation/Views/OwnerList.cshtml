@@ -1,0 +1,42 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using WaFFLs.Generation.Models
+@inherits RazorEngine.Templating.TemplateBase<List<TeamInfo>>
+
+<html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <th>Coach</th>
+                <th>Years</th>
+                <th>Record</th>
+                <th>Playoff</th>
+                <th></th>
+            </tr>
+            @foreach (var x in Model.OrderByDescending(x => x.SeasonRecord.Wins).ThenByDescending(x => x.LastSeason))
+            {
+                <tr>
+                    <td><a href="@x.Filename">@x.Owner</a></td>
+                    <td>
+                        @if (x.FirstSeason == x.LastSeason)
+                        {
+                            <text>@x.FirstSeason</text>
+                        }
+                        else
+                        {
+                            <text>@x.FirstSeason-@x.LastSeason</text>
+                        }
+                    </td>
+                    <td>@x.SeasonRecord.Wins-@x.SeasonRecord.Losses</td>
+                    <td>@x.PlayoffRecord.Wins-@x.PlayoffRecord.Losses</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
