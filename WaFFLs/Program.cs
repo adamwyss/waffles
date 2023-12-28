@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -28,7 +28,9 @@ namespace WaFFLs
             var parser = new HtmlPageParser(dataProvider, teamResolver);
             parser.Parse(leagueData, 1996, 2023);
 
-            var e = new Engine(leagueData, "c:\\waffles-output");
+            string root = "c:\\waffles-output";
+
+            var e = new Engine(leagueData, root);
 
             var providers =
                 typeof(Program).Assembly.GetTypes()
@@ -38,7 +40,7 @@ namespace WaFFLs
 
             e.Generate(providers);
 
-            Process.Start("c:\\waffles-output\\index.htm");
+            Process.Start(root + "\\index.html");
 
 
             //GetAllTeamsEverInLeague(leagueData);

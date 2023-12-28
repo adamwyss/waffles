@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="generator" content="Rvglobalsoft" />
 <!-- Version: 6.4.81 PRO; Project name: WaFFL Home Page; Project id: 5c18f4749d5f9409152c4456350c72d6; Template Name: 22-433-1_darkgreen_plain01_2; 
-Published date: December 18, 2023, 11:27 55 (GMT -06:00) --> 
+Published date: December 26, 2023, 9:30 42 (GMT -06:00) --> 
 <link rel="stylesheet" href="http://thewaffl.net/style.css" type="text/css" />
 
 <link rel="stylesheet" href="http://thewaffl.net/Verdana.css" type="text/css" />
@@ -1032,19 +1032,19 @@ e - eliminated</font></td></tr></tbody></table><br />
 <div align="left"><font color="#0000ff">Rocky Mountain Oysters 721, Wolves 515</font></div>
 <div align="left">&nbsp;</div></td>
 <td colspan="2" align="left">
-<div align="left"><font color="#ff0000">Fantasy Cognoscenti (#4) @ Truffle Shuffle (#1)</font></div>
-<div align="left"><font color="#ff0000">The TecmoBowlers (#3) @ Speed Demons (#2)</font></div>
-<div align="left"><font color="#0000ff">Rocky Mountain Oysters (#5) @ Bayou Boys (#1)</font></div>
-<div align="left"><font color="#0000ff">Ultracogs (#3) @ Just Too Lucky (#2)&nbsp; &nbsp;</font></div></td></tr>
+<div align="left"><font color="#ff0000">Fantasy Cognoscenti 1273, Truffle Shuffle 766</font></div>
+<div align="left"><font color="#ff0000">Speed Demons 831, The TecmoBowlers 760</font></div>
+<div align="left"><font color="#0000ff">Rocky Mountain Oysters 1070, Bayou Boys 959</font></div>
+<div align="left"><font color="#0000ff">Ultracogs 759, Just Too Lucky 533&nbsp; &nbsp;</font></div></td></tr>
 <tr valign="top" align="center">
 <td colspan="2" align="center"><strong><a title="" href="Conference-Championship.php" style="color: #77bc53"><font color="#006600">Conference Championship</font></a></strong><br />
 </td>
 <td colspan="2" align="center">
 <div align="center">&nbsp;<strong><a title="" href="Fantasy-Bowl.php" style="color: #77bc53"><font color="#006600">Fantasy Bowl XXVIII</font></a></strong></div></td></tr>
 <tr valign="top" align="center">
-<td colspan="2" align="center"><font color="#ff0000">AFC Div. Winner Lo @ AFC Div. Winner Hi</font><br />
-<font color="#0000ff">NFC Div. Winner Lo @ NFC Div. Winner Hi</font></td>
-<td colspan="2" align="center"><font color="#0000ff">NFC Champion&nbsp;</font>@<font color="#ff0000">&nbsp;AFC Champion</font><br />
+<td colspan="2" align="center"><font color="#ff0000">Fantasy Cognoscenti (#4) @ Speed Demons (#2)</font><br />
+<font color="#0000ff">Rocky Mountain Oysters (#5) @ Ultracogs (#3)</font></td>
+<td colspan="2" align="center"><font color="#0000ff">NFC&nbsp; Champion&nbsp;</font>@<font color="#ff0000">&nbsp;AFC Champion</font><br />
 MVP: TBD</td></tr>
 <tr align="center">
 <td colspan="4" align="center">

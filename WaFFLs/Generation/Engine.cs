@@ -54,7 +54,7 @@ namespace WaFFLs.Generation
 
         private void GenerateHome(IRazorEngineService razor, List<object> providers)
         {
-            using (var writer = new StreamWriter(_root + "index.htm"))
+            using (var writer = new StreamWriter(_root + "index.html"))
             {
                 object model = providers.Select(p => p.GetType()).OrderBy(t => t.Name).ToList();
                 razor.RunCompile("home", writer, null, model);
@@ -65,7 +65,7 @@ namespace WaFFLs.Generation
         {
             foreach (var recordProvider in providers.OfType<T>())
             {
-                using (var writer = new StreamWriter(_root + recordProvider.GetType().Name + ".htm"))
+                using (var writer = new StreamWriter(_root + recordProvider.GetType().Name + ".html"))
                 {
                     object model = modelResolver(recordProvider);
 
@@ -95,12 +95,12 @@ namespace WaFFLs.Generation
         {
             var teams = GetTeamInfo(_leagueData);
 
-            using (var writer = new StreamWriter(_root + "teams.htm"))
+            using (var writer = new StreamWriter(_root + "teams.html"))
             {
                 razor.RunCompile("team-list", writer, null, teams.OrderBy(t => t.Name).ToList());
             }
 
-            using (var writer = new StreamWriter(_root + "owners.htm"))
+            using (var writer = new StreamWriter(_root + "owners.html"))
             {
                 razor.RunCompile("owner-list", writer, null, teams.OrderBy(t => t.Owner).ToList());
             }
@@ -144,7 +144,7 @@ namespace WaFFLs.Generation
                 OtherNames = LeagueTeamResolver.GetOtherNames(t),
                 FirstSeason = t.Games.Min(g => g.Week.Season.Year),
                 LastSeason = t.Games.Max(g => g.Week.Season.Year),
-                Filename = GetSafeFilename(t.Name + ".htm"),
+                Filename = GetSafeFilename(t.Name + ".html"),
                 SeasonRecord = GetSeasonRecordForTeam(t),
                 PlayoffRecord = GetPlayoffRecordForTeam(t),
                 HeadToHeadRecords = GetHeadToHeadRecordsFor(t),
