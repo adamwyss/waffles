@@ -67,7 +67,7 @@ namespace WaFFLs
         {
             var weeks = postseason.Element("tbody").Elements("tr").ToArray();
 
-            if ((year == 2021 || year == 2022 || year == 2023) && weeks.Length == 5)
+            if (year >= 2021 && weeks.Length == 5)
             {
                 // an extra element was added in 2021
                 weeks = weeks.Take(weeks.Length - 1).ToArray();
@@ -92,7 +92,7 @@ namespace WaFFLs
                     seasonData.Playoffs.Add(weekData);
 
                     var individualGames = games[j].Elements("div").ToArray();
-                    if (individualGames.Length == 0 && year == 2021 || year == 2022)
+                    if (individualGames.Length == 0 && year >= 2021)
                     {
                         if (text == "Fantasy Bowl XXVI")
                         {
@@ -101,6 +101,10 @@ namespace WaFFLs
                         else if (text == "Fantasy Bowl XXVII")
                         {
                             individualGames = new XElement[] { XElement.Parse("<div>Ultracogs 826, Truffle Shuffle 795</div>") };
+                        }
+                        else if (text == "Fantasy Bowl XXVIII")
+                        {
+                            individualGames = new XElement[0]; ;
                         }
                         else
                         {

@@ -123,6 +123,29 @@ namespace WaFFLs
         }
     }
 
+    [Title(Text = "Most Playoff Wins for a Team")]
+    [Summary(Text = "Playoff wins.")]
+    public class MostCareerPlayoffWins : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostCareerPlayoffWins(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            var teams = _leagueData.Teams.Select(t => new { Team = t, Wins = t.Games.Where(g => !g.Week.Name.StartsWith("Week ")).Count(g => g.IsWinningTeam(t)) })
+                                         .OrderByDescending(x => x.Wins)
+                                         .Take(_count);
+
+            return teams.Select(t => new CareerRecord() { Value = t.Wins, Team = t.Team }).ToList();
+        }
+    }
+
     [Title(Text = "Most Losses for a Team")]
     [Summary(Text = "Includes regular season and playoff losses.")]
     public class MostLossesInCareerIncludingPlayoffs : ICareerRecordProvider
