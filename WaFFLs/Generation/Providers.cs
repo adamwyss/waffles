@@ -30,6 +30,5 @@ namespace WaFFLs.Generation
     public interface IStreakRecordProvider : IProvider
     {
         List<StreakRecord> GetData();
-
     }
 }

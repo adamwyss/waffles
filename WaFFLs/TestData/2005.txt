@@ -6,26 +6,27 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="generator" content="Rvglobalsoft" />
-<!-- Version: 5.4.1 PRO; Project name: WaFFL Home Page; Project id: 5c18f4749d5f9409152c4456350c72d6; Template Name: 22-433-1_darkgreen_plain01_2; 
-Published date: December 14, 2014, 10:49 43 (GMT -06:00) --> 
-<link rel="stylesheet" href="http://thewaffl.net/style.css" type="text/css" />
+<!-- Version: 6.4.106 PRO; Project name: WaFFL Home Page; Project id: 5c18f4749d5f9409152c4456350c72d6; Template Name: 22-433-1_darkgreen_plain01_2; 
+Published date: October 18, 2025, 11:22 16 (GMT -05:00) --> 
+<link rel="stylesheet" href="https://thewaffl.net/style.css" type="text/css" />
 
-<link rel="stylesheet" href="http://thewaffl.net/Verdana.css" type="text/css" />
-<link rel="stylesheet" href="http://thewaffl.net/Navigator.css" type="text/css" />
-<link rel="stylesheet" href="http://thewaffl.net/pathway.css" type="text/css" />
-
-
-<link id ="linkcssglobal" rel="stylesheet" type="text/css" media="screen" href="http://thewaffl.net/js/jquery-ui/themes/base/ui.all.css" />
-<script  type="text/javascript" src="http://thewaffl.net/js/jquery-ui/jquery.min.js"></script>
-<script  type="text/javascript" src="http://thewaffl.net/js/jquery-ui/ui/minified/jquery-ui.min.js"></script>
-
-<script  type="text/javascript" src="http://thewaffl.net/rvsincludefile/rvsheadpage.js"></script>
+<link rel="stylesheet" href="https://thewaffl.net/Verdana.css" type="text/css" />
+<link rel="stylesheet" href="https://thewaffl.net/Navigator.css" type="text/css" />
+<link rel="stylesheet" href="https://thewaffl.net/pathway.css" type="text/css" />
 
 
-<script type="text/javascript" src="http://thewaffl.net/js/jquery.url.js"></script>
+<script src="//www.google.com/recaptcha/api.js" async defer></script>
+<link id ="linkcssglobal" rel="stylesheet" type="text/css" media="screen" href="https://thewaffl.net/js/jquery-ui/themes/base/ui.all.css" />
+<script  type="text/javascript" src="https://thewaffl.net/js/jquery-ui/jquery.min.js"></script>
+<script  type="text/javascript" src="https://thewaffl.net/js/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+
+<script  type="text/javascript" src="https://thewaffl.net/rvsincludefile/rvsheadpage.js"></script>
+
+
+<script type="text/javascript" src="https://thewaffl.net/js/jquery.url.js"></script>
 <!-- new navigation style 2013 -->
-<link rel="stylesheet" type="text/css" href="http://thewaffl.net/js/publishNavigator/ddsmoothmenu.css" />
-<link rel="stylesheet" type="text/css" href="http://thewaffl.net/js/publishNavigator/ddsmoothmenu-v.css" />
+<link rel="stylesheet" type="text/css" href="https://thewaffl.net/js/publishNavigator/ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="https://thewaffl.net/js/publishNavigator/ddsmoothmenu-v.css" />
 
 <script type="text/javascript" defer ="defer">
 
@@ -41,7 +42,7 @@ $(document).ready(function() {
             CurrentUrl = page;
         }
     }
-    
+
     if ($.browser.webkit) {
 	    window.addEventListener('load', function(){
 	    	$(':-webkit-autofill').each(function(){
@@ -52,15 +53,17 @@ $(document).ready(function() {
             });
 	    }, false);
 	}
-    
-    
+
+
     var poiont = $('.rvnavigator a[href="' + page + '"]').parents("li").length;
     if (poiont > 0) {
         for (i=0;i<=poiont;i++) {
-            $('.rvnavigator a[href="' + page + '"]').parents("li").eq(i).find('a:first').attr('class', 'current');
+            if (page != '') {
+            	$('.rvnavigator a[href="' + page + '"]').parents("li").eq(i).find('a:first').attr('class', 'current');
+            }
         }
     }
-    
+
     $('#jumpmenu').find('option').each(function() {
 		if($(this).val() == window.location.href) {
 			$(this).attr('selected', 'selected');
@@ -72,7 +75,7 @@ $(document).ready(function() {
 
 </script>
 
-<script  type="text/javascript" src="http://thewaffl.net/rvsincludefile/rvscustomopenwindow.js"></script>
+<script  type="text/javascript" src="https://thewaffl.net/rvsincludefile/rvscustomopenwindow.js"></script>
 
 
 
@@ -96,18 +99,67 @@ $(document).ready(function() {
 <!-- START CUSTOM LAYER --><!-- END CUSTOM LAYER -->
 <div id="fb-root"></div>
 <!-- {literal} -->
-<script type="text/javascript">
+<script id="scriptBuildFacebook" type="text/javascript">
+
 //<![CDATA[
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+
+  (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s);
+      js.id = id;
+	  //version=v2.5 & appId=362039017157260 Rvsitebuilder social network (delete)
+	  //js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=362039017157260";
+	  //version=v18.0 & appId=3195763584055259 //Rvsitebuilder App (new 12/09/2023)
+	  
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0&appId=3195763584055259";
+	  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
 //]]>
+
+function getFrameFacebook() {
+
+	if($('.fb-like-box').find('iframe').get(0) == undefined)
+	{
+		recursiveTimeout = setTimeout(function(){getFrameFacebook();},100);
+		//console.log('undefined')
+	} else {
+		//console.log('sucess'+$('.fb-like-box').find('iframe').width()+'='+ fbWidth )
+		if ($('.fb-like-box').find('iframe').width() != 0) {
+			$('.fb-like-box').find('iframe').attr('width',fbWidth+'px').css('width',fbWidth);
+			recursiveTimeout = setTimeout(function(){getFrameFacebook();},100);
+			$('.fb-like-box').find('iframe').load(function(){
+			clearTimeout(recursiveTimeout); })
+		} else {
+			$('.fb-like-box').find('iframe').attr('width',fbWidth+'px').css('width',fbWidth);
+		       }
+	}
+}
+
+$(document).ready(function(){
+     var recursiveDetectWidth = setTimeout(function(){
+			detectWidthFacebook();
+	},500);
+
+     function detectWidthFacebook(){
+    	  if($('div.fbFanPageBlock').find('iframe').prop('tagName') == undefined){
+    	   recursiveDetectWidth = setTimeout(function(){
+				detectWidthFacebook();
+			},500);
+    	}else{
+    	   var fbWidth = $('div.fbFanPageBlock').find('div[data-width]').attr('data-width');
+    	   var fBody = $('div.fbFanPageBlock').find('iframe');
+
+    	   fBody.load(function(){
+				$(this).css('width',fbWidth);
+    	   })
+    	}
+    	}
+});
+
 </script>
-<!-- {/literal} -->	
+<!-- {/literal} -->
 			<table cellpadding="0" cellspacing="0" width="100%">
 				<tr>
 					<td width="99%" valign="top" class="bgtop"><img src="images/spacer.gif" alt="" width="776" height="151" /></td>
@@ -115,111 +167,135 @@ $(document).ready(function() {
 				<tr>
 					<td align="left" valign="top" height="32" class="bgmenu"><div id="rvnavigator"><ul class="rvnavigator">
 <li>
-<a href="http://thewaffl.net/Home.php"   target="_self" ><span>Home +</span></a><ul>
+<a href="https://thewaffl.net/Home.php"   target="_self" ><span  pageid="9c928833f213d32a99c2028f5bbd41a7"  is_homepage="1"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Home.php"  other_embed=""  page_css="" >Home +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/WaFFL-Rules.php"   target="_self" ><span>WaFFL Rules</span></a></li>
+<a href="https://thewaffl.net/WaFFL-Rules.php"   target="_self" ><span  pageid="89cf4f4d73e10e3e6672be7289b41d4a"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="WaFFL-Rules.php"  other_embed=""  page_css="" >WaFFL Rules</span></a></li>
 <li>
-<a href="http://thewaffl.net/Draft-Process.php"   target="_self" ><span>Draft Process</span></a></li>
+<a href="https://thewaffl.net/Draft-Process.php"   target="_self" ><span  pageid="455e5f84ce91415a4f55f9927d99c6cc"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Draft-Process.php"  other_embed=""  page_css="" >Draft Process</span></a></li>
 </ul>
 </li>
 <li>
-<a href="http://thewaffl.net/2014.php"   target="_self" ><span>2014 +</span></a><ul>
+<a href="https://thewaffl.net/Copied-2024.php"   target="_self" ><span  pageid="ad6013250015b50411ffe107e8f79c43"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Copied-2024.php"  other_embed=""  page_css="" >2025 +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/2014-Draft.php"   target="_self" ><span>2014 Draft</span></a></li>
-<li>
-<a href="http://thewaffl.net/Playoff-Scenario.php"   target="_self" ><span>Playoff Scenario</span></a></li>
-<li>
-<a href="http://thewaffl.net/Pro-Bowl.php"   target="_self" ><span>Pro Bowl</span></a></li>
+<a href="https://thewaffl.net/Playoff-Scenario.php"   target="_self" ><span  pageid="4209cbaafcff97fe2d7445aabbbe2aa6"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Playoff-Scenario.php"  other_embed=""  page_css="" >Playoff Scenario</span></a></li>
 </ul>
 </li>
 <li>
-<a href="http://thewaffl.net/Rosters.php"   target="_self" ><span>Rosters +</span></a><ul>
+<a href="https://thewaffl.net/Rosters.php"   target="_self" ><span  pageid="dcc4cc393ab8550979bbb9f0044b1c32"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Rosters.php"  other_embed=""  page_css="" >Rosters +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/Waiver-Order.php"   target="_self" ><span>Waiver Order</span></a></li>
+<a href="https://thewaffl.net/Waiver-Order.php"   target="_self" ><span  pageid="cf735fdd7534562864fa19a94f7de496"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Waiver-Order.php"  other_embed=""  page_css="" >Waiver Order</span></a></li>
 <li>
-<a href="http://thewaffl.net/Transactions.php"   target="_self" ><span>Transactions</span></a></li>
-<li>
-<a href="http://thewaffl.net/2013-Draft.php"   target="_self" ><span>2013 Draft</span></a></li>
-<li>
-<a href="http://thewaffl.net/2012-Draft.php"   target="_self" ><span>2012 Draft</span></a></li>
-<li>
-<a href="http://thewaffl.net/2011-Draft.php"   target="_self" ><span>2011 Draft</span></a></li>
+<a href="https://thewaffl.net/Transactions.php"   target="_self" ><span  pageid="7ed3a805118596b3de057267ef24e1ac"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Transactions.php"  other_embed=""  page_css="" >Transactions</span></a></li>
 </ul>
 </li>
 <li>
-<a href="http://thewaffl.net/League-Leaders.php"   target="_self" ><span>League Leaders +</span></a><ul>
+<a href="https://thewaffl.net/League-Leaders.php"   target="_self" ><span  pageid="ec859514d1e3d7a33f819d0ff2846f5d"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="League-Leaders.php"  other_embed=""  page_css="" >League Leaders +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/AFC-Team-Stats.php"   target="_self" ><span>AFC Team Stats</span></a></li>
+<a href="https://thewaffl.net/AFC-Team-Stats.php"   target="_self" ><span  pageid="af94d6e2e621b7996f0e4eab3301f849"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="AFC-Team-Stats.php"  other_embed=""  page_css="" >AFC Team Stats</span></a></li>
 <li>
-<a href="http://thewaffl.net/NFC-Team-Stats.php"   target="_self" ><span>NFC Team Stats</span></a></li>
+<a href="https://thewaffl.net/NFC-Team-Stats.php"   target="_self" ><span  pageid="4ecd7a90894b125430ed3e21c37147e6"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="NFC-Team-Stats.php"  other_embed=""  page_css="" >NFC Team Stats</span></a></li>
 <li>
-<a href="http://thewaffl.net/Playoff-Leaders.php"   target="_self" ><span>Playoff Leaders</span></a></li>
+<a href="https://thewaffl.net/Playoff-Leaders.php"   target="_self" ><span  pageid="2386da60a16c1d83f106321017bd000c"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Playoff-Leaders.php"  other_embed=""  page_css="" >Playoff Leaders</span></a></li>
 </ul>
 </li>
 <li>
-<a href="http://thewaffl.net/Playoff-Challenge-Standings.php"   target="_self" ><span>Playoff Challenge Standings +</span></a><ul>
+<a href="https://thewaffl.net/Playoff-Challenge-Standings.php"   target="_self" ><span  pageid="fe466f4b87fe34849dc735ff648a7089"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="Playoff-Challenge-Standings.php"  other_embed=""  page_css="" >Playoff Challenge Standings +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/AFC-Playoff-Challenge-Scores.php"   target="_self" ><span>AFC Playoff Challenge Scores</span></a></li>
+<a href="https://thewaffl.net/AFC-Playoff-Challenge-Scores.php"   target="_self" ><span  pageid="821d062e21ceaccd9466de26c8638d9f"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="AFC-Playoff-Challenge-Scores.php"  other_embed=""  page_css="" >AFC Playoff Challenge Scores</span></a></li>
 <li>
-<a href="http://thewaffl.net/NFC-Playoff-Challenge-Scores.php"   target="_self" ><span>NFC Playoff Challenge Scores</span></a></li>
+<a href="https://thewaffl.net/NFC-Playoff-Challenge-Scores.php"   target="_self" ><span  pageid="d4bb3223605518188f8c5d1d1baef8e6"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="NFC-Playoff-Challenge-Scores.php"  other_embed=""  page_css="" >NFC Playoff Challenge Scores</span></a></li>
 <li>
-<a href="http://thewaffl.net/NFL-Playoff-Stats.php"   target="_self" ><span>NFL Playoff Stats</span></a></li>
+<a href="https://thewaffl.net/NFL-Playoff-Stats.php"   target="_self" ><span  pageid="b1970714a7b0348b91cc249d949365ff"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="NFL-Playoff-Stats.php"  other_embed=""  page_css="" >NFL Playoff Stats</span></a></li>
 </ul>
 </li>
 <li>
-<a href="http://thewaffl.net/Home27.php"   target="_self" ><span>League History +</span></a><ul>
+<a href="https://thewaffl.net/History.php"   target="_self" ><span  pageid="f562fb681ce413346d0594dd9d313607"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="History.php"  other_embed=""  page_css="" >League History +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/1996.php"   target="_self" ><span>1996</span></a></li>
+<a href="https://thewaffl.net/1990s.php"   target="_self" ><span  pageid="c8d2cd39ccd3620fbde1445fef99474e"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="1990s.php"  other_embed=""  page_css="" >1990s +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/1997.php"   target="_self" ><span>1997</span></a></li>
+<a href="https://thewaffl.net/1996.php"   target="_self" ><span  pageid="d1fa44bfb47554bbc1017dd37fb2d021"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="1996.php"  other_embed=""  page_css="" >1996</span></a></li>
 <li>
-<a href="http://thewaffl.net/1998.php"   target="_self" ><span>1998</span></a></li>
+<a href="https://thewaffl.net/1997.php"   target="_self" ><span  pageid="d1d593483f9beea7f740f195a29d3949"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="1997.php"  other_embed=""  page_css="" >1997</span></a></li>
 <li>
-<a href="http://thewaffl.net/1999.php"   target="_self" ><span>1999</span></a></li>
+<a href="https://thewaffl.net/1998.php"   target="_self" ><span  pageid="3ab0839914a5dd13349799f3ce4f1622"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="1998.php"  other_embed=""  page_css="" >1998</span></a></li>
 <li>
-<a href="http://thewaffl.net/2000.php"   target="_self" ><span>2000</span></a></li>
-<li>
-<a href="http://thewaffl.net/2001.php"   target="_self" ><span>2001</span></a></li>
-<li>
-<a href="http://thewaffl.net/2002.php"   target="_self" ><span>2002</span></a></li>
-<li>
-<a href="http://thewaffl.net/2003.php"   target="_self" ><span>2003</span></a></li>
-<li>
-<a href="http://thewaffl.net/2004.php"   target="_self" ><span>2004</span></a></li>
-<li>
-<a href="http://thewaffl.net/2005.php"   target="_self" ><span>2005</span></a></li>
-<li>
-<a href="http://thewaffl.net/2006.php"   target="_self" ><span>2006</span></a></li>
-<li>
-<a href="http://thewaffl.net/2007.php"   target="_self" ><span>2007</span></a></li>
-<li>
-<a href="http://thewaffl.net/2008.php"   target="_self" ><span>2008</span></a></li>
-<li>
-<a href="http://thewaffl.net/2009.php"   target="_self" ><span>2009</span></a></li>
-<li>
-<a href="http://thewaffl.net/2010.php"   target="_self" ><span>2010</span></a></li>
-<li>
-<a href="http://thewaffl.net/2011.php"   target="_self" ><span>2011</span></a></li>
-<li>
-<a href="http://thewaffl.net/2012.php"   target="_self" ><span>2012</span></a></li>
-<li>
-<a href="http://thewaffl.net/2013.php"   target="_self" ><span>2013</span></a></li>
+<a href="https://thewaffl.net/1999.php"   target="_self" ><span  pageid="d07a1b8a685f45c5baeb03d207ebe72c"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="1999.php"  other_embed=""  page_css="" >1999</span></a></li>
 </ul>
 </li>
 <li>
-<a href="http://thewaffl.net/WaFFL-Hall-of-Fame.php"   target="_self" ><span>WaFFL Hall of Fame +</span></a><ul>
+<a href="https://thewaffl.net/2000s.php"   target="_self" ><span  pageid="d2e651cc72ada21740b21b662d35f2fa"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2000s.php"  other_embed=""  page_css="" >2000s +</span></a><ul>
 <li>
-<a href="http://thewaffl.net/WaFFL-Records.php"   target="_self" ><span>WaFFL Records</span></a></li>
+<a href="https://thewaffl.net/2000.php"   target="_self" ><span  pageid="8d1aa81a40e311e31925893f3bf0169c"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2000.php"  other_embed=""  page_css="" >2000</span></a></li>
 <li>
-<a href="http://thewaffl.net/All-Pros--1996-Present-.php"   target="_self" ><span>All-Pros (1996-Present)</span></a></li>
+<a href="https://thewaffl.net/2001.php"   target="_self" ><span  pageid="d7629848a78eb1c014e29b455c034345"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2001.php"  other_embed=""  page_css="" >2001</span></a></li>
 <li>
-<a href="http://thewaffl.net/All-Time-Coaching-Records.php"   target="_self" ><span>All-Time Coaching Records</span></a></li>
+<a href="https://thewaffl.net/2002.php"   target="_self" ><span  pageid="faf54135f221ce07092c0022bc58b0e8"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2002.php"  other_embed=""  page_css="" >2002</span></a></li>
 <li>
-<a href="http://thewaffl.net/Pro-Bowl-Results.php"   target="_self" ><span>Pro Bowl Results</span></a></li>
+<a href="https://thewaffl.net/2003.php"   target="_self" ><span  pageid="0a66b9bf5bdbc92fe79bb9155ec87ed8"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2003.php"  other_embed=""  page_css="" >2003</span></a></li>
+<li>
+<a href="https://thewaffl.net/2004.php"   target="_self" ><span  pageid="ca47bdf1e207dc8878fe9537e74c2213"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2004.php"  other_embed=""  page_css="" >2004</span></a></li>
+<li>
+<a href="https://thewaffl.net/2005.php"   target="_self" ><span  pageid="cb281a05be6e9d19a7e055b5d7ac82fd"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2005.php"  other_embed=""  page_css="" >2005</span></a></li>
+<li>
+<a href="https://thewaffl.net/2006.php"   target="_self" ><span  pageid="947d9101810d16728879309aee0d7a5a"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2006.php"  other_embed=""  page_css="" >2006</span></a></li>
+<li>
+<a href="https://thewaffl.net/2007.php"   target="_self" ><span  pageid="6b45b83af29618614ac38e4b17591eae"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2007.php"  other_embed=""  page_css="" >2007</span></a></li>
+<li>
+<a href="https://thewaffl.net/2008.php"   target="_self" ><span  pageid="8b49de561238d4396cc4be4bc6efe152"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2008.php"  other_embed=""  page_css="" >2008</span></a></li>
+<li>
+<a href="https://thewaffl.net/2009.php"   target="_self" ><span  pageid="1da0fa18966ad847182480a02a8d743f"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2009.php"  other_embed=""  page_css="" >2009</span></a></li>
 </ul>
 </li>
 <li>
-<a href="http://thewaffl.net/JHS.php"   target="_self" ><span>JHS</span></a></li>
+<a href="https://thewaffl.net/2010s.php"   target="_self" ><span  pageid="07ad64d062414504c2c73050d97fc9b5"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2010s.php"  other_embed=""  page_css="" >2010s +</span></a><ul>
+<li>
+<a href="https://thewaffl.net/2010.php"   target="_self" ><span  pageid="69f93ba9e79561177335fc80a386b8b9"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2010.php"  other_embed=""  page_css="" >2010</span></a></li>
+<li>
+<a href="https://thewaffl.net/2011.php"   target="_self" ><span  pageid="9890ed65a8082e3affffb228b5f6aa4b"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2011.php"  other_embed=""  page_css="" >2011</span></a></li>
+<li>
+<a href="https://thewaffl.net/2012.php"   target="_self" ><span  pageid="0f80174c9236b072272397eb92c3bd32"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2012.php"  other_embed=""  page_css="" >2012</span></a></li>
+<li>
+<a href="https://thewaffl.net/2013.php"   target="_self" ><span  pageid="005014671720ed67682fa45c4fdd4b38"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2013.php"  other_embed=""  page_css="" >2013</span></a></li>
+<li>
+<a href="https://thewaffl.net/2014.php"   target="_self" ><span  pageid="e9f04769a0f62232b2581b5e44f773f3"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2014.php"  other_embed=""  page_css="" >2014</span></a></li>
+<li>
+<a href="https://thewaffl.net/2015.php"   target="_self" ><span  pageid="529c94d9196c9748510c76a192f2cbe0"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2015.php"  other_embed=""  page_css="" >2015</span></a></li>
+<li>
+<a href="https://thewaffl.net/2016.php"   target="_self" ><span  pageid="232e2dbc50a855adba6741d1b1424541"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2016.php"  other_embed=""  page_css="" >2016</span></a></li>
+<li>
+<a href="https://thewaffl.net/2017.php"   target="_self" ><span  pageid="36449f0f353bf3d9153686adf7fa4c7a"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2017.php"  other_embed=""  page_css="" >2017</span></a></li>
+<li>
+<a href="https://thewaffl.net/2018.php"   target="_self" ><span  pageid="0c1e742f44ce7b82b43f2a12fd1eec68"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2018.php"  other_embed=""  page_css="" >2018</span></a></li>
+<li>
+<a href="https://thewaffl.net/2019.php"   target="_self" ><span  pageid="cead7acc88d14d45dc8e8bd0494e4364"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2019.php"  other_embed=""  page_css="" >2019</span></a></li>
+</ul>
+</li>
+<li>
+<a href="https://thewaffl.net/2020s.php"   target="_self" ><span  pageid="05c299762fe8622bbfeab6b1bb67f6e8"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2020s.php"  other_embed=""  page_css="" >2020s +</span></a><ul>
+<li>
+<a href="https://thewaffl.net/2020.php"   target="_self" ><span  pageid="06865ab8932e89ea5477b387a3a88913"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2020.php"  other_embed=""  page_css="" >2020</span></a></li>
+<li>
+<a href="https://thewaffl.net/2021.php"   target="_self" ><span  pageid="c3669edd9cd62c1099421382f4be4c77"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2021.php"  other_embed=""  page_css="" >2021</span></a></li>
+<li>
+<a href="https://thewaffl.net/2022.php"   target="_self" ><span  pageid="4a483489701496f43b00dc2825fb531f"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2022.php"  other_embed=""  page_css="" >2022</span></a></li>
+<li>
+<a href="https://thewaffl.net/2023.php"   target="_self" ><span  pageid="6a658b8eab5304359a3c73a9ff2f0284"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2023.php"  other_embed=""  page_css="" >2023</span></a></li>
+<li>
+<a href="https://thewaffl.net/2024.php"   target="_self" ><span  pageid="707d375cc44b6f553e7c5cd37bdc9327"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="2024.php"  other_embed=""  page_css="" >2024</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://thewaffl.net/WaFFL-Hall-of-Fame.php"   target="_self" ><span  pageid="9cdb04b021d3d5a146bc01355790f73f"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="WaFFL-Hall-of-Fame.php"  other_embed=""  page_css="" >WaFFL Hall of Fame +</span></a><ul>
+<li>
+<a href="https://thewaffl.net/WaFFL-Records.php"   target="_self" ><span  pageid="44f8969e09ec4c8017327212cd978534"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="WaFFL-Records.php"  other_embed=""  page_css="" >WaFFL Records</span></a></li>
+<li>
+<a href="https://thewaffl.net/All-Pros--1996-Present-.php"   target="_self" ><span  pageid="92304146908df415cf8248d1c3a98206"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="All-Pros--1996-Present-.php"  other_embed=""  page_css="" >All-Pros (1996-Present)</span></a></li>
+<li>
+<a href="https://thewaffl.net/All-Time-Coaching-Records.php"   target="_self" ><span  pageid="fb764c428e5cbb88927448c0ed64e61f"  is_homepage="0"  is_draft="0"  page_title=""  meta_keyword=""  meta_description=""  file_name="All-Time-Coaching-Records.php"  other_embed=""  page_css="" >All-Time Coaching Records</span></a></li>
+</ul>
+</li>
 </ul></div>
 <div class="clear"></div>
 </td>
@@ -236,7 +312,7 @@ $(document).ready(function() {
 									<table cellpadding="0" cellspacing="0" width="100%">
 										<tr>
 											<!-- Begin PATHWAY -->
-											<td align="left" width="99%"><table cellpadding="0" cellspacing="0" width="100%"><tr valign="top"> <td nowrap="nowrap">&nbsp;&nbsp;&nbsp;<a href="http://thewaffl.net/index.php" target="_top">Home</a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><a href="http://thewaffl.net/.php"></a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="http://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><b>2005</b></td><td width="99%" nowrap="nowrap"></td></tr></table></td>
+											<td align="left" width="99%"><table cellpadding="0" cellspacing="0" width="100%"  iscomponentDB="0" ><tr valign="top" style="float:left;"> <td nowrap="nowrap">&nbsp;&nbsp;&nbsp;<a href="https://thewaffl.net/index.php" target="_top" pageid="9c928833f213d32a99c2028f5bbd41a7">Home</a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="https://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><a href="https://thewaffl.net/2000s.php" pageid="d2e651cc72ada21740b21b662d35f2fa">2000s</a></td><td nowrap>&nbsp;&nbsp;&nbsp;<img class="pathway" border="0" alt="" src="https://thewaffl.net/images/spacer.gif" />&nbsp;&nbsp;&nbsp;</td><td nowrap><b pageid="cb281a05be6e9d19a7e055b5d7ac82fd">2005</b></td><td width="99%" nowrap="nowrap"></td></tr></table></td>
 											<!-- End PATHWAY -->
 											<!-- Begin ICON -->
 											<td align="right"><!--Cannot get icon--></td>
@@ -255,540 +331,817 @@ $(document).ready(function() {
 <div><a title="" href="mailto:Waffl@hotmail.com">Ryan Simmons</a></div>
 <div>&nbsp;</div>
 <div>Deputy Commissioner:</div>
-<div>Chris Rangel</div>
+<div>TBA</div>
 <div>&nbsp;</div>
-<div>&nbsp;</div>
+<div style="font-size: 12.1599998474121px">&nbsp;</div>
+<div><span style="font-size: 12.1599998474121px"><br />
+</span></div>
 <div><strong><u>Web Links</u></strong></div>
+<div><strong><u><br />
+</u></strong></div>
+<div><a title="" href="https://fantasy.espn.com/football/league?leagueId=69765935" target="_blank">ESPN Fantasy Home</a></div>
 <div>&nbsp;</div>
 <div><a title="" target="_blank" href="http://www.nfl.com">NFL.com</a></div>
 <div>&nbsp;</div>
-<div><a title="" target="_blank" href="http://www.nationalchamps.net/Helmet_Project/">Helmet Project</a>&nbsp;</div></td>
+<div><a title="" target="_blank" href="http://www.nationalchamps.net/Helmet_Project/">Helmet Project</a>&nbsp;</div>
+<div>&nbsp;</div></td>
 											<!-- End SIDE1 -->
 											<td align="left" valign="top" class="magin" id="rv_adjust_width_5" width="100%"><div class="content_margin_left_right">
-<table cellpadding="0" cellspacing="0" width="100%">  <tr>    <td align="left" valign="top" width="100%" id="layout_zone1" style = ""><div align="center"><img title="" height="108" alt="" width="173" src="http://thewaffl.net/images/WaFFLlogo.gif" /></div>
-<div align="center">&nbsp;</div>
+<table cellpadding="0" cellspacing="0" width="100%"><tr>
+<td align="left" valign="top" width="100%" id="layout_zone1" style="">
+<div align="center"><img title="" height="108" alt="" width="173" src="https://thewaffl.net/images/WaFFLlogo.gif"></div>
+<div align="center">Â </div>
 <div align="center"><font size="4"><strong>2005 WaFFL Season</strong></font></div>
-<div>&nbsp;</div>
-<div><strong><font color="#000000" size="2"></font></strong>&nbsp;</div>
+<div>Â </div>
 <div>
-<table style="width: 70%; border-collapse: collapse; background-color: #ffcccc" bordercolor="#ffffff" cellspacing="0" cellpadding="3" align="center" border="1">
-<tbody>
+<strong><font color="#000000" size="2"></font></strong>Â </div>
+<div>
+<table style="width: 70%; border-collapse: collapse; background-color: #ffcccc" bordercolor="#ffffff" cellspacing="0" cellpadding="3" align="center" border="1"><tbody>
 <tr valign="top" bgcolor="#ffffff">
 <td>
-<div align="left"><strong><font size="2">AFC North</font></strong></div></td>
+<div align="left"><strong><font size="2">AFC North</font></strong></div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div>&nbsp;</div></td>
+<div>Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td></tr>
+<div align="left">Â </div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#6699ff">
 <td>
-<div align="left"><strong>Team</strong></div></td>
+<div align="left"><strong>Team</strong></div>
+</td>
 <td>
-<div align="center"><strong>W-L</strong></div></td>
+<div align="center"><strong>W-L</strong></div>
+</td>
 <td>
-<div align="center"><strong>%</strong></div></td>
+<div align="center"><strong>%</strong></div>
+</td>
 <td>
-<div align="center"><strong>GB</strong></div></td>
+<div align="center"><strong>GB</strong></div>
+</td>
 <td>
-<div align="center"><strong>PF</strong></div></td>
+<div align="center"><strong>PF</strong></div>
+</td>
 <td>
-<div align="center"><strong>PA</strong></div></td>
+<div align="center"><strong>PA</strong></div>
+</td>
 <td>
-<div align="center"><strong>+/-</strong></div></td>
+<div align="center"><strong>+/-</strong></div>
+</td>
 <td>
-<div align="center"><strong>Div</strong></div></td>
+<div align="center"><strong>Div</strong></div>
+</td>
 <td>
-<div align="center"><strong>AFC</strong></div></td>
+<div align="center"><strong>AFC</strong></div>
+</td>
 <td>
-<div align="center"><strong>NFC</strong></div></td></tr>
+<div align="center"><strong>NFC</strong></div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">z - Dominators</div></td>
+<div align="left">z - Dominators</div>
+</td>
 <td>
-<div align="center">11-3</div></td>
+<div align="center">11-3</div>
+</td>
 <td>
-<div align="center">.786</div></td>
+<div align="center">.786</div>
+</td>
 <td>
-<div align="center">-</div></td>
+<div align="center">-</div>
+</td>
 <td>
-<div align="center">11,749</div></td>
+<div align="center">11,749</div>
+</td>
 <td>
-<div align="center">9,755</div></td>
+<div align="center">9,755</div>
+</td>
 <td>
-<div align="center">+ 1,944</div></td>
+<div align="center">+ 1,944</div>
+</td>
 <td>
-<div align="center">5-1</div></td>
+<div align="center">5-1</div>
+</td>
 <td>
-<div align="center">8-2</div></td>
+<div align="center">8-2</div>
+</td>
 <td>
-<div align="center">3-1</div></td></tr>
+<div align="center">3-1</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">x - Team Bean</div></td>
+<div align="left">x - Team Bean</div>
+</td>
 <td>
-<div align="center">7-7</div></td>
+<div align="center">7-7</div>
+</td>
 <td>
-<div align="center">.500</div></td>
+<div align="center">.500</div>
+</td>
 <td>
-<div align="center">4</div></td>
+<div align="center">4</div>
+</td>
 <td>
-<div align="center">10,801</div></td>
+<div align="center">10,801</div>
+</td>
 <td>
-<div align="center">11,630</div></td>
+<div align="center">11,630</div>
+</td>
 <td>
-<div align="center">- 829</div></td>
+<div align="center">- 829</div>
+</td>
 <td>
-<div align="center">3-3</div></td>
+<div align="center">3-3</div>
+</td>
 <td>
-<div align="center">5-5</div></td>
+<div align="center">5-5</div>
+</td>
 <td>
-<div align="center">2-2</div></td></tr>
+<div align="center">2-2</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Fighting Calrissians</div></td>
+<div align="left">Fighting Calrissians</div>
+</td>
 <td>
-<div align="center">5-9</div></td>
+<div align="center">5-9</div>
+</td>
 <td>
-<div align="center">.357</div></td>
+<div align="center">.357</div>
+</td>
 <td>
-<div align="center">6</div></td>
+<div align="center">6</div>
+</td>
 <td>
-<div align="center">10,457</div></td>
+<div align="center">10,457</div>
+</td>
 <td>
-<div align="center">10,299</div></td>
+<div align="center">10,299</div>
+</td>
 <td>
-<div align="center">+ 158</div></td>
+<div align="center">+ 158</div>
+</td>
 <td>
-<div align="center">2-4</div></td>
+<div align="center">2-4</div>
+</td>
 <td>
-<div align="center">4-6</div></td>
+<div align="center">4-6</div>
+</td>
 <td>
-<div align="center">1-3</div></td></tr>
+<div align="center">1-3</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Drunken Squirrels</div></td>
+<div align="left">Drunken Squirrels</div>
+</td>
 <td>
-<div align="center">3-11</div></td>
+<div align="center">3-11</div>
+</td>
 <td>
-<div align="center">.214</div></td>
+<div align="center">.214</div>
+</td>
 <td>
-<div align="center">8</div></td>
+<div align="center">8</div>
+</td>
 <td>
-<div align="center">8,910</div></td>
+<div align="center">8,910</div>
+</td>
 <td>
-<div align="center">10,681</div></td>
+<div align="center">10,681</div>
+</td>
 <td>
-<div align="center">- 1,771</div></td>
+<div align="center">- 1,771</div>
+</td>
 <td>
-<div align="center">2-4</div></td>
+<div align="center">2-4</div>
+</td>
 <td>
-<div align="center">3-7</div></td>
+<div align="center">3-7</div>
+</td>
 <td>
-<div align="center">0-4&nbsp;</div></td></tr>
+<div align="center">0-4Â </div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffff">
 <td>
-<div align="left"><strong><font size="2">AFC South</font></strong>&nbsp;</div></td>
+<div align="left">
+<strong><font size="2">AFC South</font></strong>Â </div>
+</td>
 <td>
-<div align="center">&nbsp;</div></td>
+<div align="center">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="center">&nbsp;</div></td>
+<div align="center">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div>&nbsp;</div></td>
+<div>Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td></tr>
+<div align="left">Â </div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#6699ff">
 <td>
-<div align="left"><strong>Team</strong></div></td>
+<div align="left"><strong>Team</strong></div>
+</td>
 <td>
-<div align="center"><strong>W-L</strong></div></td>
+<div align="center"><strong>W-L</strong></div>
+</td>
 <td>
-<div align="center"><strong>%</strong></div></td>
+<div align="center"><strong>%</strong></div>
+</td>
 <td>
-<div align="center"><strong>GB</strong></div></td>
+<div align="center"><strong>GB</strong></div>
+</td>
 <td>
-<div align="center"><strong>PF</strong></div></td>
+<div align="center"><strong>PF</strong></div>
+</td>
 <td>
-<div align="center"><strong>PA</strong></div></td>
+<div align="center"><strong>PA</strong></div>
+</td>
 <td>
-<div align="center"><strong>+/-</strong></div></td>
+<div align="center"><strong>+/-</strong></div>
+</td>
 <td>
-<div align="center"><strong>Div</strong></div></td>
+<div align="center"><strong>Div</strong></div>
+</td>
 <td>
-<div align="center"><strong>AFC</strong></div></td>
+<div align="center"><strong>AFC</strong></div>
+</td>
 <td>
-<div align="center"><strong>NFC</strong></div></td></tr>
+<div align="center"><strong>NFC</strong></div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">y - Marauding Nomads</div></td>
+<div align="left">y - Marauding Nomads</div>
+</td>
 <td>
-<div align="center">10-4</div></td>
+<div align="center">10-4</div>
+</td>
 <td>
-<div align="center">.714</div></td>
+<div align="center">.714</div>
+</td>
 <td>
-<div align="center">-</div></td>
+<div align="center">-</div>
+</td>
 <td>
-<div align="center">12,800</div></td>
+<div align="center">12,800</div>
+</td>
 <td>
-<div align="center">10,865</div></td>
+<div align="center">10,865</div>
+</td>
 <td>
-<div align="center">+ 1,935</div></td>
+<div align="center">+ 1,935</div>
+</td>
 <td>
-<div align="center">5-1</div></td>
+<div align="center">5-1</div>
+</td>
 <td>
-<div align="center">7-3</div></td>
+<div align="center">7-3</div>
+</td>
 <td>
-<div align="center">3-1</div></td></tr>
+<div align="center">3-1</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">x - TD Matrix</div></td>
+<div align="left">x - TD Matrix</div>
+</td>
 <td>
-<div align="center">10-4</div></td>
+<div align="center">10-4</div>
+</td>
 <td>
-<div align="center">.714</div></td>
+<div align="center">.714</div>
+</td>
 <td>
-<div align="center">-</div></td>
+<div align="center">-</div>
+</td>
 <td>
-<div align="center">12,698</div></td>
+<div align="center">12,698</div>
+</td>
 <td>
-<div align="center">10,697</div></td>
+<div align="center">10,697</div>
+</td>
 <td>
-<div align="center">+ 2,001</div></td>
+<div align="center">+ 2,001</div>
+</td>
 <td>
-<div align="center">4-2</div></td>
+<div align="center">4-2</div>
+</td>
 <td>
-<div align="center">7-3</div></td>
+<div align="center">7-3</div>
+</td>
 <td>
-<div align="center">3-1</div></td></tr>
+<div align="center">3-1</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Eternals</div></td>
+<div align="left">Eternals</div>
+</td>
 <td>
-<div align="center">6-8</div></td>
+<div align="center">6-8</div>
+</td>
 <td>
-<div align="center">.429</div></td>
+<div align="center">.429</div>
+</td>
 <td>
-<div align="center">4</div></td>
+<div align="center">4</div>
+</td>
 <td>
-<div align="center">10,527</div></td>
+<div align="center">10,527</div>
+</td>
 <td>
-<div align="center">11,045</div></td>
+<div align="center">11,045</div>
+</td>
 <td>
-<div align="center">- 518</div></td>
+<div align="center">- 518</div>
+</td>
 <td>
-<div align="center">1-5</div></td>
+<div align="center">1-5</div>
+</td>
 <td>
-<div align="center">4-6</div></td>
+<div align="center">4-6</div>
+</td>
 <td>
-<div align="center">2-2</div></td></tr>
+<div align="center">2-2</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Stormtroopers</div></td>
+<div align="left">Stormtroopers</div>
+</td>
 <td>
-<div align="center">3-11</div></td>
+<div align="center">3-11</div>
+</td>
 <td>
-<div align="center">.214</div></td>
+<div align="center">.214</div>
+</td>
 <td>
-<div align="center">7</div></td>
+<div align="center">7</div>
+</td>
 <td>
-<div align="center">8,523</div></td>
+<div align="center">8,523</div>
+</td>
 <td>
-<div align="center">11,330</div></td>
+<div align="center">11,330</div>
+</td>
 <td>
-<div align="center">- 2,807</div></td>
+<div align="center">- 2,807</div>
+</td>
 <td>
-<div align="center">1-5</div></td>
+<div align="center">1-5</div>
+</td>
 <td>
-<div align="center">2-8</div></td>
+<div align="center">2-8</div>
+</td>
 <td>
-<div align="center">1-3</div></td></tr>
+<div align="center">1-3</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffff">
 <td>
-<div align="left"><strong><font size="2">NFC North</font></strong></div></td>
+<div align="left"><strong><font size="2">NFC North</font></strong></div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div>&nbsp;</div></td>
+<div>Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td></tr>
+<div align="left">Â </div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#6699ff">
 <td>
-<div align="left"><strong>Team</strong></div></td>
+<div align="left"><strong>Team</strong></div>
+</td>
 <td>
-<div align="center"><strong>W-L</strong></div></td>
+<div align="center"><strong>W-L</strong></div>
+</td>
 <td>
-<div align="center"><strong>%</strong></div></td>
+<div align="center"><strong>%</strong></div>
+</td>
 <td>
-<div align="center"><strong>GB</strong></div></td>
+<div align="center"><strong>GB</strong></div>
+</td>
 <td>
-<div align="center"><strong>PF</strong></div></td>
+<div align="center"><strong>PF</strong></div>
+</td>
 <td>
-<div align="center"><strong>PA</strong></div></td>
+<div align="center"><strong>PA</strong></div>
+</td>
 <td>
-<div align="center"><strong>+/-</strong></div></td>
+<div align="center"><strong>+/-</strong></div>
+</td>
 <td>
-<div align="center"><strong>Div</strong></div></td>
+<div align="center"><strong>Div</strong></div>
+</td>
 <td>
-<div align="center"><strong>NFC</strong></div></td>
+<div align="center"><strong>NFC</strong></div>
+</td>
 <td>
-<div align="center"><strong>AFC</strong></div></td></tr>
+<div align="center"><strong>AFC</strong></div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">y&nbsp;- Wolves</div></td>
+<div align="left">yÂ - Wolves</div>
+</td>
 <td>
-<div align="center">8-6</div></td>
+<div align="center">8-6</div>
+</td>
 <td>
-<div align="center">.571</div></td>
+<div align="center">.571</div>
+</td>
 <td>
-<div align="center">-</div></td>
+<div align="center">-</div>
+</td>
 <td>
-<div align="center">11,943</div></td>
+<div align="center">11,943</div>
+</td>
 <td>
-<div align="center">10,175</div></td>
+<div align="center">10,175</div>
+</td>
 <td>
-<div align="center">+ 1,768</div></td>
+<div align="center">+ 1,768</div>
+</td>
 <td>
-<div align="center">3-3</div></td>
+<div align="center">3-3</div>
+</td>
 <td>
-<div align="center">5-5</div></td>
+<div align="center">5-5</div>
+</td>
 <td>
-<div align="center">3-1</div></td></tr>
+<div align="center">3-1</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">x - Sporky's Revenge</div></td>
+<div align="left">x - Sporky's Revenge</div>
+</td>
 <td>
-<div align="center">8-6</div></td>
+<div align="center">8-6</div>
+</td>
 <td>
-<div align="center">.571</div></td>
+<div align="center">.571</div>
+</td>
 <td>
-<div align="center">-</div></td>
+<div align="center">-</div>
+</td>
 <td>
-<div align="center">11,425</div></td>
+<div align="center">11,425</div>
+</td>
 <td>
-<div align="center">11,599</div></td>
+<div align="center">11,599</div>
+</td>
 <td>
-<div align="center">- 174</div></td>
+<div align="center">- 174</div>
+</td>
 <td>
-<div align="center">3-3</div></td>
+<div align="center">3-3</div>
+</td>
 <td>
-<div align="center">5-5</div></td>
+<div align="center">5-5</div>
+</td>
 <td>
-<div align="center">3-1</div></td></tr>
+<div align="center">3-1</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Overpaid Crybabies</div></td>
+<div align="left">Overpaid Crybabies</div>
+</td>
 <td>
-<div align="center">7-7</div></td>
+<div align="center">7-7</div>
+</td>
 <td>
-<div align="center">.500</div></td>
+<div align="center">.500</div>
+</td>
 <td>
-<div align="center">1</div></td>
+<div align="center">1</div>
+</td>
 <td>
-<div align="center">11,366</div></td>
+<div align="center">11,366</div>
+</td>
 <td>
-<div align="center">11,003</div></td>
+<div align="center">11,003</div>
+</td>
 <td>
-<div align="center">+ 363</div></td>
+<div align="center">+ 363</div>
+</td>
 <td>
-<div align="center">3-3</div></td>
+<div align="center">3-3</div>
+</td>
 <td>
-<div align="center">4-6</div></td>
+<div align="center">4-6</div>
+</td>
 <td>
-<div align="center">3-1</div></td></tr>
+<div align="center">3-1</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Phantom122</div></td>
+<div align="left">Phantom122</div>
+</td>
 <td>
-<div align="center">5-9</div></td>
+<div align="center">5-9</div>
+</td>
 <td>
-<div align="center">.357</div></td>
+<div align="center">.357</div>
+</td>
 <td>
-<div align="center">3</div></td>
+<div align="center">3</div>
+</td>
 <td>
-<div align="center">8,622</div></td>
+<div align="center">8,622</div>
+</td>
 <td>
-<div align="center">11,313</div></td>
+<div align="center">11,313</div>
+</td>
 <td>
-<div align="center">- 2,691</div></td>
+<div align="center">- 2,691</div>
+</td>
 <td>
-<div align="center">3-3</div></td>
+<div align="center">3-3</div>
+</td>
 <td>
-<div align="center">4-6</div></td>
+<div align="center">4-6</div>
+</td>
 <td>
-<div align="center">1-3</div></td></tr>
+<div align="center">1-3</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffff">
 <td>
-<div align="left"><strong><font size="2">NFC South</font></strong></div></td>
+<div align="left"><strong><font size="2">NFC South</font></strong></div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div>&nbsp;</div></td>
+<div>Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td>
+<div align="left">Â </div>
+</td>
 <td>
-<div align="left">&nbsp;</div></td></tr>
+<div align="left">Â </div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#6699ff">
 <td>
-<div align="left"><strong>Team</strong></div></td>
+<div align="left"><strong>Team</strong></div>
+</td>
 <td>
-<div align="center"><strong>W-L</strong></div></td>
+<div align="center"><strong>W-L</strong></div>
+</td>
 <td>
-<div align="center"><strong>%</strong></div></td>
+<div align="center"><strong>%</strong></div>
+</td>
 <td>
-<div align="center"><strong>GB</strong></div></td>
+<div align="center"><strong>GB</strong></div>
+</td>
 <td>
-<div align="center"><strong>PF</strong></div></td>
+<div align="center"><strong>PF</strong></div>
+</td>
 <td>
-<div align="center"><strong>PA</strong></div></td>
+<div align="center"><strong>PA</strong></div>
+</td>
 <td>
-<div align="center"><strong>+/-</strong></div></td>
+<div align="center"><strong>+/-</strong></div>
+</td>
 <td>
-<div align="center"><strong>Div</strong></div></td>
+<div align="center"><strong>Div</strong></div>
+</td>
 <td>
-<div align="center"><strong>NFC</strong></div></td>
+<div align="center"><strong>NFC</strong></div>
+</td>
 <td>
-<div align="center"><strong>AFC</strong></div></td></tr>
+<div align="center"><strong>AFC</strong></div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">z - Ultracogs</div></td>
+<div align="left">z - Ultracogs</div>
+</td>
 <td>
-<div align="center">11-3</div></td>
+<div align="center">11-3</div>
+</td>
 <td>
-<div align="center">.786</div></td>
+<div align="center">.786</div>
+</td>
 <td>
-<div align="center">-</div></td>
+<div align="center">-</div>
+</td>
 <td>
-<div align="center">14,228</div></td>
+<div align="center">14,228</div>
+</td>
 <td>
-<div align="center">11,035</div></td>
+<div align="center">11,035</div>
+</td>
 <td>
-<div align="center">+ 3,193</div></td>
+<div align="center">+ 3,193</div>
+</td>
 <td>
-<div align="center">4-2</div></td>
+<div align="center">4-2</div>
+</td>
 <td>
-<div align="center">7-3</div></td>
+<div align="center">7-3</div>
+</td>
 <td>
-<div align="center">4-0</div></td></tr>
+<div align="center">4-0</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">x&nbsp;- Rocky Mountain&nbsp;Oysters</div></td>
+<div align="left">xÂ - Rocky MountainÂ Oysters</div>
+</td>
 <td>
-<div align="center">9-5</div></td>
+<div align="center">9-5</div>
+</td>
 <td>
-<div align="center">.643</div></td>
+<div align="center">.643</div>
+</td>
 <td>
-<div align="center">2</div></td>
+<div align="center">2</div>
+</td>
 <td>
-<div align="center">11,407</div></td>
+<div align="center">11,407</div>
+</td>
 <td>
-<div align="center">9,944</div></td>
+<div align="center">9,944</div>
+</td>
 <td>
-<div align="center">+ 1,463</div></td>
+<div align="center">+ 1,463</div>
+</td>
 <td>
-<div align="center">4-2</div></td>
+<div align="center">4-2</div>
+</td>
 <td>
-<div align="center">8-2</div></td>
+<div align="center">8-2</div>
+</td>
 <td>
-<div align="center">1-3</div></td></tr>
+<div align="center">1-3</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Bayou Boys</div></td>
+<div align="left">Bayou Boys</div>
+</td>
 <td>
-<div align="center">6-8</div></td>
+<div align="center">6-8</div>
+</td>
 <td>
-<div align="center">.429</div></td>
+<div align="center">.429</div>
+</td>
 <td>
-<div align="center">5</div></td>
+<div align="center">5</div>
+</td>
 <td>
-<div align="center">11,494</div></td>
+<div align="center">11,494</div>
+</td>
 <td>
-<div align="center">11,546</div></td>
+<div align="center">11,546</div>
+</td>
 <td>
-<div align="center">- 52</div></td>
+<div align="center">- 52</div>
+</td>
 <td>
-<div align="center">3-3</div></td>
+<div align="center">3-3</div>
+</td>
 <td>
-<div align="center">5-5</div></td>
+<div align="center">5-5</div>
+</td>
 <td>
-<div align="center">1-3</div></td></tr>
+<div align="center">1-3</div>
+</td>
+</tr>
 <tr valign="top" bgcolor="#ffffcc">
 <td>
-<div align="left">Red Raiders</div></td>
+<div align="left">Red Raiders</div>
+</td>
 <td>
-<div align="center">3-11</div></td>
+<div align="center">3-11</div>
+</td>
 <td>
-<div align="center">.214</div></td>
+<div align="center">.214</div>
+</td>
 <td>
-<div align="center">8</div></td>
+<div align="center">8</div>
+</td>
 <td>
-<div align="center">10,127</div></td>
+<div align="center">10,127</div>
+</td>
 <td>
-<div align="center">12,671</div></td>
+<div align="center">12,671</div>
+</td>
 <td>
-<div align="center">- 2,544</div></td>
+<div align="center">- 2,544</div>
+</td>
 <td>
-<div align="center">1-5</div></td>
+<div align="center">1-5</div>
+</td>
 <td>
-<div align="center">2-8</div></td>
+<div align="center">2-8</div>
+</td>
 <td>
-<div align="center">1-3</div></td></tr></tbody></table></div>
-<div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="1">z - clinched Conference; y - clinched division; x - clinched playoff</font>&nbsp;</div>
-<div align="center">&nbsp;</div>
+<div align="center">1-3</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div align="left">Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â <font size="1">z - clinched Conference; y - clinched division; x - clinched playoff</font>Â </div>
+<div align="center">Â </div>
 <div align="center"><strong><font size="4">2005 Scores</font></strong></div>
-<div align="center">&nbsp;</div>
+<div align="center">Â </div>
 <div align="center">
-<table style="width: 80%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
-<tbody>
+<table style="width: 80%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1"><tbody>
 <tr valign="top">
 <td>
-<div align="left"><strong><font color="#000000">Week 1</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Week 1</font></strong></div>
+</td>
 <td>
-<div align="left"><strong><font color="#000000">Week 2</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Week 2</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
 <div align="left"><font color="#000000">Drunken Squirrels 914, Dominators 538</font></div>
@@ -798,7 +1151,8 @@ $(document).ready(function() {
 <div align="left">Phantom122 826, Wolves 288</div>
 <div align="left">Overpaid Crybabies 985, Sporky's Revenge 511</div>
 <div align="left">Ultracogs 941, Bayou Boys 463</div>
-<div align="left">Rocky Mountain Oysters 1255, Red Raiders 603</div></td>
+<div align="left">Rocky Mountain Oysters 1255, Red Raiders 603</div>
+</td>
 <td>
 <div align="left"><font color="#000000">Fighting Calrissians 1180, Drunken Squirrels 696</font></div>
 <div align="left">Dominators 1197, Team Bean 753</div>
@@ -807,12 +1161,17 @@ $(document).ready(function() {
 <div align="left">Overpaid Crybabies 691, Phantom 122 634</div>
 <div align="left">Sporky's Revenge 762, Wolves 343</div>
 <div align="left">Rocky Mountain Oysters 498, Bayou Boys 474</div>
-<div align="left">Ultracogs 1044, Red Raiders 698</div></td></tr>
+<div align="left">Ultracogs 1044, Red Raiders 698</div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="left"><strong><font color="#000000">Week 3</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Week 3</font></strong></div>
+</td>
 <td>
-<div align="left"><strong><font color="#000000">Week 4</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Week 4</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
 <div align="left"><font color="#000000">Team Bean 843, Drunken Squirrels 743</font></div>
@@ -822,7 +1181,8 @@ $(document).ready(function() {
 <div align="left">Phantom122 919, Sporky's Revenge 902</div>
 <div align="left">Wolves 1152, Overpaid Crybabies 610</div>
 <div align="left">Bayou Boys 971, Red Raiders 662</div>
-<div align="left">Ultracogs 1399, Rocky Mountain Oysters 804</div></td>
+<div align="left">Ultracogs 1399, Rocky Mountain Oysters 804</div>
+</td>
 <td>
 <div align="left"><font color="#000000">Marauding Nomads 939, Drunken Squirrels 413</font></div>
 <div align="left">TD Matrix 1158, Dominators 973</div>
@@ -831,12 +1191,17 @@ $(document).ready(function() {
 <div align="left">Bayou Boys 845, Phantom122 568</div>
 <div align="left">Ultracogs 670, Wolves 655</div>
 <div align="left">Rocky Mountain Oysters 781, Overpaid Crybabies 765</div>
-<div align="left">Sporky's Revenge 960, Red Raiders 892</div></td></tr>
+<div align="left">Sporky's Revenge 960, Red Raiders 892</div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="left"><strong><font color="#000000">Week 5</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Week 5</font></strong></div>
+</td>
 <td>
-<div align="left"><strong><font color="#000000">Week 6</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Week 6</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
 <div align="left"><font color="#000000">TD Matrix 990, Drunken Squirrels 834</font></div>
@@ -846,7 +1211,8 @@ $(document).ready(function() {
 <div align="left">Ultracogs 872, Phantom122 617</div>
 <div align="left">Red Raiders 540, Overpaid Crybabies 469</div>
 <div align="left">Wolves 825, Bayou Boys 478</div>
-<div align="left">Rocky Mountain Oysters 1137, Sporky's Revenge 766</div></td>
+<div align="left">Rocky Mountain Oysters 1137, Sporky's Revenge 766</div>
+</td>
 <td>
 <div align="left">Sporky's Revenge 850, Drunken Squirrels 777</div>
 <div align="left">Dominators 998, Overpaid Crybabies 676</div>
@@ -855,12 +1221,17 @@ $(document).ready(function() {
 <div align="left">Marauding Nomads 728, Red Raiders 324</div>
 <div align="left">TD Matrix 1022, Rocky Mountain Oysters 711</div>
 <div align="left">Ultracogs 1113, Stormtroopers 851</div>
-<div align="left">Eternals 1326, Bayou Boys 559</div></td></tr>
+<div align="left">Eternals 1326, Bayou Boys 559</div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="left"><strong><font color="#000000">Week 7</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Week 7</font></strong></div>
+</td>
 <td>
-<div align="left"><strong><font color="#000000">Week 8</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Week 8</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
 <div align="left"><font color="#000000">Overpaid Crybabies 678, Drunken Squirrels 502</font></div>
@@ -870,7 +1241,8 @@ $(document).ready(function() {
 <div align="left">Marauding Nomads 1097, Rocky Mountain Oysters 657</div>
 <div align="left">TD Matrix 706, Red Raiders 648</div>
 <div align="left">Bayou Boys 900, Stormtroopers 545</div>
-<div align="left">Ultracogs 1057, Eternals 693</div></td>
+<div align="left">Ultracogs 1057, Eternals 693</div>
+</td>
 <td>
 <div align="left"><font color="#000000">Wolves 1149, Drunken Squirrels 500</font></div>
 <div align="left">Sporky's Revenge 808, Fighting Calrissians 568</div>
@@ -879,12 +1251,17 @@ $(document).ready(function() {
 <div align="left">Ultracogs 1418, Marauding Nomads 666</div>
 <div align="left">Stormtroopers 986, Red Raiders 932</div>
 <div align="left">TD Matrix 855, Bayou Boys 643</div>
-<div align="left">Eternals 533, Rocky Mountain Oysters 268</div></td></tr>
+<div align="left">Eternals 533, Rocky Mountain Oysters 268</div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="left"><strong><font color="#000000">Week 9</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Week 9</font></strong></div>
+</td>
 <td>
-<div align="left"><strong><font color="#000000">Week 10</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Week 10</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
 <div align="left"><font color="#000000">Phantom122 577, Drunken Squirrels 198</font></div>
@@ -894,7 +1271,8 @@ $(document).ready(function() {
 <div align="left">Marauding Nomads 909, Bayou Boys 501</div>
 <div align="left">Ultracogs 977, TD Matrix 897</div>
 <div align="left">Rocky Mountain Oysters 467, Stormtroopers 362</div>
-<div align="left">Red Raiders 843, Eternals 656</div></td>
+<div align="left">Red Raiders 843, Eternals 656</div>
+</td>
 <td>
 <div align="left"><font color="#000000">Drunken Squirrels 761, Stormtroopers 291</font></div>
 <div align="left">Dominators 939, Eternals 617</div>
@@ -903,12 +1281,17 @@ $(document).ready(function() {
 <div align="left">Rocky Mountain Oysters 1294, Phantom122 354</div>
 <div align="left">Wolves 1292, Red Raiders 698</div>
 <div align="left">Bayou Boys 959, Overpaid Crybabies 937</div>
-<div align="left">Sporky's Revenge 774, Ultracogs 578</div></td></tr>
+<div align="left">Sporky's Revenge 774, Ultracogs 578</div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="left"><strong><font color="#000000">Week 11</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Week 11</font></strong></div>
+</td>
 <td>
-<div align="left"><strong><font color="#000000">Week 12</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Week 12</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
 <div align="left"><font color="#000000">Team Bean 1346, Marauding Nomads 1189</font></div>
@@ -918,7 +1301,8 @@ $(document).ready(function() {
 <div align="left">Sporky's Revenge 1224, Bayou Boys 781</div>
 <div align="left">Ultracogs 1185, Overpaid Crybabies 909</div>
 <div align="left">Rocky Mountain Oysters 1022, Wolves 792</div>
-<div align="left">Phantom122 937, Red Raiders 857</div></td>
+<div align="left">Phantom122 937, Red Raiders 857</div>
+</td>
 <td>
 <div align="left"><font color="#000000">Dominators 592, Drunken Squirrels 498</font></div>
 <div align="left">Team Bean 860, Fighting Calrissians 852</div>
@@ -927,12 +1311,17 @@ $(document).ready(function() {
 <div align="left">Phantom122 867, Wolves 623</div>
 <div align="left">Overpaid Crybabies 957, Sporky's Revenge 730</div>
 <div align="left">Ultracogs 1273, Bayou Boys 915</div>
-<div align="left">Rocky Mountain Oysters 1063, Red Raiders 568</div></td></tr>
+<div align="left">Rocky Mountain Oysters 1063, Red Raiders 568</div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="left"><strong><font color="#000000">Week 13</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Week 13</font></strong></div>
+</td>
 <td>
-<div align="left"><strong><font color="#000000">Week 14</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Week 14</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
 <div align="left"><font color="#000000">Drunken Squirrels 964, Fighting Calrissians 648</font></div>
@@ -942,7 +1331,8 @@ $(document).ready(function() {
 <div align="left">Ovepaid Crybabies 980, Phantom122 591</div>
 <div align="left">Wolves 1306, Sporky's Revenge 820</div>
 <div align="left">Bayou Boys 649, Rocky Mountain Oysters 456</div>
-<div align="left">Red Raiders 1099, Ultracogs 876</div></td>
+<div align="left">Red Raiders 1099, Ultracogs 876</div>
+</td>
 <td>
 <div align="left"><font color="#000000">Team Bean 819, Drunken Squirrels 640</font></div>
 <div align="left">Dominators 555, Fighting Calrissians 370</div>
@@ -951,108 +1341,145 @@ $(document).ready(function() {
 <div align="left">Sporky's Revenge 871, Phantom122 482</div>
 <div align="left">Wolves 1146, Overpaid Crybabies 1055</div>
 <div align="left">Bayou Boys 1282, Red Raiders 813</div>
-<div align="left">Rocky Mountain Oysters 994, Ultracogs 825</div></td></tr></tbody></table></div>
-<div align="center">&nbsp;</div>
+<div align="left">Rocky Mountain Oysters 994, Ultracogs 825</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div align="center">Â </div>
 <div align="center"><strong><font size="4">2005 WaFFL Playoffs</font></strong></div>
-<div align="center">&nbsp;</div>
+<div align="center">Â </div>
 <div align="center">
-<table style="width: 80%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
-<tbody>
+<table style="width: 80%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1"><tbody>
 <tr valign="top">
 <td colspan="2">
-<div align="left"><strong><font color="#000000">Wild Card Week</font></strong></div></td>
+<div align="left"><strong><font color="#000000">Wild Card Week</font></strong></div>
+</td>
 <td colspan="2">
-<div align="left"><strong><font color="#000000">Conference Championship</font></strong></div></td></tr>
+<div align="left"><strong><font color="#000000">Conference Championship</font></strong></div>
+</td>
+</tr>
 <tr valign="top">
 <td colspan="2">
 <div align="left"><font color="#000000">AFC: Dominators 897, Team Bean 563</font></div>
 <div align="left">AFC: Marauding Nomads 1097, TD Matrix 816</div>
 <div align="left">NFC: Sporky's Revenge 1034, Ultracogs 894</div>
 <div align="left">NFC: Wolves 874, Rocky Mountain Oysters 385</div>
-<div>&nbsp;</div></td>
+<div>Â </div>
+</td>
 <td colspan="2">
-<div align="left"><font color="#000000">AFC:&nbsp;Dominators 676, Marauding Nomads 622</font></div>
-<div align="left"><font color="#000000">NFC: Sporky's Revenge 986, Wolves 537</font></div></td></tr>
-<tr valign="top">
-<td colspan="4">
-<div><font color="#000000"><strong>Fantasy Bowl&nbsp;X</strong></font></div></td></tr>
-<tr valign="top">
-<td colspan="4">
+<div align="left"><font color="#000000">AFC:Â Dominators 676, Marauding Nomads 622</font></div>
+<div align="left"><font color="#000000">NFC: Sporky's Revenge 986, Wolves 537</font></div>
+</td>
+</tr>
+<tr valign="top"><td colspan="4">
+<div><font color="#000000"><strong>Fantasy BowlÂ X</strong></font></div>
+</td></tr>
+<tr valign="top"><td colspan="4">
 <div><font color="#000000">Sporky's Revenge 823, Dominators 427</font></div>
-<div><font color="#000000">MVP:</font> Larry Johnson - Sporky's Revenge</div></td></tr></tbody></table></div>
-<div align="center">&nbsp;</div>
-<div align="center">&nbsp;</div>
-<div align="center">&nbsp;</div>
+<div>
+<font color="#000000">MVP:</font> Larry Johnson - Sporky's Revenge</div>
+</td></tr>
+</tbody></table>
+</div>
+<div align="center">Â </div>
+<div align="center">Â </div>
+<div align="center">Â </div>
 <div align="center"><strong><font size="4">2005 WaFFL All-Pro's</font></strong></div>
-<div align="center">&nbsp;</div>
-<div align="center">The WaFFL All-Pro's were selected based on scoring the most points in their respective positions during the 2005 WaFFL Season.&nbsp; The MVP Award is&nbsp;voted on by the owners from the list of All-Pros'.&nbsp;</div>
-<div align="justify">&nbsp;</div>
+<div align="center">Â </div>
+<div align="center">The WaFFL All-Pro's were selected based on scoring the most points in their respective positions during the 2005 WaFFL Season.Â  The MVP Award isÂ voted on by the owners from the list of All-Pros'.Â </div>
+<div align="justify">Â </div>
 <div align="justify">
-<table style="width: 100%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1">
-<tbody>
+<table style="width: 100%; border-collapse: collapse" bordercolor="#ffffff" cellspacing="0" cellpadding="3" border="1"><tbody>
 <tr valign="top">
 <td>
-<div align="center"><img title="" height="108" alt="" width="72" src="http://thewaffl.net/images/manning05.jpg" /></div></td>
+<div align="center"><img title="" height="108" alt="" width="72" src="https://thewaffl.net/images/manning05.jpg"></div>
+</td>
 <td>
-<div align="center"><img title="" height="108" alt="" width="68" src="http://thewaffl.net/images/alexander05.jpg" /></div></td>
+<div align="center"><img title="" height="108" alt="" width="68" src="https://thewaffl.net/images/alexander05.jpg"></div>
+</td>
 <td>
-<div align="center"><img title="" height="108" alt="" width="87" src="http://thewaffl.net/images/james05.jpg" /></div></td>
+<div align="center"><img title="" height="108" alt="" width="87" src="https://thewaffl.net/images/james05.jpg"></div>
+</td>
 <td>
-<div align="center"><img title="" height="108" alt="" width="85" src="http://thewaffl.net/images/smith05.jpg" /></div></td>
+<div align="center"><img title="" height="108" alt="" width="85" src="https://thewaffl.net/images/smith05.jpg"></div>
+</td>
 <td>
-<div align="center"><img title="" height="108" alt="" width="90" src="http://thewaffl.net/images/boldin05.gif" /></div></td>
+<div align="center"><img title="" height="108" alt="" width="90" src="https://thewaffl.net/images/boldin05.gif"></div>
+</td>
 <td>
-<div align="center"><img title="" height="108" alt="" width="87" src="http://thewaffl.net/images/brown05.jpg" /></div></td>
+<div align="center"><img title="" height="108" alt="" width="87" src="https://thewaffl.net/images/brown05.jpg"></div>
+</td>
 <td>
-<div align="center"><img title="" height="108" alt="" width="80" src="http://thewaffl.net/images/min05.jpg" /></div></td></tr>
+<div align="center"><img title="" height="108" alt="" width="80" src="https://thewaffl.net/images/min05.jpg"></div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="center">Peyton Manning</div></td>
+<div align="center">Peyton Manning</div>
+</td>
 <td>
-<div align="center">Shaun Alexander - <strong>MVP</strong></div></td>
+<div align="center">Shaun Alexander - <strong>MVP</strong>
+</div>
+</td>
 <td>
-<div align="center">Edgerrin James</div></td>
+<div align="center">Edgerrin James</div>
+</td>
 <td>
-<div align="center">Steve Smith</div></td>
+<div align="center">Steve Smith</div>
+</td>
 <td>
-<div align="center">Anquan Boldin</div></td>
+<div align="center">Anquan Boldin</div>
+</td>
 <td>
-<div align="center">Josh Brown</div></td>
+<div align="center">Josh Brown</div>
+</td>
 <td>
-<div align="center">Minnesota Vikings</div></td></tr>
+<div align="center">Minnesota Vikings</div>
+</td>
+</tr>
 <tr valign="top">
 <td>
-<div align="center">Red Raiders</div></td>
+<div align="center">Red Raiders</div>
+</td>
 <td>
-<div align="center">Marauding Nomads</div></td>
+<div align="center">Marauding Nomads</div>
+</td>
 <td>
-<div align="center">Dominators</div></td>
+<div align="center">Dominators</div>
+</td>
 <td>
-<div align="center">Ultracogs</div></td>
+<div align="center">Ultracogs</div>
+</td>
 <td>
-<div align="center">TD Matrix</div></td>
+<div align="center">TD Matrix</div>
+</td>
 <td>
-<div align="center">Phantom122</div></td>
+<div align="center">Phantom122</div>
+</td>
 <td>
-<div align="center">Rocky Mountain Oysters</div></td></tr></tbody></table></div>
-<div align="center">&nbsp;</div>
-<div>&nbsp;</div></td>  </tr></table>
+<div align="center">Rocky Mountain Oysters</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div align="center">Â </div>
+<div>Â </div>
+</td>  </tr></table>
 </div></td>
 											<!-- Begin SIDE2 -->
-											<td width="160" align="center" valign="top" class="magin"><div><strong>2013 WaFFL Champs</strong></div>
+											<td width="160" align="center" valign="top" class="magin"><div><strong>2024 WaFFL Champs</strong></div>
 <div>&nbsp;</div>
-<div><img src="http://thewaffl.net/images/dtmb.gif" width="160" height="106" border="0" title="" alt="" /><br />
+<div><img src="https://thewaffl.net/images/SR.gif" width="160" height="106" border="0" title="" alt="" /><br />
 </div>
-<div>&nbsp;</div>
-<div>Dont Tase Me Bro</div>
-<div>&nbsp;</div>
+<div>Sporky's Revenge</div>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
-<div><strong>2013 Playoff Challenge Champs</strong></div>
 <div>&nbsp;</div>
-<div><img src="http://thewaffl.net/images/D.gif" width="160" height="106" border="0" title="" alt="" />&nbsp;</div>
-<div>&nbsp;</div>
-<div>Dominators</div></td>
+<div><strong>2024 Playoff Challenge Champs</strong></div>
+<div><img src="https://thewaffl.net/images/SR.gif" width="160" height="106" border="0" title="" alt="" /><br />
+</div>
+<div>Sporky's Revenge</div></td>
 											<!-- End SIDE2 -->
 										</tr>
 									</table>														

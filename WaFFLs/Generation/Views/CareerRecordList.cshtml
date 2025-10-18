@@ -14,7 +14,7 @@
     @foreach (var x in Model)
     {
         <li>
-            @x.Value.WithCommas()
+            @x.Value
             @x.Team.GetDisplayName()
             @if (!string.IsNullOrWhiteSpace(x.Notes))
             {

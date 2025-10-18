@@ -1,5 +1,4 @@
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
 using System.Linq;
 using WaFFLs.Generation;
@@ -10,6 +9,8 @@ namespace WaFFLs
     {
         private static void UpdateYear(int year)
         {
+            Console.WriteLine("Caching {0}", year);
+
             var remote = new OnlineWaFFLDataSource();
             var local = new CachedWaFFLDataSource();
             var txt = remote.GetStandingsDataForYear(year);
@@ -18,15 +19,20 @@ namespace WaFFLs
 
         static void Main(string[] args)
         {
-            //for (int i = 1996; i <= 2023; i++)
-            //    UpdateYear(2023);
+            if (args.Length == 1)
+            {
+                for (int i = 1996; i <= 2024; i++)
+                {
+                    UpdateYear(i);
+                }
+            }
 
             League leagueData = new League();
 
             IWaFFLDataSource dataProvider = new CachedWaFFLDataSource();
             ITeamResolver teamResolver = new LeagueTeamResolver(leagueData);
             var parser = new HtmlPageParser(dataProvider, teamResolver);
-            parser.Parse(leagueData, 1996, 2023);
+            parser.Parse(leagueData, 1996, 2024);
 
             string root = "c:\\waffles-output";
 
@@ -44,12 +50,12 @@ namespace WaFFLs
 
 
             //GetAllTeamsEverInLeague(leagueData);
-            GetAllTeamsInSeason(leagueData, 2023);
+            //GetAllTeamsInSeason(leagueData, 2007);
             //GetTeamsAndYearsPlayed(leagueData);
             //GetTeamsAndPlayoffAppearances(leagueData);
-            //GetAverages(leagueData);
-            //var team = leagueData.Teams.Single(t => t.Name == "Rocky Mountain Oysters");
-            //GetAverages(leagueData);
+            GetAverages(leagueData);
+            //GetWeek(leagueData, 2007, 6);
+            //GetSeasonHeadToHeadRecords(leagueData, 2007);
 
             Console.WriteLine("Completed");
         }
@@ -106,11 +112,53 @@ namespace WaFFLs
                     bool valid = (wins + losses == 15 && targetseason.Year == 1996) || (wins + losses == 14 && targetseason.Year != 1996);
 
                     var winloss = string.Format("{0}-{1}{2}", wins, losses, valid ? "" : "*");
-                    Console.WriteLine("  {0, -30}: {1,5} {2,10:00.0}%", team.Name, winloss, winPercentage);
+                    Console.WriteLine("  {0, -30}: {1,5} {2,10:00.0}%         {3}", team.Name, winloss, winPercentage, LeagueTeamResolver.GetOwner(closureTeam));
                 }
             }
         }
 
+        private static void GetWeek(League leagueData, int year, int week)
+        {
+            Console.WriteLine("Week {0}, {1}", week, year);
+            var games = leagueData.Seasons.Single(s => s.Year == year).Weeks.Single(w => w.Name == string.Format("Week {0}", week)).Games;
+            foreach (var game in games)
+            {
+                var winner = game.GetWinningScore();
+                var loser = game.GetLosingScore();
+                Console.WriteLine("{0} {1}, {2} {3}", winner.Team.Name, winner.Score, loser.Team.Name, loser.Score);
+            }
+        }
+
+        private static void GetSeasonHeadToHeadRecords(League leagueData, int year)
+        {
+            Console.WriteLine("Head-to-Head {0}", year);
+
+            var orderedteams = leagueData.Teams.OrderBy(t => t.Name);
+            foreach (Team team in orderedteams)
+            {
+                var seasons = team.Games.Select(g => g.Week.Season).Distinct();
+                var targetseason = seasons.SingleOrDefault(s => s.Year == year);
+                if (targetseason != null)
+                {
+                    Team closureTeam = team;
+
+                    Console.WriteLine(" {0}", closureTeam.Name);
+
+                    var games = targetseason.Weeks.SelectMany(w => w.Games);
+                    var grouping = games.Where(g => g.Involved(closureTeam)).GroupBy(g => g.OpponentOf(closureTeam)).OrderByDescending(g => g.Count());
+                    foreach (var group in grouping)
+                    {
+                        int wins = group.Where(g => g.Week.Name.StartsWith("Week ")).Count(g => g.GetWinningTeam() == closureTeam);
+                        int losses = group.Where(g => g.Week.Name.StartsWith("Week ")).Count(g => g.GetLosingTeam() == closureTeam);
+
+                        int pwins = group.Where(g => !g.Week.Name.StartsWith("Week ")).Count(g => g.GetWinningTeam() == closureTeam);
+                        int plosses = group.Where(g => !g.Week.Name.StartsWith("Week ")).Count(g => g.GetLosingTeam() == closureTeam);
+
+                        Console.WriteLine("   -> {0}, {1}-{2}    {2}-{3}", group.Key.Name, wins, losses, pwins, plosses);
+                    }
+                }
+            }
+        }
 
         private static void GetTeamsAndYearsPlayed(League leagueData)
         {

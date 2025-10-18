@@ -27,7 +27,7 @@ namespace WaFFLs
         {
             for (int year = startYear; year <= endYear; year++)
             {
-//                Console.WriteLine("{0}", year);
+                Console.WriteLine("Parsing {0}", year);
 
                 Season seasonData = new Season() { Year = year };
                 leagueData.Seasons.Add(seasonData);
@@ -40,17 +40,24 @@ namespace WaFFLs
         private void ParseRegularSeason(string raw, int year, Season seasonData)
         {
             string seasonTable = _seasonParser.GetData(raw);
-            seasonTable = seasonTable.Replace("&nbsp;", " ");
+            seasonTable = CleanupTableData(seasonTable);
             XElement season = XElement.Parse(seasonTable);
             _extractor.Extract(season, year, seasonData);
         }
 
-        public void ParsePostSeason(string raw, int year, Season seasonData)
+        private void ParsePostSeason(string raw, int year, Season seasonData)
         {
             string postseasonTable = _postseasonParser.GetData(raw);
-            postseasonTable = postseasonTable.Replace("&nbsp;", " ");
+            postseasonTable = CleanupTableData(postseasonTable);
             XElement postseason = XElement.Parse(postseasonTable);
             _playoffExtractor.Extract(postseason, year, seasonData);
+        }
+
+        private string CleanupTableData(string data)
+        {
+            return data.Replace("&nbsp;", " ")
+                       .Replace("Â", "")
+                       .Replace(" ", " ");    // unicode 160 with unicode 32
         }
     }
 
@@ -104,7 +111,11 @@ namespace WaFFLs
                         }
                         else if (text == "Fantasy Bowl XXVIII")
                         {
-                            individualGames = new XElement[0]; ;
+                            individualGames = new XElement[] { XElement.Parse("<div>Fantasy Cognoscenti 1422, Rocky Mountain Oysters 958</div>") };
+                        }
+                        else if (text == "Fantasy Bowl XXIX")
+                        {
+                            individualGames = new XElement[] { XElement.Parse("<div>Sporky's Revenge 1080, Truffle Shuffle 825</div>") };
                         }
                         else
                         {
@@ -135,6 +146,9 @@ namespace WaFFLs
 
         private void ProcessGameLine(string line, Week weekData)
         {
+            if (string.IsNullOrWhiteSpace(line))
+                return;
+
             string[] raw = line.Split(',');
             if (raw.Length == 2)
             {
@@ -169,7 +183,13 @@ namespace WaFFLs
             while (char.IsDigit(raw[--scoreIndex])) ;
             scoreIndex++;
 
-            string team = raw.Substring(0, scoreIndex).Trim();
+            int nameIndex = 0;
+            if (raw.StartsWith("(#"))
+            {
+                while (!char.IsWhiteSpace(raw[++nameIndex])) ;
+            }
+
+            string team = raw.Substring(nameIndex, scoreIndex-nameIndex).Trim();
             string score = raw.Substring(scoreIndex).Trim();
 
             int scoreInt = Convert.ToInt32(score);
@@ -234,7 +254,7 @@ namespace WaFFLs
                     var weekData = new Week() { Name = text, Season = seasonData };
                     seasonData.Weeks.Add(weekData);
 
-//                    Console.WriteLine("  " + text);
+                    //                    Console.WriteLine("  " + text);
 
                     var individualGames = games[j].Elements("div").ToArray();
                     if (individualGames.Length == 1)
@@ -359,35 +379,16 @@ namespace WaFFLs
                         }
                     }
 
-                    if (year == 2007 && weekData.Name == "Week 6")
+                    if (year == 2008 && weekData.Name == "Week 12")
                     {
-                        // Data as screwed up in week 6, 2007.  After careful analysis,
-                        // I determined that the following games were in need of correction
-                        // with the team in [] being the actual team that should of been
-                        // recorded
-                        //
-                        // Wolves[BB] 443, Wolfins 177
-                        // Fighting Calrissians[TB] 1095, Sporky's Revenge 1035
-                        // Eternals[RMO] 520, Ultracogs 469
-                        // TD Matrix 736, Dominators[MN] 390
+                        // there is no score data for FC this week, so this was calculated by totaling the
+                        // results of all games and subtracting the seaons points for.
 
                         foreach (var element in individualGames)
                         {
-                            if (element.Value == "Wolves 443, Wolfins 177")
+                            if (element.Value == "Dominators 1170, Fighting Calrissians")
                             {
-                                element.Value = "Bayou Boys 443, Wolfins 177";
-                            }
-                            else if (element.Value == "Fighting Calrissians 1095, Sporky's Revenge 1035")
-                            {
-                                element.Value = "Team Bean 1095, Sporky's Revenge 1035";
-                            }
-                            else if (element.Value == "Eternals 520, Ultracogs 469")
-                            {
-                                element.Value = "Rocky Mountain Oysters 520, Ultracogs 469";
-                            }
-                            else if (element.Value == "TD Matrix 736, Dominators 390")
-                            {
-                                element.Value = "TD Matrix 736, Marauding Nomads 390";
+                                element.Value = "Dominators 1170, Fighting Calrissians 819";
                             }
                         }
                     }
@@ -438,13 +439,26 @@ namespace WaFFLs
 
                     if (year == 2021 && weekData.Name == "Week 12")
                     {
-                        // Rocky mountian oysters is mis-spelled
+                        // rocky mountian oysters is mis-spelled
 
                         foreach (var element in individualGames)
                         {
                             if (element.Value == "Sporky's Revenge 1043, Rocky Mouyntain Oysters 369 ")
                             {
                                 element.Value = "Sporky's Revenge 1043, Rocky Mountain Oysters 369";
+                            }
+                        }
+                    }
+
+                    if (year == 2024 && weekData.Name == "Week 13")
+                    {
+                        // koothrapaulli browns score is a super high, assuming 851 is the correct score
+
+                        foreach (var element in individualGames)
+                        {
+                            if (element.Value == "Koothrapaulli Browns 8518, Rocky Mountain Oysters 563")
+                            {
+                                element.Value = "Koothrapaulli Browns 851, Rocky Mountain Oysters 563";
                             }
                         }
                     }
@@ -460,7 +474,7 @@ namespace WaFFLs
 
         private void ProcessGameLine(string line, Week weekData)
         {
-            if (string.IsNullOrEmpty(line))
+            if (string.IsNullOrWhiteSpace(line))
                 return;
 
             string[] raw = line.Split(',');
@@ -501,14 +515,6 @@ namespace WaFFLs
 
             string team = raw.Substring(0, scoreIndex).Trim();
             string score = raw.Substring(scoreIndex).Trim();
-
-            if (scoreData.Game.Week.Name == "Week 12" && scoreData.Game.Week.Season.Year == 2008 &&
-                score == "" && team == "Fighting Calrissians")
-            {
-                // there is no score data for FC this week, so this was calculated by totaling the
-                // results of all games and subtracting the seaons points for.
-                score = "819";
-            }
 
             int scoreInt = Convert.ToInt32(score);
 

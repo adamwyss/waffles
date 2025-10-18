@@ -137,6 +137,11 @@ namespace WaFFLs
             throw new Exception();
         }
 
+        public static bool Involved(this Game game, Team team)
+        {
+            return team == game.Home.Team || team == game.Away.Team;
+        }
+
         public static bool IsWinningTeam(this Game g, Team t)
         {
             if (g.Home.Team == t)

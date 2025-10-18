@@ -157,7 +157,6 @@ namespace WaFFLs
             _league = league;
         }
 
-
         public static string GetOwner(Team team)
         {
             string owner;

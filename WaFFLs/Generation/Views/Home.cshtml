@@ -1,4 +1,5 @@
 ﻿@using System.Collections.Generic
+@using WaFFLs.Generation
 @inherits RazorEngine.Templating.TemplateBase<List<System.Type>>
 
 <html>
@@ -9,22 +10,22 @@
 <body>
     <p>WaFFL Record Book</p>
 
-<p>
-    <a href="teams.html">All Teams</a>
-</p>
+    <p>
+        <a href="teams.html">All Teams</a>
+    </p>
 
-<p>
-    <a href="owners.html">All Owners</a>
-</p>
+    <p>
+        <a href="owners.html">All Owners</a>
+    </p>
 
-<div>
-    <p>Records</p>
-    <ul>
-        @foreach (var t in Model)
-        {
-            <li><a href="@string.Format("{0}.html", t.Name)">@t.Name</a></li>
-        }
-    </ul>
-</div>
+    <div>
+        <p>Records</p>
+        <ul>
+            @foreach (var t in Model)
+            {
+                <li><a href="@string.Format("{0}.html", t.Name)">@TitleAttribute.GetTitleText(t)</a></li>
+            }
+        </ul>
+    </div>
 </body>
 </html>

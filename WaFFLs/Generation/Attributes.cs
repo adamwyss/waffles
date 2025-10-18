@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WaFFLs.Generation
 {
@@ -15,6 +11,11 @@ namespace WaFFLs.Generation
         public static string GetTitleText(object obj)
         {
             Type type = obj.GetType();
+            return GetTitleText(type);
+        }
+
+        public static string GetTitleText(Type type)
+        {
             var title = type.GetCustomAttribute<TitleAttribute>(false);
             if (title != null && !string.IsNullOrWhiteSpace(title.Text))
             {

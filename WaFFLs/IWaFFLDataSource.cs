@@ -16,19 +16,6 @@ namespace WaFFLs
         public string GetStandingsDataForYear(int year)
         {
             string url = string.Format(UrlFormat, year);
-            if (year == 2018)
-            {
-                url = string.Format(UrlFormat, "Copied-2017");
-            }
-            else if (year == 2019)
-            {
-                url = string.Format(UrlFormat, "Copied-2018");
-            }
-            else if (year == 2023)
-            {
-                url = string.Format(UrlFormat, "Copied-2022");
-            }
-
             using (WebClient client = new WebClient())
             {
                 return client.DownloadString(url);
