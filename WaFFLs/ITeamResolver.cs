@@ -150,7 +150,7 @@ namespace WaFFLs
 
         private readonly League _league;
 
-        private Dictionary<string, int> counts = new Dictionary<string, int>();
+        private readonly Dictionary<string, int> counts = new Dictionary<string, int>();
 
         public LeagueTeamResolver(League league)
         {
@@ -159,8 +159,7 @@ namespace WaFFLs
 
         public static string GetOwner(Team team)
         {
-            string owner;
-            bool hasOwner = TeamOwners.TryGetValue(team.Name, out owner);
+            bool hasOwner = TeamOwners.TryGetValue(team.Name, out string owner);
             if (hasOwner)
             {
                 return owner;
@@ -189,8 +188,7 @@ namespace WaFFLs
             Team team = _league.Teams.SingleOrDefault(t => string.Equals(t.Name, name, StringComparison.OrdinalIgnoreCase));
             if (team == null)
             {
-                string corrected;
-                bool correctionExists = TeamNameCorrections.TryGetValue(name, out corrected);
+                bool correctionExists = TeamNameCorrections.TryGetValue(name, out string corrected);
                 if (correctionExists)
                 {
                     name = corrected;
@@ -199,14 +197,12 @@ namespace WaFFLs
             }
 
             // the team may have been renamed.  we will use the latest team name.
-            string renamed;
-            bool renameExists = TeamNameRenames.TryGetValue(name, out renamed);
+            bool renameExists = TeamNameRenames.TryGetValue(name, out string renamed);
             if (renameExists)
             {
                 name = renamed;
                 team = _league.Teams.SingleOrDefault(t => string.Equals(t.Name, renamed, StringComparison.OrdinalIgnoreCase));
             }
-
 
             if (team == null)
             {

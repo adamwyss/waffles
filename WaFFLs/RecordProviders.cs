@@ -35,8 +35,7 @@ namespace WaFFLs
                 Team champion = bowl.GetWinningTeam();
                 Team runnerup = bowl.GetLosingTeam();
 
-                List<int> years;
-                bool exists = cache.TryGetValue(champion, out years);
+                bool exists = cache.TryGetValue(champion, out List<int> years);
                 if (!exists)
                 {
                     years = new List<int>();
@@ -53,9 +52,11 @@ namespace WaFFLs
                 }
                 years.Add(season.Year);
             }
-            
-            return cache.Select(c => new CareerRecord() { Value = c.Value.Count.WithCommas(), Team = c.Key, Notes = string.Join(",", c.Value) })
-                        .OrderByDescending(t => t.Value)
+
+            return cache.OrderByDescending(t => t.Value.Count)
+                        .ThenByDescending(t => t.Value.Max())
+                        .Take(_count)
+                        .Select(t => new CareerRecord() { Value = t.Value.Count.WithCommas(), Team = t.Key, Notes = string.Join(",", t.Value) })
                         .ToList();
         }
     }
@@ -85,8 +86,7 @@ namespace WaFFLs
 
                 Team champion = bowl.GetWinningTeam();
 
-                List<int> years;
-                bool exists = cache.TryGetValue(champion, out years);
+                bool exists = cache.TryGetValue(champion, out List<int> years);
                 if (!exists)
                 {
                     years = new List<int>();
@@ -95,8 +95,10 @@ namespace WaFFLs
                 years.Add(season.Year);
             }
 
-            return cache.Select(c => new CareerRecord() { Value = c.Value.Count.WithCommas(), Team = c.Key, Notes = string.Join(",", c.Value) })
-                        .OrderByDescending(t => t.Value)
+            return cache.OrderByDescending(t => t.Value.Count)
+                        .ThenByDescending(t => t.Value.Max())
+                        .Take(_count)
+                        .Select(t => new CareerRecord() { Value = t.Value.Count.WithCommas(), Team = t.Key, Notes = string.Join(",", t.Value) })
                         .ToList();
         }
     }
@@ -117,8 +119,8 @@ namespace WaFFLs
         public List<CareerRecord> GetData()
         {
             var teams = _leagueData.Teams.Select(t => new { Team = t, Wins = t.Games.Count(g => g.IsWinningTeam(t)) })
-                                        .OrderByDescending(x => x.Wins)
-                                        .Take(_count);
+                                         .OrderByDescending(x => x.Wins)
+                                         .Take(_count);
 
             return teams.Select(t => new CareerRecord() { Value = t.Wins.WithCommas(), Team = t.Team }).ToList();
         }
@@ -190,7 +192,7 @@ namespace WaFFLs
                                                                  .OrderByDescending(x => x.Wins)
                                                                  .Take(_count);
 
-            return teams.Select(t => new SeasonRecord() { Value = t.Wins, Team = t.Team, Year = t.Year }).ToList();
+            return teams.Select(t => new SeasonRecord() { Value = t.Wins.ToString(), Team = t.Team, Year = t.Year }).ToList();
         }
     }
 
@@ -215,7 +217,7 @@ namespace WaFFLs
                                          .OrderByDescending(x => x.PointsScored)
                                          .Take(_count);
 
-            return teams.Select(t => new SeasonRecord() { Value = t.PointsScored, Team = t.Team, Year = t.Year }).ToList();
+            return teams.Select(t => new SeasonRecord() { Value = t.PointsScored.WithCommas(), Team = t.Team, Year = t.Year }).ToList();
         }
     }
 
@@ -243,7 +245,7 @@ namespace WaFFLs
     }
 
 
-    [Title(Text = "1000 Point Games")]
+    [Title(Text = "1000 Point Games - Career")]
     [Summary(Text = "Breaking the 1000-point barrier is a mark of greatness. See which teams have done it most often and set the league on fire!")]
     public class Most1000PointGames : ICareerRecordProvider
     {
@@ -270,7 +272,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "1000 Point Games (Season & Playoffs)")]
+    [Title(Text = "1000 Point Games - Season + Playoffs")]
     [Summary(Text = "Who’s had the hottest hand in a single season, including the playoffs? These teams have delivered jaw-dropping performances when it mattered most!")]
     public class Most1000PointGamesInASeasonAndPlayoffs : ISeasonRecordProvider
     {
@@ -293,11 +295,11 @@ namespace WaFFLs
             var groupedScores = scores.GroupBy(g => new { g.Game.Week.Season.Year, g.Team }).OrderByDescending(x => x.Count())
                                       .Take(_count);
 
-            return groupedScores.Select(t => new SeasonRecord() { Value = t.Count(), Team = t.Key.Team, Year = t.Key.Year}).ToList();
+            return groupedScores.Select(t => new SeasonRecord() { Value = t.Count().ToString(), Team = t.Key.Team, Year = t.Key.Year}).ToList();
         }
     }
 
-    [Title(Text = "1000 Point Games (Season)")]
+    [Title(Text = "1000 Point Games - Season")]
     [Summary(Text = "Regular season fireworks! Discover the teams that have stacked up 1000-point games in a single campaign and electrified fans week after week!")]
     public class Most1000PointGamesInASeason : ISeasonRecordProvider
     {
@@ -320,7 +322,7 @@ namespace WaFFLs
             var groupedScores = scores.GroupBy(g => new { g.Game.Week.Season.Year, g.Team }).OrderByDescending(x => x.Count())
                                       .Take(_count);
 
-            return groupedScores.Select(t => new SeasonRecord() { Value = t.Count(), Team = t.Key.Team, Year = t.Key.Year }).ToList();
+            return groupedScores.Select(t => new SeasonRecord() { Value = t.Count().ToString(), Team = t.Key.Team, Year = t.Key.Year }).ToList();
         }
     }
 
@@ -506,7 +508,9 @@ namespace WaFFLs
                 allStreaks.AddRange(teamStreaks);
             }
 
-            var topStreaks = allStreaks.OrderByDescending(s => s.Count).Take(_count);
+            var topStreaks = allStreaks.OrderByDescending(s => s.Count)
+                                       .ThenByDescending(s => s.Last().Week.Season.Year)
+                                       .Take(_count);
 
             return topStreaks.Select(s => new StreakRecord()
             {
@@ -543,7 +547,9 @@ namespace WaFFLs
                 allStreaks.AddRange(teamStreaks);
             }
 
-            var topStreaks = allStreaks.OrderByDescending(s => s.Count).Take(_count);
+            var topStreaks = allStreaks.OrderByDescending(s => s.Count)
+                                       .ThenByDescending(s => s.Last().Week.Season.Year)
+                                       .Take(_count);
 
             return topStreaks.Select(s => new StreakRecord()
             {
@@ -670,7 +676,6 @@ namespace WaFFLs
             public int Losses { get; set; }
 
             public double Percentage => (double)Wins / (double)(Wins + Losses);
-
         }
     }
 

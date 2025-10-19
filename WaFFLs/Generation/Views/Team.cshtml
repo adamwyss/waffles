@@ -3,59 +3,163 @@
 @inherits RazorEngine.Templating.TemplateBase<TeamInfo>
 
 <html>
-<head></head>
-<body>
-    <p>@Model.Owner</p>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+        }
 
-<p>@Model.Name 
-@if (@Model.FirstSeason == @Model.LastSeason)
-{
-    <text>(@Model.FirstSeason)</text>
-}
-else
-{
-    <text>(@Model.FirstSeason - @Model.LastSeason)</text>
-}
-<br/>
-@foreach (var team in Model.OtherNames)
-{
-    <small>@team</small><br/>
-}
-</p>
+        .main-container {
+            width: 60%;
+            background: #fff;
+            margin: 2em auto;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
 
-    <p>Record: @Model.SeasonRecord.Wins - @Model.SeasonRecord.Losses (@Model.SeasonRecord.Percentage.AsWinningPercentage())</p>
-    <p>Playoffs: @Model.PlayoffRecord.Wins - @Model.PlayoffRecord.Losses (@Model.PlayoffRecord.Percentage.AsWinningPercentage())</p>
+        .team-header {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
 
-<p>Head to Head:</p>
-<ul>
-    @foreach (var record in Model.HeadToHeadRecords)
-    {
-        <li>@record.Team.GetDisplayName()
-            @record.SeasonRecord.Wins-@record.SeasonRecord.Losses @record.SeasonRecord.Percentage.AsWinningPercentage()
+        .team-meta {
+            color: #555;
+            margin-bottom: 1em;
+        }
 
-            @if (@record.PlayoffRecord.Wins + @record.PlayoffRecord.Losses > 0)
-            {
-                <text>(@record.PlayoffRecord.Wins - @record.PlayoffRecord.Losses)</text>
+        .other-names {
+            color: #888;
+            font-size: 0.95em;
+            margin-bottom: 1em;
+        }
+
+        .record-section {
+            margin-bottom: 1em;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .headtohead-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f9f9f9;
+            margin-bottom: 1.5em;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+            .headtohead-table th, .headtohead-table td {
+                padding: 0.5em 1em;
+                border-bottom: 1px solid #e0e0e0;
+                text-align: left;
             }
-        </li>
-    }
-</ul>
 
-<p>Seasons:</p>
-<ul>
-    @foreach (var season in Model.Seasons)
-    {
-        <li>
-            <strong>@season.Name</strong> @season.Record.Wins-@season.Record.Losses <i>(@season.Record.Percentage.AsWinningPercentage())</i>
-            <ol>
-                @foreach (var game in season.Games)
+            .headtohead-table th {
+                background: #f1f3f4;
+                font-weight: bold;
+            }
+
+            .headtohead-table tr:last-child td {
+                border-bottom: none;
+            }
+
+        .season-title {
+            font-weight: bold;
+        }
+
+        .game-details {
+            font-size: 0.95em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="team-header">@Model.Name</div>
+        <div class="team-meta">
+            Coach: @Model.Owner<br />
+            @if (@Model.FirstSeason == @Model.LastSeason)
+            {
+                <span>(@Model.FirstSeason)</span>
+            }
+            else
+            {
+                <span>(@Model.FirstSeason - @Model.LastSeason)</span>
+            }
+        </div>
+        @if (Model.OtherNames.Any())
+        {
+            <div class="other-names">
+                Also known as:
+                @foreach (var team in Model.OtherNames)
                 {
-                    <li>@game.WL @game.Score-@game.OpponentScore vs @game.Opponent.GetDisplayName() @game.Date.GetDisplayName()</li>
+                    <span>@team</span><br />
                 }
-            </ol>
-        </li>
-    }
-</ul>
+            </div>
+        }
+        <div class="record-section">
+            <div>Record: <strong>@Model.SeasonRecord.Wins - @Model.SeasonRecord.Losses</strong> (@Model.SeasonRecord.Percentage.AsWinningPercentage())</div>
+            <div>Playoffs: <strong>@Model.PlayoffRecord.Wins - @Model.PlayoffRecord.Losses</strong> (@Model.PlayoffRecord.Percentage.AsWinningPercentage())</div>
+        </div>
 
+        <div class="section-title">Head to Head:</div>
+        <table class="headtohead-table">
+            <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Head-to-head Record</th>
+                    <th>Percentage</th>
+                    <th>Playoff Head-to-head</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model.HeadToHeadRecords)
+                {
+                    <tr>
+                        <td>@record.Team.GetDisplayName()</td>
+                        <td>@record.SeasonRecord.Wins-@record.SeasonRecord.Losses</td>
+                        <td>@record.SeasonRecord.Percentage.AsWinningPercentage()</td>
+                        <td>
+                            @if (record.PlayoffRecord.Wins + record.PlayoffRecord.Losses > 0)
+                            {
+                                <span>@record.PlayoffRecord.Wins-@record.PlayoffRecord.Losses</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="section-title">Seasons:</div>
+        <ul>
+            @foreach (var season in Model.Seasons)
+            {
+                <li>
+                    <span class="season-title">@season.Name</span>
+                    <span> @season.Record.Wins-@season.Record.Losses <i>(@season.Record.Percentage.AsWinningPercentage())</i></span>
+                    <ol>
+                        @foreach (var game in season.Games)
+                        {
+                            <li class="game-details">@game.WL @game.Score-@game.OpponentScore vs @game.Opponent.GetDisplayName() @game.Date.GetDisplayName()</li>
+                        }
+                    </ol>
+                </li>
+            }
+        </ul>
+    </div>
 </body>
 </html>

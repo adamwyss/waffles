@@ -25,9 +25,10 @@ namespace WaFFLs
 
         public void Parse(League leagueData, int startYear, int endYear)
         {
+            using (var loader = Terminal.Show("Parsing"))
             for (int year = startYear; year <= endYear; year++)
             {
-                Console.WriteLine("Parsing {0}", year);
+                loader.Update(year);
 
                 Season seasonData = new Season() { Year = year };
                 leagueData.Seasons.Add(seasonData);
@@ -63,7 +64,7 @@ namespace WaFFLs
 
     public class PlayoffGameExtractor
     {
-        private ITeamResolver _teamResolver;
+        private readonly ITeamResolver _teamResolver;
 
         public PlayoffGameExtractor(ITeamResolver teamResolver)
         {
@@ -158,12 +159,12 @@ namespace WaFFLs
 
                 TeamScore homeScoreData = new TeamScore();
                 homeScoreData.Game = gameData;
-                ProcessTeam(raw[0], homeScoreData, 0);
+                ProcessTeam(raw[0], homeScoreData);
                 gameData.Home = homeScoreData;
 
                 TeamScore awayScoreData = new TeamScore();
                 awayScoreData.Game = gameData;
-                ProcessTeam(raw[1], awayScoreData, 1);
+                ProcessTeam(raw[1], awayScoreData);
                 gameData.Away = awayScoreData;
             }
             else
@@ -175,7 +176,7 @@ namespace WaFFLs
             }
         }
 
-        private void ProcessTeam(string teamline, TeamScore scoreData, int pos)
+        private void ProcessTeam(string teamline, TeamScore scoreData)
         {
             string raw = teamline.Trim();
 
@@ -204,7 +205,7 @@ namespace WaFFLs
 
     public class GameExtractor
     {
-        private ITeamResolver teamResolver;
+        private readonly ITeamResolver teamResolver;
 
         public GameExtractor(ITeamResolver resolver)
         {
@@ -486,12 +487,12 @@ namespace WaFFLs
 
                 TeamScore homeScoreData = new TeamScore();
                 homeScoreData.Game = gameData;
-                ProcessTeam(raw[0], homeScoreData, 0);
+                ProcessTeam(raw[0], homeScoreData);
                 gameData.Home = homeScoreData;
 
                 TeamScore awayScoreData = new TeamScore();
                 awayScoreData.Game = gameData;
-                ProcessTeam(raw[1], awayScoreData, 1);
+                ProcessTeam(raw[1], awayScoreData);
                 gameData.Away = awayScoreData;
             }
             else
@@ -505,7 +506,7 @@ namespace WaFFLs
             }
         }
 
-        private void ProcessTeam(string teamline, TeamScore scoreData, int pos)
+        private void ProcessTeam(string teamline, TeamScore scoreData)
         {
             string raw = teamline.Trim();
 

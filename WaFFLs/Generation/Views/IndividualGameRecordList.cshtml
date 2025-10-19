@@ -4,18 +4,105 @@
 @inherits RazorEngine.Templating.TemplateBase<List<IndividualGameRecord>>
 
 <html>
-<head></head>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+        }
+
+        .summary-container {
+            width: 60%;
+            margin: 0 auto 0.5em auto;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .centered-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2em;
+            width: 100%;
+        }
+
+        ol {
+            width: 60%;
+            background: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        li {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0.5em 0;
+        }
+
+            li:last-child {
+                border-bottom: none;
+            }
+
+        .li-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .li-name {
+            text-align: left;
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .li-week {
+            margin-left: 1.5em;
+            font-size: 0.95em;
+            color: #888;
+            font-weight: normal;
+            opacity: 0.85;
+        }
+
+        .li-value {
+            text-align: right;
+            min-width: 80px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        h2, i {
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
-
-<h2>@ViewBag.Title</h2>
-<i>@ViewBag.Summary</i>
-
-<ol>
-    @foreach (var x in Model)
-    {
-        <li>@x.Value @x.Team.GetDisplayName() @x.Game.GetDisplayName()</li>
-    }
-</ol>
-
+    <h2>@ViewBag.Title</h2>
+    <div class="summary-container">
+        <i>@ViewBag.Summary</i>
+    </div>
+    <div class="centered-list">
+        <ol>
+            @foreach (var x in Model)
+            {
+                <li>
+                    <span class="li-content">
+                        <span class="li-name">
+                            @x.Team.GetDisplayName()
+                            <span class="li-week">@x.Game.GetDisplayName()</span>
+                        </span>
+                        <span class="li-value">@x.Value</span>
+                    </span>
+                </li>
+            }
+        </ol>
+    </div>
 </body>
 </html>

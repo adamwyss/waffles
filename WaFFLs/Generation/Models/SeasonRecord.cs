@@ -8,7 +8,7 @@ namespace WaFFLs.Generation.Models
 {
     public class SeasonRecord
     {
-        public int Value { get; set; }
+        public string Value { get; set; }
 
         public Team Team { get; set; }
 

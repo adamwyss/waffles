@@ -6,6 +6,54 @@
 <html>
 <head>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+        }
+
+        table {
+            margin: 2em auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 0.75em 1.5em;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: #f1f3f4;
+        }
+
+            /* Left align Team (first column) and Championships (fifth column) */
+            th:first-child,
+            td:first-child,
+            th:nth-child(5),
+            td:nth-child(5) {
+                text-align: left;
+            }
+
+        a {
+            color: #0074d9;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        small {
+            color: #888;
+        }
     </style>
 </head>
 <body>

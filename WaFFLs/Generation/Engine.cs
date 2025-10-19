@@ -39,16 +39,23 @@ namespace WaFFLs.Generation
                 CachingProvider = new DefaultCachingProvider(t => { }),
             };
 
+            using (Terminal terminal = Terminal.Show("Generating"))
             using (IRazorEngineService razor = RazorEngineService.Create(config))
             {
                 CacheViews(razor);
                 GenerateHome(razor, providers);
+                terminal.Update("home");
                 GenerateTeams(razor);
+                terminal.Update("teams");
                 GenerateRecords<ICareerRecordProvider>(razor, "career-record-list", providers, x => x.GetData());
+                terminal.Update("career records");
                 GenerateRecords<ISeasonRecordProvider>(razor, "season-record-list", providers, x => x.GetData());
+                terminal.Update("season records");
                 GenerateRecords<IGameRecordProvider>(razor, "game-record-list", providers, x => x.GetData());
                 GenerateRecords<IIndividualGameRecordProvider>(razor, "individual-game-record-list", providers, x => x.GetData());
+                terminal.Update("game records");
                 GenerateRecords<IStreakRecordProvider>(razor, "streak-record-list", providers, x => x.GetData());
+                terminal.Update("streak records");
             }
         }
 

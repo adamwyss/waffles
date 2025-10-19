@@ -9,8 +9,6 @@ namespace WaFFLs
     {
         private static void UpdateYear(int year)
         {
-            Console.WriteLine("Caching {0}", year);
-
             var remote = new OnlineWaFFLDataSource();
             var local = new CachedWaFFLDataSource();
             var txt = remote.GetStandingsDataForYear(year);
@@ -21,9 +19,13 @@ namespace WaFFLs
         {
             if (args.Length == 1)
             {
-                for (int i = 1996; i <= 2024; i++)
+                using (var terminal = Terminal.Show("Downloading"))
                 {
-                    UpdateYear(i);
+                    for (int i = 1996; i <= 2024; i++)
+                    {
+                        terminal.Update(i);
+                        UpdateYear(i);
+                    }
                 }
             }
 
@@ -35,13 +37,13 @@ namespace WaFFLs
             parser.Parse(leagueData, 1996, 2024);
 
             string root = "c:\\waffles-output";
+            int count = 15;
 
             var e = new Engine(leagueData, root);
 
-            var providers =
-                typeof(Program).Assembly.GetTypes()
+            var providers = typeof(Program).Assembly.GetTypes()
                     .Where(t => !t.IsInterface && typeof(IProvider).IsAssignableFrom(t))
-                    .Select(t => (object)Activator.CreateInstance(t, leagueData, 25))
+                    .Select(t => (object)Activator.CreateInstance(t, leagueData, count))
                     .ToList();
 
             e.Generate(providers);
@@ -85,7 +87,7 @@ namespace WaFFLs
                     var winloss = string.Format("{0}-{1}{2}", wins, losses, valid ? "" : "*");
                     Console.WriteLine("  {0}:  {1,5} {2,10:00.0}%", season.Year, winloss, winPercentage);
                 }
-            }
+            }   
         }
 
         private static void GetAllTeamsInSeason(League leagueData, int year)
@@ -207,7 +209,7 @@ namespace WaFFLs
                 Console.WriteLine("{0,-15} {1,-7} {2,-7} {3,-7}", "WaFFL", "Avg", "Avg W", "Avg L");
                 Console.WriteLine("{0,15}+{1,-5}+{2,-5}+{3,-5}", new String('-', 15), new String('-', 7), new String('-', 7),new String('-', 7));
                 Console.WriteLine("{0,-15} {1,7:0.0} {2,7:0.0} {3,7:0.0}", "Season", avgSeasonScore, avgSeasonWin, avgSeasonLosing);
-                Console.WriteLine("{0,-15} {1,7:0.0} {2,7:0.0} {3,7:0.0}", "Playoffs", avgPlayoffScore, avgPlayoffWin,avgPlayoffLosing);
+                Console.WriteLine("{0,-15} {1,7:0.0} {2,7:0.0} {3,7:0.0}", "Playoffs", avgPlayoffScore, avgPlayoffWin, avgPlayoffLosing);
             }
 
             Console.WriteLine("");
