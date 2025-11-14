@@ -56,9 +56,12 @@ namespace WaFFLs
 
         private string CleanupTableData(string data)
         {
+            const char unicode160 = (char)160; // unicode 160 space
+            const char unicode194 = (char)194; // latin capital letter A with circumflex
+
             return data.Replace("&nbsp;", " ")
-                       .Replace("Â", "")
-                       .Replace(" ", " ");    // unicode 160 with unicode 32
+                       .Replace(unicode194.ToString(), "")
+                       .Replace(unicode160.ToString(), " "); 
         }
     }
 
@@ -396,13 +399,13 @@ namespace WaFFLs
 
                     if (year == 2015 && weekData.Name == "Week 11")
                     {
-                        // score mis-recorded as 10,069 - assuming 1,069
+                        // score mis-recorded as 10,069 - score was 1,006.  Confirmed via boxscore
 
                         foreach (var element in individualGames)
                         {
                             if (element.Value == "Dont Tase Me Bro 10069, Rocky Mountain Oysters 907")
                             {
-                                element.Value = "Dont Tase Me Bro 1069, Rocky Mountain Oysters 907";
+                                element.Value = "Dont Tase Me Bro 1006, Rocky Mountain Oysters 907";
                             }
                         }
                     }
@@ -451,15 +454,28 @@ namespace WaFFLs
                         }
                     }
 
+                    if (year == 2024 && weekData.Name == "Week 4")
+                    {
+                        // ultracogs score got transposed, confirmed via boxscore
+
+                        foreach (var element in individualGames)
+                        {
+                            if (element.Value == "Ultracogs 694, Rocky Mountain Oysters 831")
+                            {
+                                element.Value = "Ultracogs 964, Rocky Mountain Oysters 831";
+                            }
+                        }
+                    }
+
                     if (year == 2024 && weekData.Name == "Week 13")
                     {
-                        // koothrapaulli browns score is a super high, assuming 851 is the correct score
+                        // koothrapaulli browns score is a super high, 858 is the correct score, confirmed via boxscore
 
                         foreach (var element in individualGames)
                         {
                             if (element.Value == "Koothrapaulli Browns 8518, Rocky Mountain Oysters 563")
                             {
-                                element.Value = "Koothrapaulli Browns 851, Rocky Mountain Oysters 563";
+                                element.Value = "Koothrapaulli Browns 858, Rocky Mountain Oysters 563";
                             }
                         }
                     }

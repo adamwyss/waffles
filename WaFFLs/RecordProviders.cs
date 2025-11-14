@@ -9,8 +9,8 @@ using WaFFLs.Generation.Models;
 namespace WaFFLs
 {
 
-    [Title(Text = "Fantasy Bowl Appearances")]
-    [Summary(Text = "Discover the legends who have battled their way to the Fantasy Bowl more than anyone else. See which teams have consistently reached the pinnacle of competition!")]
+    [Title(Text = "Most Fantasy Bowl Appearances")]
+    [Summary(Text = "Discover the teams that have reached the Fantasy Bowl more than any other. These franchises have consistently battled their way to the championship game, proving their staying power at the top!")]
     public class MostFantasyBowlAppearances : ICareerRecordProvider
     {
         private readonly League _leagueData;
@@ -61,8 +61,8 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Fantasy Bowl Champions")]
-    [Summary(Text = "Uncover the dynasties that have conquered the Fantasy Bowl time and time again. These teams have turned championship dreams into reality!")]
+    [Title(Text = "Most Fantasy Bowl Championships")]
+    [Summary(Text = "See which teams have turned championship dreams into reality! These dynasties have conquered the Fantasy Bowl time and time again, building a legacy of winning when it matters most.")]
     public class MostFantasyBowlChampionships : ICareerRecordProvider
     {
         private readonly League _leagueData;
@@ -103,8 +103,8 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Career Wins")]
-    [Summary(Text = "Which teams have racked up the most victories across regular seasons and playoffs? Witness the winningest franchises in league history!")]
+    [Title(Text = "Most Career Wins")]
+    [Summary(Text = "Which teams have racked up the most victories across both regular seasons and playoffs? Witness the winningest franchises in league history and their relentless pursuit of victory!")]
     public class MostWinsInCareerIncludingPlayoffs : ICareerRecordProvider
     {
         private readonly League _leagueData;
@@ -126,8 +126,8 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Career Playoff Wins")]
-    [Summary(Text = "Playoff pressure? These teams thrive on it. See who has dominated the postseason and built a legacy of clutch performances!")]
+    [Title(Text = "Most Career Playoff Wins")]
+    [Summary(Text = "Playoff pressure? These teams thrive on it. See who has dominated the postseason and built a legacy of clutch performances when the stakes are highest!")]
     public class MostCareerPlayoffWins : ICareerRecordProvider
     {
         private readonly League _leagueData;
@@ -149,7 +149,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Career Losses")]
+    [Title(Text = "Most Career Losses")]
     [Summary(Text = "Every loss tells a story. Explore the teams that have faced adversity more than any other, and see how they’ve endured through the toughest seasons!")]
     public class MostLossesInCareerIncludingPlayoffs : ICareerRecordProvider
     {
@@ -172,8 +172,8 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Season Wins")]
-    [Summary(Text = "Which teams have put together the most dominant single-season runs? Relive the campaigns that set new standards for excellence!")]
+    [Title(Text = "Most Wins in a Single Season")]
+    [Summary(Text = "Which teams have put together the most dominant single-season runs? Relive the campaigns that set new standards for excellence—including playoff victories!")]
     public class MostWinsInASeason : ISeasonRecordProvider
     {
         private readonly League _leagueData;
@@ -196,7 +196,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Season Points")]
+    [Title(Text = "Most Points Scored in a Season")]
     [Summary(Text = "Offensive explosions! Find out which teams have posted the highest point totals in a single season and redefined what’s possible on the scoreboard!")]
     public class MostPointsScoredInASeason : ISeasonRecordProvider
     {
@@ -221,7 +221,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Career Points")]
+    [Title(Text = "Most Points Scored in a Career")]
     [Summary(Text = "Consistency is king. These teams have piled up points year after year, cementing their place among the league’s all-time greats!")]
     public class MostPointsScoredInCareer : ICareerRecordProvider
     {
@@ -244,8 +244,7 @@ namespace WaFFLs
         }
     }
 
-
-    [Title(Text = "1000 Point Games - Career")]
+    [Title(Text = "Most 1000-Point Games - Career")]
     [Summary(Text = "Breaking the 1000-point barrier is a mark of greatness. See which teams have done it most often and set the league on fire!")]
     public class Most1000PointGames : ICareerRecordProvider
     {
@@ -272,7 +271,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "1000 Point Games - Season + Playoffs")]
+    [Title(Text = "Most 1000 Point Games - Season + Playoffs")]
     [Summary(Text = "Who’s had the hottest hand in a single season, including the playoffs? These teams have delivered jaw-dropping performances when it mattered most!")]
     public class Most1000PointGamesInASeasonAndPlayoffs : ISeasonRecordProvider
     {
@@ -299,7 +298,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "1000 Point Games - Season")]
+    [Title(Text = "Most 1000 Point Games - Season")]
     [Summary(Text = "Regular season fireworks! Discover the teams that have stacked up 1000-point games in a single campaign and electrified fans week after week!")]
     public class Most1000PointGamesInASeason : ISeasonRecordProvider
     {
@@ -326,7 +325,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Single Game High Scores")]
+    [Title(Text = "Best Score - Single Game")]
     [Summary(Text = "Relive the most unforgettable games where teams put up monster numbers and shattered records in a single outing!")]
     public class BestSingleGameScores : IIndividualGameRecordProvider
     {
@@ -357,9 +356,8 @@ namespace WaFFLs
         }
     }
 
-
-    [Title(Text = "Single Game Low Scores")]
-    [Summary(Text = "Not every game is a shootout. These are the lowest scoring performances, where defenses reigned and points were hard to come by!")]
+    [Title(Text = "Lowest Score - Single Game")]
+    [Summary(Text = "Not every game is a shootout. These are the lowest scoring performances, where points were hard to come by!")]
     public class WorstSingleGameScores : IIndividualGameRecordProvider
     {
         private readonly League _leagueData;
@@ -389,7 +387,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "High-Scoring Losses")]
+    [Title(Text = "Best Score - in a Loss")]
     [Summary(Text = "Scoring big but coming up short—these teams put up huge numbers in defeat, proving that sometimes even greatness isn’t enough!")]
     public class BestSingleGameLosingScores : IIndividualGameRecordProvider
     {
@@ -420,7 +418,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Highest Combined Scores")]
+    [Title(Text = "Best Combined Scores - Single Game")]
     [Summary(Text = "When both teams light up the scoreboard, history is made. Check out the games with the most combined points ever!")]
     public class HighestScoringGames : IGameRecordProvider
     {
@@ -452,7 +450,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Closest Games")]
+    [Title(Text = "Closest Scores - Single Game")]
     [Summary(Text = "Every point counts! These nail-biters were decided by the slimmest of margins, keeping fans on the edge of their seats until the final whistle!")]
     public class ClosestGames : IGameRecordProvider
     {
@@ -471,6 +469,7 @@ namespace WaFFLs
             var orderedGames = _leagueData.Seasons.SelectMany(s => s.WeeksIncludingPlayoffs())
                                           .SelectMany(w => w.Games)
                                           .OrderBy(g => Math.Abs(g.Home.Score - g.Away.Score))
+                                          .ThenByDescending(g => g.Week.Season.Year)
                                           .Take(_count);
 
             return orderedGames.Select(t =>
@@ -484,7 +483,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Winning Streaks")]
+    [Title(Text = "Longest Winning Streaks")]
     [Summary(Text = "Unstoppable! These teams strung together the longest winning streaks, proving their dominance week after week!")]
     public class LongestWinningStreaks : IStreakRecordProvider
     {
@@ -503,7 +502,7 @@ namespace WaFFLs
             foreach (var team in _leagueData.Teams)
             {
                 var t = team;
-                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.IsRegular()).ToList();
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).ToList();
                 var teamStreaks = StreakHelper.GetAllStreaks(orderedGames, g => g.IsWinningTeam(t)).ToList();
                 allStreaks.AddRange(teamStreaks);
             }
@@ -522,7 +521,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "Losing Streaks")]
+    [Title(Text = "Longest Losing Streaks")]
     [Summary(Text = "Endurance through adversity—these are the longest losing streaks, where teams battled through tough times and kept fighting!")]
     public class LongestLosingStreaks : IStreakRecordProvider
     {
@@ -541,7 +540,7 @@ namespace WaFFLs
             foreach (var team in _leagueData.Teams)
             {
                 var t = team;
-                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.IsRegular()).ToList();
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).ToList();
 
                 var teamStreaks = StreakHelper.GetAllStreaks(orderedGames, g => g.IsLosingTeam(t)).ToList();
                 allStreaks.AddRange(teamStreaks);
@@ -561,7 +560,7 @@ namespace WaFFLs
         }
     }
 
-    [Title(Text = "1000 Point Streaks")]
+    [Title(Text = "Longest 1000-Point Streaks")]
     [Summary(Text = "Sustained excellence! These teams have delivered 1000-point games in consecutive weeks, setting a new standard for offensive firepower!")]
     public class Longest1000PointStreaks : IStreakRecordProvider
     {
@@ -580,7 +579,7 @@ namespace WaFFLs
             foreach (var team in _leagueData.Teams)
             {
                 var t = team;
-                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).Where(g => g.Week.IsRegular()).ToList();
+                var orderedGames = team.Games.GroupBy(g => g.Week.Season).OrderBy(g => g.Key.Year).SelectMany(g => g).ToList();
                 var teamStreaks = StreakHelper.GetAllStreaks(orderedGames, g => g.GetTeamScore(t) >= 1000).ToList();
                 allStreaks.AddRange(teamStreaks);
             }
@@ -610,12 +609,11 @@ namespace WaFFLs
                 results.Add(r);
             }
 
-
             return results;
         }
     }
 
-    [Title(Text = "Head-to-Head Dominance")]
+    [Title(Text = "Best Head-to-Head Records")]
     [Summary(Text = "Rivalries are the heart of competition. See which teams have absolutely owned their matchups and built legendary head-to-head records!")]
     public class CareerHeadToHeadRecords : ICareerRecordProvider
     {
@@ -676,6 +674,148 @@ namespace WaFFLs
             public int Losses { get; set; }
 
             public double Percentage => (double)Wins / (double)(Wins + Losses);
+        }
+    }
+
+    [Title(Text = "Best Season Record - Excluding Playoffs")]
+    [Summary(Text = "Which teams have put together the most dominant single-season runs? Relive the campaigns that set new standards for excellence—regular season only!")]
+    public class BestRecordInASeason : ISeasonRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public BestRecordInASeason(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<SeasonRecord> GetData()
+        {
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.Where(g => g.Week.IsRegular())
+                                                                 .GroupBy(g => g.Week.Season.Year)
+                                                                 .Select(s => new { Team = t, Year = s.Key, Wins = s.Count(g => g.IsWinningTeam(t)), Losses = s.Count(g => g.IsLosingTeam(t)) }))
+                                                                 .OrderByDescending(s => GetWinPercentage(s.Wins, s.Losses))
+                                                                 .ThenByDescending(s => s.Year)
+                                                                 .Take(_count);
+
+            return teams.Select(t => new SeasonRecord() { Value = string.Format("{0} - {1} {2:F3}", t.Wins, t.Losses, GetWinPercentage(t.Wins, t.Losses)), Team = t.Team, Year = t.Year }).ToList();
+        }
+
+        public double GetWinPercentage(int wins, int losses)
+        {
+            return (double)wins / (double)(wins + losses);
+        }   
+    }
+
+    [Title(Text = "Most 10 Win Seasons")]
+    [Summary(Text = "Which teams have been consistently great season after season? These teams have won 10 games or more in a single season a record number of times!")]
+    public class Most10WinSeasons : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public Most10WinSeasons(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.GroupBy(g => g.Week.Season.Year)
+                                                                 .Select(s => new { Team = t, Year = s.Key, Wins = s.Count(g => g.Week.IsRegular() && g.IsWinningTeam(t)) })
+                                                                 .Where(s => s.Wins >= 10)
+                                                                 .GroupBy(s => s.Team)
+                                                                 .Select(s => new { Team = t, Seasons = s.Count(), LastYear = s.Max(x => x.Year) }));
+
+            return teams.OrderByDescending(t => t.Seasons)
+                        .ThenByDescending(t => t.LastYear)
+                        .Take(_count)
+                        .Select(t => new CareerRecord() { Value = t.Seasons.ToString(), Team = t.Team }).ToList();
+        }
+    }
+
+    [Title(Text = "Most 10 Loss Seasons")]
+    [Summary(Text = "Which teams have struggled the most season after season? These teams have lost 10 games or more in a single season more than any other!")]
+    public class Most10LossSeasons : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public Most10LossSeasons(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.GroupBy(g => g.Week.Season.Year)
+                                                                 .Select(s => new { Team = t, Year = s.Key, Losses = s.Count(g => g.Week.IsRegular() && g.IsLosingTeam(t)) })
+                                                                 .Where(s => s.Losses >= 10)
+                                                                 .GroupBy(s => s.Team)
+                                                                 .Select(s => new { Team = t, Seasons = s.Count(), LastYear = s.Max(x => x.Year) }));
+
+            return teams.OrderByDescending(t => t.Seasons)
+                        .ThenByDescending(t => t.LastYear)
+                        .Take(_count)
+                        .Select(t => new CareerRecord() { Value = t.Seasons.ToString(), Team = t.Team }).ToList();
+        }
+    }
+
+    [Title(Text = "Most Seasons Played")]
+    [Summary(Text = "Who are the elder statesmen? These teams have been around the longest, showing unmatched longevity in the league!")]
+    public class TotalSeasonsPlayed : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public TotalSeasonsPlayed(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.GroupBy(g => g.Week.Season.Year)
+                                                                 .Select(s => new { Team = t, Year = s.Key })
+                                                                 .GroupBy(g => g.Team)
+                                                                 .Select(s => new { Team = s.Key, SeasonsPlayed = s.Count(), LastYear = s.Max(x => x.Year) }));
+
+            return teams.OrderByDescending(t => t.SeasonsPlayed)
+                        .ThenByDescending(t => t.LastYear)
+                        .Take(_count)
+                        .Select(t => new CareerRecord() { Value = t.SeasonsPlayed.ToString(), Team = t.Team }).ToList();
+        }
+    }
+
+    [Title(Text = "Most Playoff Appearances")]
+    [Summary(Text = "These teams have proven their consistency and resilience by reaching the playoffs more times than any other. Explore the franchises that are always in the hunt for a championship, year after year!")]
+    public class MostPlayOffAppearances : ICareerRecordProvider
+    {
+        private readonly League _leagueData;
+        private readonly int _count;
+
+        public MostPlayOffAppearances(League leagueData, int count = 10)
+        {
+            _leagueData = leagueData;
+            _count = count;
+        }
+
+        public List<CareerRecord> GetData()
+        {
+            var teams = _leagueData.Teams.SelectMany(t => t.Games.GroupBy(g => g.Week.Season.Year)
+                                                                 .Where(s => s.Any(g => g.Week.IsPlayoff()))
+                                                                 .Select(s => new { Team = t, Year = s.Key })
+                                                                 .GroupBy(g => g.Team)
+                                                                 .Select(s => new { Team = s.Key, Playoffs = s.Count(), LastYear = s.Max(x => x.Year) }));
+
+            return teams.OrderByDescending(t => t.Playoffs)
+                        .ThenByDescending(t => t.LastYear)
+                        .Take(_count)
+                        .Select(t => new CareerRecord() { Value = t.Playoffs.ToString(), Team = t.Team }).ToList();
         }
     }
 
