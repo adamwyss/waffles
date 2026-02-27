@@ -16,6 +16,10 @@ namespace WaFFLs
         public string GetStandingsDataForYear(int year)
         {
             string url = string.Format(UrlFormat, year);
+            if (year == 2025)
+            {
+                url = "https://thewaffl.net/Copied-2024.php";
+            }
             using (WebClient client = new WebClient())
             {
                 return client.DownloadString(url);

@@ -121,6 +121,10 @@ namespace WaFFLs
                         {
                             individualGames = new XElement[] { XElement.Parse("<div>Sporky's Revenge 1080, Truffle Shuffle 825</div>") };
                         }
+                        else if (text == "Fantasy Bowl XXX")
+                        {
+                            individualGames = new XElement[] { XElement.Parse("<div>Speed Demons 1007, Dominators 829</div>") };
+                        }
                         else
                         {
                             individualGames = games[j].Elements("font").ToArray();

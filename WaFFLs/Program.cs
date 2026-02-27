@@ -17,11 +17,13 @@ namespace WaFFLs
 
         static void Main(string[] args)
         {
-            if (args.Length == 1)
+            int currentYear = 2025;
+
+            if (true || args.Length == 1)
             {
                 using (var terminal = Terminal.Show("Downloading"))
                 {
-                    for (int i = 1996; i <= 2024; i++)
+                    for (int i = 1996; i <= currentYear; i++)
                     {
                         terminal.Update(i);
                         UpdateYear(i);
@@ -34,7 +36,7 @@ namespace WaFFLs
             IWaFFLDataSource dataProvider = new CachedWaFFLDataSource();
             ITeamResolver teamResolver = new LeagueTeamResolver(leagueData);
             var parser = new HtmlPageParser(dataProvider, teamResolver);
-            parser.Parse(leagueData, 1996, 2024);
+            parser.Parse(leagueData, 1996, currentYear);
 
             string root = "c:\\waffles-output";
             int count = 15;
